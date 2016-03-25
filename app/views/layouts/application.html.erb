@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RieApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+    <%= link_to 'Home', root_path %>
+    <% if @current_user.present? %>
+    <% if @current_user.admin? %>
+    <%= link_to 'All Users', users_path %>
+    <%= link_to "Add Product", new_product_path %>
+    <%= link_to "Add Categorie", new_category_path %>
+    <% end %>
+    <%= link_to "Products", products_path %>
+    <%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %>
+    <% else %>
+    <%= link_to "Products", products_path %>
+    <%= link_to "Sign up", signup_path %>
+    <%= link_to "Login", login_path %>
+
+
+  <% end %>
+
+  </nav>
+
+
+  <% if flash[:error].present? %>
+    <h2 class="error"> <%= flash[:error] %> </h2>
+  <% end %>
+
+    <%= yield %>
+
+
+</body>
+</html>

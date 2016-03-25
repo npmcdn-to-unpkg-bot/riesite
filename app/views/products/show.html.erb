@@ -1,0 +1,15 @@
+<h1><%= @product.name%></h1>
+
+
+<%= image_tag(@product.image) %>
+<p> <%= @product.price %> </p>
+<p> <%= @product.description %> </p>
+
+
+
+<% if @current_user.present? %>
+<% if @current_user.admin? %>
+<%= link_to 'Edit Product', edit_product_path %><br>
+<%= link_to 'Delete Product', @product, :method => :delete %>
+<% end %>
+<% end %>

@@ -1,15 +1,29 @@
 <h1><%= @product.name%></h1>
 
+  <div class="productimage">
+    <%= image_tag(@product.image, :class => "feature") %>
+  </div>
 
-<%= image_tag(@product.image) %>
-<p> <%= @product.price %> </p>
-<p> <%= @product.description %> </p>
+  <div class="producttext">
+    <h1><%= @product.name%></h1>
+    <p> <%= @product.price %> </p>
+    <p> <%= @product.description %> </p>
+  </div>
 
 
+    <% if @current_user.present? %>
+      <% if @current_user.admin? %>
+        <br><br><hr>
+        <%= link_to 'Edit Product', edit_product_path %><br>
+        <%= link_to 'Delete Product', @product, :method => :delete %>
+        <br><hr><br>
 
-<% if @current_user.present? %>
-<% if @current_user.admin? %>
-<%= link_to 'Edit Product', edit_product_path %><br>
-<%= link_to 'Delete Product', @product, :method => :delete %>
-<% end %>
-<% end %>
+      <% end %>
+    <% end %>
+
+  <div class="displaycategories">
+    <h2>Categories</h2>
+       <% @product.categories.each do |category| %>
+         <%= link_to(image_tag(category.image), category) %>
+       <% end %>
+   </div>

@@ -1,16 +1,16 @@
 <h1>EDIT USER</h1>
   <%= form_for @user do |f| %>
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email %><br>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><br>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br>
 
   <%= f.label :image%>
-  <%= f.url_field :image %>
+  <%= f.url_field :image %><br><br>
 
-  <%= f.submit %>
+  <%= f.submit %><br><br>
 <% end %>

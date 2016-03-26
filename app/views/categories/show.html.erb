@@ -1,14 +1,21 @@
 <h1><%= @category.name%></h1>
+    <%= image_tag(@category.image) %>
+
+    <% if @current_user.present? %>
+      <% if @current_user.admin? %>
+        <br><br><hr>
+        <p><%= link_to 'Edit Product', edit_category_path %></p>
+        <p><%= link_to 'Delete Product', @category, :method => :delete %></p>
+        <hr><br><br>
+      <% end %>
+    <% end %>
 
 
-<%= image_tag(@category.image) %>
-<p> <%= @category.description %> </p>
-
-
-
-<% if @current_user.present? %>
-<% if @current_user.admin? %>
-<%= link_to 'Edit Product', edit_category_path %><br>
-<%= link_to 'Delete Product', @category, :method => :delete %>
-<% end %>
-<% end %>
+<div class="displaycategories">
+  <h2>Products</h2>
+  <% @category.products.each do |product| %>
+    <div class="products">
+      <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
+    </div>
+    <% end %>
+</div>

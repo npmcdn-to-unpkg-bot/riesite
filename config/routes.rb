@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users, :only => [:new, :create, :index, :update]
+  resources :users, :only => [:new, :edit, :create, :index, :update, :show]
   resources :products
   resources :categories
+  resources :favourites, :only => [:create, :destroy]
 
 
   root :to => 'categories#index'

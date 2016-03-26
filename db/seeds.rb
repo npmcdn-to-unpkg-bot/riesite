@@ -14,3 +14,5 @@ Category.destroy_all
   c2 = Category.create  :name => 'PostCards', :image => 'https://scontent-syd1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12814312_250434475289200_3735811049237846486_n.jpg?oh=d197233cc828dd7a9f1053b37b8dfe9b&oe=578C59FB', :description => 'From Rio with Love'
   c3 = Category.create  :name => 'Pillows', :image => 'https://scontent-syd1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12814312_250434475289200_3735811049237846486_n.jpg?oh=d197233cc828dd7a9f1053b37b8dfe9b&oe=578C59FB', :description => 'Make it Home'
   c4 = Category.create  :name => 'Canvas', :image => 'https://scontent-syd1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12814312_250434475289200_3735811049237846486_n.jpg?oh=d197233cc828dd7a9f1053b37b8dfe9b&oe=578C59FB', :description => 'Canvas'
+
+  c1.products << p1 << p7

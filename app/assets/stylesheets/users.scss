@@ -1,77 +1,213 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 body {
-  background-color: lavender;
-}
-
-.products {
-  display: inline-block;
-  max-width: 25%;
+  background-color: gainsboro;
   text-align: center;
-  padding: 30px;
+  font-family: 'Lato', sans-serif;
 }
 
-.thumb {
-  width: 10em;
-  border: 2px solid white;
-  border-radius: 50%;
+p {
+  color: black;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
   letter-spacing: .2em;
   font-family: 'Poiret One', cursive;
   margin-top: 30px;
 }
 
-nav {
-  background-color: rgba(0, 0, 0, 1);
-  width: 100%;
-  padding: 30px;
-  z-index: 2000000;
-  width: 100%;
-  display: inline-block;
-  box-shadow: 1px 2px 2px gainsboro;
-  margin: -10px;
-}
+//NAV
 
-// .background-image {
-//   background-image: url("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xla1/v/t1.0-9/12801152_250439548622026_5639803690400642832_n.jpg?oh=d035f8c33788af82fac1374ce918aef0&oe=5779529E&__gda__=1464808243_466ef8a5280ed408a23328d374feb76e");
-//   background-attachment: fixed;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   position: relative;
-//   padding-top: 10%;
-//   padding-bottom: 700px;
-//   margin: 0 auto;
-//   opacity: 0.2;
-// }
-
-
-
-
-a {
-  color: white;
+nav a {
+  color: #25A289;
   text-decoration: none;
-  padding: 10px
+  margin-right: 5%;
+  margin-left: 5%;
+  max-width: 100%;
 }
 
-a:visited{
-  color: white
+nav a:visited{
+  color: lavender;
 }
 
-a:hover {
+nav a:hover {
   color: rgba(250, 167, 136, 1);
 }
+
+nav {
+  background-color: rgba(0, 0, 0, 1);
+  padding: 10px;
+  z-index: 2000000;
+  width: 100%;
+  text-align: center;
+  // position: fixed;
+}
+
+.logo {
+  width: 80px;
+}
+
+//INDEX PAGE
+
+.background-image {
+  background-attachment: fixed;
+  background-image: url("http://previews.123rf.com/images/mihtiander/mihtiander1409/mihtiander140900574/31354867-Panorama-equirectangular-projection-on-sandy-beach-with-buildings--Stock-Photo.jpg");
+  max-width: 100%;
+  height: 550px;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 10%;
+  opacity: 0.5;
+}
+
+.index-description {
+  background-color: white;
+  height: 300px;
+  padding: 2% 0;
+}
+
+.index-description p{
+  padding: 5px 100px 10px 100px;
+}
+
+.index-categories{
+  padding: 30px;
+  background-color: gainsboro;
+}
+
+.categorie {
+  box-shadow: 2px 2px 2px white;
+}
+
+// BODY
+
+.container {
+  padding: 2% 0;
+}
+
+
+
+// FORMS
 
 label {
   width: 100px;
   display: inline-block;
 }
 
-button {
+fieldset {
+  border: none;
+  min-width: 60px;
+}
 
+
+//IMAGES
+
+.feature {
+  border-radius: 10%;
+  max-width: 100%;
+}
+
+.list-index {
+  display: inline-block;
+  max-width: 25%;
+  padding: 10px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.cat-index {
+  display: inline-block;
+  max-width: 90%;
+}
+
+//  PRODUCTS
+
+.products-index {
+  background-color: gainsboro;
+}
+
+.productimage {
+  display: inline-block;
+  padding-right: 50px;
+  max-width: 60%;
+}
+
+.producttext {
+  display: inline-block;
+  text-align: center;
+  max-width: 30%
+}
+
+.categorie {
+  box-shadow: 2px 2px 2px white;
+}
+
+.products {
+  display: inline-block;
+  padding: 10px;
+}
+
+
+//SHOW PAGE CATEGORIES
+
+.displaycategories{
+  background-color: gainsboro;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  display: inline-block;
+  max-width: 100%;
+}
+
+// CAT & PROD
+
+.thumb {
+  width: 15em;
+  height: 15em;
+  border: 2px solid white;
+  opacity: 0.3;
+  box-shadow: 2px 2px 2px black;
+  display: inline-block;
+}
+
+.thumb:hover{
+  opacity: 1;
+}
+
+//USER
+
+.favourites{
+  padding-bottom: 30px;
+}
+
+//FOOTER
+.footer{
+  background-color: white;
+  padding: 2%;
+}
+.socialmedia {
+  margin-top: 60px;
+  margin-bottom: 100px;
+  display: inline-block;
+  text-align: right;
+}
+
+.socialmedia img:hover {
+  background: white;
+  border-radius: 25px;
+}
+
+.information {
+  display: inline-block;
+  text-align: left;
+  margin-left: -100px;
+  padding-right: 100px;
 }

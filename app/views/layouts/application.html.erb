@@ -8,26 +8,33 @@
 </head>
 <body>
 
-<div class="container">
     <nav>
-    <%= link_to 'Home', root_path %>
-    <% if @current_user.present? %>
-    <% if @current_user.admin? %>
-    <%= link_to 'All Users', users_path %>
-    <%= link_to "Add Product", new_product_path %>
-    <%= link_to "Add Categorie", new_category_path %>
-    <% end %>
-    <%= link_to "Products", products_path %>
-    <%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %>
-    <% else %>
-    <%= link_to "Products", products_path %>
-    <%= link_to "Sign up", signup_path %>
-    <%= link_to "Login", login_path %>
+      <%= link_to 'Somos Rie', root_path %>
+      <%= link_to "Products", products_path %>
+      <a href="/">
+        <img class="logo" src="https://scontent-syd1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12814312_250434475289200_3735811049237846486_n.jpg?oh=d197233cc828dd7a9f1053b37b8dfe9b&oe=578C59FB" alt="" />
+      </a>
+
+      <% if @current_user.present? %>
+      <% if @current_user.admin? %>
+
+      <%= link_to 'All Users', users_path %>
+      <%= link_to "Add Product", new_product_path %>
+      <%= link_to "Add Categorie", new_category_path %>
+      <% end %>
+      <%= link_to "Products", products_path %>
+       <a href="/users/<%=@current_user.id%>">Your Profile</a>
+      <%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %>
+      <% else %>
+       <%= link_to "Sign up", signup_path %>
+       <%= link_to "Login", login_path %>
+
+      <% end %>
 
 
-  <% end %>
 
-  </nav>
+    </nav>
+
 
 
   <% if flash[:error].present? %>
@@ -36,6 +43,23 @@
 
     <%= yield %>
 
+
+<div class="footer">
+  <div class="information">
+      <p>Rie.</p>
+      .......................................................................................................</p>
+      <p>Produtos feitos com amor na cidade maravilhosa.</p>
+      <p>.......................................................................................................</p>
+      <p>Cartões Postais - Almofadas- Canvas - Tote Bags</p>
+  </div>
+
+  <div class="socialmedia">
+     <a href="https://www.facebook.com/somos.rie/" target="_blank"><img src="https://media-public.canva.com/MAAkOkcVoNM/2/thumbnail.png" alt="tumblr" class="social-media"></a>
+     <a href="https://www.instagram.com/rie.store/" target="_blank"><img src="https://media-public.canva.com/MAAkOoMEZes/2/thumbnail.png" alt="instagram" class="social-media"></a>
+     <a href="mailto:contac@rie.com"><img src="https://media-public.canva.com/MAAkOgkJpj4/2/thumbnail.png" alt="email" class="social-media"></a>
+  </div>
+
+</div>
 
 </body>
 </html>

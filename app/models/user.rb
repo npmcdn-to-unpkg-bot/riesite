@@ -14,5 +14,6 @@
 class User < ActiveRecord::Base
   has_secure_password
   validates :email, :presence => true, :uniqueness => true
-  has_and_belongs_to_many :favourites
+  has_many :favorites
+  has_many :favorited_products, through: :favorites, source: :favorited, source_type: 'Product'
 end

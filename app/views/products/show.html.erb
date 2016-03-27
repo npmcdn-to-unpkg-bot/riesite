@@ -1,5 +1,6 @@
-<h1><%= @product.name%></h1>
+<div class="product-show">
 
+<h1>Somos Rie</h1>
   <div class="productimage">
     <%= image_tag(@product.image, :class => "feature") %>
   </div>
@@ -8,9 +9,20 @@
     <h1><%= @product.name%></h1>
     <p> <%= @product.price %> </p>
     <p> <%= @product.description %> </p>
+    <h3>Category</h3>
+       <% @product.categories.each do |category| %>
+       <%= link_to(category.name, category) %> <br>
+       <% end %>
+
+       <% if @current_user.present? %>
+       <h3>Whish List</h3>
+       <%= link_to image_tag("https://media-public.canva.com/MAAR2KoGwHA/1/thumbnail.png", :class => "dislike"), favorite_product_path(@product), method: :delete %>
+       <%= link_to image_tag("https://media-public.canva.com/MAAPIqwS0MY/1/thumbnail.png", :class => "like"), favorite_products_path(product_id: @product), method: :post %>
+       <% end %>
+
+       <br><br><%= link_to('Back', products_path) %>
   </div>
-
-
+</div>
     <% if @current_user.present? %>
       <% if @current_user.admin? %>
         <br><br><hr>
@@ -20,10 +32,3 @@
 
       <% end %>
     <% end %>
-
-  <div class="displaycategories">
-    <h2>Categories</h2>
-       <% @product.categories.each do |category| %>
-         <%= link_to(image_tag(category.image), category) %>
-       <% end %>
-   </div>

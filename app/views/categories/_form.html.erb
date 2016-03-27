@@ -1,11 +1,12 @@
 <%= form_for @category do |f| %>
 <fieldset> <%= f.label :name %> <%= f.text_field :name %> </fieldset>
 <fieldset> <%= f.label :image %> <%= f.url_field :image %> </fieldset>
+<fieldset> <%= f.label :banner %> <%= f.url_field :banner %> </fieldset>
 <fieldset> <%= f.label :description %> <%= f.text_field :description %> </fieldset>
 
 <fieldset>
-  <%= f.label :products %>
-  <%= f.select :products, Product.pluck(:name,:id), :include_blank => true %>
+  <%= f.label :product_ids, Product %>
+  <%= f.select :product_ids, Product.pluck(:name,:id), :include_blank => true %>
 </fieldset>
 
 <fieldset><%= f.submit %></fieldset>

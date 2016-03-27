@@ -2,19 +2,20 @@
 <div class="background-image"></div>
 
 <div class="index-description">
-  <h1> Somos Rie</h1>
+  <h1> Rie. Porque o Rio continua lindo :)</h1>
   .......................................................................................................</p>
-  <p>Produtos feitos com amor na cidade maravilhosa.</p>
+  <p>Em Rie, acreditamos que rir deixa a alma mais leve</p>
   <p>.......................................................................................................</p>
+  <p>E você já riu muito hoje?</p>
 
 </div>
 
 
 <div class="index-categories">
 
-<h1>Categories</h1>
+<h1>Categories</h1><br>
 <% @categories.each do |category| %>
-<%= link_to(image_tag(category.image, :class => 'categorie', :title => category.name), category) %>
+<%= link_to(image_tag(category.image, :class => 'category', :title => category.name), category) %>
 <% end %>
 
 </div>

@@ -1,3 +1,5 @@
+<div class="users-pages">
+
 <h1><%= @user.email%></h1>
 
 
@@ -7,6 +9,13 @@
 <%= link_to 'Edit Profile', edit_user_path %>
 <hr>
 
-<div class="favourites">
-  <h2> Favourites </h2>
+  <h2> Whish List  </h2>
+  <p> <%= @user.favorites.count%> products</p>
+  <div class="products">
+
+  <% @user.favorites.each do |favorite| %>
+  <%= link_to(image_tag(favorite.favorited.image, :class => "thumb"), products_path) %>
+  <% end %>
+</div>
+
 </div>

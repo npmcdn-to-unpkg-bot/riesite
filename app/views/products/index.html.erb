@@ -1,9 +1,6 @@
 <div class="products-index">
 
-
 <h1>Products</h1>
-
-
 <% @products.each do |product| %>
 <div class="products">
 <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>

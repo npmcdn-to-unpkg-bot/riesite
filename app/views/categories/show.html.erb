@@ -1,16 +1,18 @@
-<h1><%= @category.name%></h1>
-    <%= image_tag(@category.image) %>
 
+<div class="showcategories">
+
+<h1><%= @category.name%></h1>
+<%= image_tag(@category.banner)%>
     <% if @current_user.present? %>
       <% if @current_user.admin? %>
         <br><br><hr>
-        <p><%= link_to 'Edit Product', edit_category_path %></p>
-        <p><%= link_to 'Delete Product', @category, :method => :delete %></p>
+        <p><%= link_to 'Edit Category', edit_category_path %></p>
+        <p><%= link_to 'Delete Category', @category, :method => :delete %></p>
         <hr><br><br>
       <% end %>
     <% end %>
-
-
+</div>
+<br>
 <div class="displaycategories">
   <h2>Products</h2>
   <% @category.products.each do |product| %>
@@ -19,3 +21,4 @@
     </div>
     <% end %>
 </div>
+<br>

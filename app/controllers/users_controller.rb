@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new users_params
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_path
     else
       render :new
@@ -33,6 +34,11 @@ class UsersController < ApplicationController
     redirect_to user
   end
 
+  def destroy
+    user = User.find params[:i]
+    user.destroy
+    redirect_to products
+  end
 
   private
   def users_params

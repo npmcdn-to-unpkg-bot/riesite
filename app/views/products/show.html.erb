@@ -9,7 +9,7 @@
     <h1><%= @product.name%></h1>
     <p> <%= @product.price %> </p>
     <p> <%= @product.description %> </p>
-    <h3>Category</h3>
+  <h3>Category</h3>
        <% @product.categories.each do |category| %>
        <%= link_to(category.name, category) %> <br>
        <% end %>

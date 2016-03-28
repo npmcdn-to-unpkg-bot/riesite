@@ -24,15 +24,16 @@
       <ul class="dropdown-menu">
         <%= link_to "Add Product", new_product_path %>
         <li role="separator" class="divider"></li>
-
         <%= link_to "Add Categorie", new_category_path %>
+        <li role="separator" class="divider"></li>
+        <%= link_to "All Users", users_path %>
          </ul>
      </li>
    </ul>
       <% end %>
       <%= link_to "Products", products_path %>
        <a href="/users/<%=@current_user.id%>">Your Profile</a>
-      <%= link_to "Logout #{@current_user.email}", login_path, :method => :delete %>
+      <%= link_to "Logout #{@current_user.username}", login_path, :method => :delete %>
       <% else %>
        <%= link_to "Sign up", signup_path %>
        <%= link_to "Login", login_path %>

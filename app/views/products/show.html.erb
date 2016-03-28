@@ -1,6 +1,10 @@
 <div class="main">
   <div class="productimage">
+    <% if @product.imageshow.present? %>
+    <%= image_tag(@product.imageshow) %>
+    <%else %>
     <%= image_tag(@product.image) %>
+    <% end %>
   </div>
 
 <div class="producttext">

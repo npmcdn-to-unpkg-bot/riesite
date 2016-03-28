@@ -38,6 +38,8 @@ GEM
       tzinfo (~> 1.1)
     ajaxify_rails (0.9.7)
       rails (>= 3.2.0)
+    animate-rails (1.0.10)
+      rails
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -164,6 +166,7 @@ PLATFORMS
 
 DEPENDENCIES
   ajaxify_rails
+  animate-rails
   annotate
   bcrypt (~> 3.1.7)
   bootstrap-sass

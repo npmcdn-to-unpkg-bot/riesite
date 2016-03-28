@@ -11,7 +11,7 @@
 <div class="index-categories">
   <%= image_tag("http://cdn.makeagif.com/media/3-27-2016/h7qlAE.gif") %>
   <% @categories.each do |category| %>
-    <%= link_to(image_tag(category.image, :id => "sortable", :class => 'category', :title => category.name), category) %>
+    <%= link_to(image_tag(category.image, :class => 'category', :title => category.name), category) %>
   <% end %>
   <%= image_tag("http://cdn.makeagif.com/media/3-28-2016/FMU7wk.gif") %>
 </div>

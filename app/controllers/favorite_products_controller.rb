@@ -3,15 +3,15 @@ class FavoriteProductsController < ApplicationController
 
   def create
     if Favorite.create(favorited: @product, user: @current_user)
-      redirect_to @product, notice: 'Product has been favorited'
+      redirect_to @product
     else
-      redirect_to @product, alert: 'Something went wrong...*sad panda*'
+      redirect_to @product
     end
   end
 
   def destroy
     Favorite.where(favorited_id: @product.id, user_id: @current_user.id).first.destroy
-    redirect_to @product, notice: 'Project is no longer in favorites'
+    redirect_to @product
   end
 
   private

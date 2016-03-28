@@ -1,34 +1,41 @@
-<div class="product-show">
-
-<h1>Somos Rie</h1>
+<div class="main">
   <div class="productimage">
-    <%= image_tag(@product.image, :class => "feature") %>
+    <%= image_tag(@product.image) %>
   </div>
 
-  <div class="producttext">
-    <h1><%= @product.name%></h1>
-    <p> <%= @product.price %> </p>
-    <p> <%= @product.description %> </p>
+<div class="producttext">
+  <h1><%= @product.name%></h1>
+  <p> <%= @product.price %> </p>
+  <p> <%= @product.description %> </p>
   <h3>Category</h3>
-       <% @product.categories.each do |category| %>
-       <%= link_to(category.name, category) %> <br>
-       <% end %>
+     <% @product.categories.each do |category| %>
+     <%= link_to(category.name, category) %> <br>
+     <% end %>
 
-       <% if @current_user.present? %>
-       <h3>Whish List</h3>
-       <%= link_to image_tag("https://media-public.canva.com/MAAR2KoGwHA/1/thumbnail.png", :class => "dislike"), favorite_product_path(@product), method: :delete %>
-       <%= link_to image_tag("https://media-public.canva.com/MAAPIqwS0MY/1/thumbnail.png", :class => "like"), favorite_products_path(product_id: @product), method: :post %>
-       <% end %>
+     <% if @current_user.present? %>
+     <h3>Whish List</h3>
+     <%- unless @current_user.favorited_products.exists?(id: @product.id) -%>
+     <%= link_to image_tag("http://s8.postimg.org/c3kr0ngsh/corazon4.png"), favorite_products_path(product_id: @product), method: :post %>
+     <%= @product.favorites.count %>
+     <br><%= "Give me a like!" %>
 
-       <br><br><%= link_to('Back', products_path) %>
+     <%else %>
+     <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), favorite_product_path(@product), method: :delete %>
+    <%= @product.favorites.count %>
+     <br><%= "You loved it!" %>
+     <% end %>
+     <% end %>
+
+     <br><hr><%= link_to('Back', products_path) %>
   </div>
 </div>
-    <% if @current_user.present? %>
-      <% if @current_user.admin? %>
-        <br><br><hr>
-        <%= link_to 'Edit Product', edit_product_path %><br>
-        <%= link_to 'Delete Product', @product, :method => :delete %>
-        <br><hr><br>
 
-      <% end %>
-    <% end %>
+
+<% if @current_user.present? %>
+  <% if @current_user.admin? %>
+    <br><br><hr>
+    <%= link_to 'Edit Product', edit_product_path %><br>
+    <%= link_to 'Delete Product', @product, :method => :delete %>
+    <br><hr><br>
+  <% end %>
+<% end %>

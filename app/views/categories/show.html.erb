@@ -1,24 +1,19 @@
-
-<div class="showcategories">
-
-<h1><%= @category.name%></h1>
-<%= image_tag(@category.banner)%>
-    <% if @current_user.present? %>
-      <% if @current_user.admin? %>
-        <br><br><hr>
-        <p><%= link_to 'Edit Category', edit_category_path %></p>
-        <p><%= link_to 'Delete Category', @category, :method => :delete %></p>
-        <hr><br><br>
-      <% end %>
-    <% end %>
+<div class="banner">
+  <%= image_tag(@category.banner)%>
 </div>
-<br>
-<div class="displaycategories">
-  <h2>Products</h2>
+
+<div class="main">
   <% @category.products.each do |product| %>
     <div class="products">
       <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
+      <p><%= link_to product.name, product %></p>
     </div>
     <% end %>
-</div>
-<br>
+</div><br>
+
+<% if @current_user.present? %>
+  <% if @current_user.admin? %> <br><br><hr>
+    <p><%= link_to 'Edit Category', edit_category_path %></p>
+    <p><%= link_to 'Delete Category', @category, :method => :delete %></p><hr><br><br>
+  <% end %>
+<% end %>

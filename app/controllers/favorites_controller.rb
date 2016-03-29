@@ -11,6 +11,7 @@ class FavouritesController < ApplicationController
     favourite = Favourite.find params[:id]
     fauvorite.destroy
     redirect_to product
+  end
 
   private
   def set_product

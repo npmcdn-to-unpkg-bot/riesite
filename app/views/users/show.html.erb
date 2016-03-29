@@ -1,13 +1,15 @@
 <div class="main">
 
-<h1><%= @user.username %></h1>
+<h1><%= @user.username.capitalize %></h1>
 
 
 <%= image_tag(@user.image,  :class => 'thumb') %><br>
 <p> <%= @user.email%></p>
 
 <hr>
-<%= link_to 'Edit Profile', edit_user_path %>
+<p><%= link_to 'Edit Profile', edit_user_path %><p>
+<p><%= link_to 'Delete Profile', @user, :method => :delete %></p>
+
 <hr>
 
   <h2> Whish List  </h2>

@@ -3,6 +3,7 @@
     <% @products.each do |product| %>
   <div class="products">
     <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
+
     <p> <%= image_tag("http://s29.postimg.org/npu90mir7/corazon6.png") %>
     <%= product.favorites.count %></p>
     <p><%= product.name %></p>

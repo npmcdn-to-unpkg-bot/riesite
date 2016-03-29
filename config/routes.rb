@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'favorite_products/new'
 
-  resources :users, :only => [:new, :edit, :create, :index, :update, :show]
+  resources :users
   resources :products
   resources :categories
   resources :favourites, :only => [:create, :destroy]

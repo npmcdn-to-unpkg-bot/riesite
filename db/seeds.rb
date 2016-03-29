@@ -1,3 +1,4 @@
+Favorite.destroy_all
 User.destroy_all
 User.create!([
   {email: "david.feuillard@gmail.com", password_digest: "$2a$10$9676BuFIy7PGVEt6EgkdMuCWvIzmY5fvXbYCvnE1Eu2q/fiW/T7R.", admin: false, image: nil, username: "David"},
@@ -34,7 +35,6 @@ Category::HABTM_Products.create!([
   {category_id: Category.all.sample.id, product_id: Product.all.sample.id},
   {category_id: Category.all.sample.id, product_id: Product.all.sample.id}
 ])
-Favorite.destroy_all
 Favorite.create!([
   {user_id: User.first.id, favorited_id: Product.all.sample.id, favorited_type: "Product"},
   {user_id: User.first.id, favorited_id: Product.all.sample.id, favorited_type: "Product"},

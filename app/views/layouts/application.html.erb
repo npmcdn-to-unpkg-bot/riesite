@@ -3,6 +3,7 @@
 <head>
   <title>RieApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="//npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -30,10 +31,10 @@
             <li class="dropdown-header"></li>
               <li><%= link_to "Products", products_path %></a></li>
               <li role="separator" class="divider"></li>
-              <li> <a href="/categories/1">Accessories</a>
-              <li> <a href="/categories/2">Stationary</a>
-              <li> <a href="/categories/3">Home</a>
-              <li> <a href="/categories/4">Clothes</a>
+              <li> <a href="/categories/9">Accessories</a>
+              <li> <a href="/categories/10">Stationary</a>
+              <li> <a href="/categories/11">Home</a>
+              <li> <a href="/categories/12">Clothes</a>
             </li></ul>
           <% if @current_user.present? %>
          <li><a href="/users/<%=@current_user.id%>">Your Profile</a></li>

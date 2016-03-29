@@ -12,18 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
-
-//= require jquery
 //= require bootstrap-sprockets
-
-//Social Media Spin
-$(document).ready(function() {
-  var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-  $('.social-media').on('mouseover', function() {
-    $(this).addClass('animated rotateIn').one(animationEnd, function() {
-      $(this).removeClass('animated ' + 'rotateIn');
-    });
-  });
-});
+//= require_tree .

@@ -2,9 +2,11 @@
 
 <h1><%= @user.username.capitalize %></h1>
 
-
-<%= image_tag(@user.image,  :class => 'thumb') %><br>
+<% if @current_user.image.present? %>
+<%= image_tag(@user.image,  :class => 'profilepic') %><br><br>
+<%end %>
 <p> <%= @user.email%></p>
+
 
 <hr>
 <p><%= link_to 'Edit Profile', edit_user_path %><p>
@@ -12,13 +14,19 @@
 
 <hr>
 
-  <h2> Whish List  </h2>
-  <p> <%= @user.favorites.count%> products</p>
-  <div class="products">
+<h2> Whish List  </h2>
+<p> <%= @user.favorites.count%> products</p>
+<div class="products">
 
-  <% @user.favorites.each do |favorite| %>
-  <%= link_to(image_tag(favorite.favorited.image, :class => "thumb"), products_path) %>
+<% @user.favorites.each do |favorite| %>
+  <% if favorite.favorited && favorite.favorited.image %>
+    <%= link_to(image_tag(favorite.favorited.image, :class => "thumb"), product_path(Product.find(favorite.favorited_id))) %>
   <% end %>
-</div>
+<% end %>
+  </div>
+
+
+
+  </div>
 
 </div>

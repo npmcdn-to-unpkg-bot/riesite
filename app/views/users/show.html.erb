@@ -17,16 +17,10 @@
 <h2> Whish List  </h2>
 <p> <%= @user.favorites.count%> products</p>
 <div class="products">
-
 <% @user.favorites.each do |favorite| %>
   <% if favorite.favorited && favorite.favorited.image %>
     <%= link_to(image_tag(favorite.favorited.image, :class => "thumb"), product_path(Product.find(favorite.favorited_id))) %>
   <% end %>
 <% end %>
+    </div>
   </div>
-
-
-
-  </div>
-
-</div>

@@ -7,12 +7,14 @@
     <div class="products">
       <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
       <p><%= link_to product.name, product %></p>
+      <p> <%= link_to(image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), product) %>
+      <%= product.favorites.count %></p>
     </div>
     <% end %>
-</div><br>
+</div>
 
 <% if @current_user.present? %>
-  <% if @current_user.admin? %> <br><br><hr>
+  <% if @current_user.admin? %> <hr>
     <p><%= link_to 'Edit Category', edit_category_path %></p>
     <p><%= link_to 'Delete Category', @category, :method => :delete %></p><hr><br><br>
   <% end %>

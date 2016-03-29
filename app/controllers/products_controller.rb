@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.sort_by do |product|
+      product.favorites.count
+    end
   end
 
   def edit

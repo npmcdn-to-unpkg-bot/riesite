@@ -12,22 +12,22 @@ $base_url: "../../media";
 //@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
 @import url("#{$base_url}/css/font-awesome/css/font-awesome.min.css");
 //@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300");
-
 @font-face {
-  font-family: 'Gotham';
-  src: url('fonts/Gotham-Medium.eot'); /* IE9 Compat Modes */
-  src: url('fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-     url('fonts/Gotham-Medium.woff') format('woff'), /* Modern Browsers */
-     url('fonts/Gotham-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
-     url('fonts/Gotham-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
-   font-weight: 400;
-   font-style: normal;
- }
+    font-family: 'Gotham Bold';
+    src: url('#{$base_url}/fonts/gotham/gotham-bold-webfont.eot');
+    src: url('#{$base_url}/fonts/gotham/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$base_url}/fonts/gotham/gotham-bold-webfont.woff') format('woff'),
+         url('#{$base_url}/fonts/gotham/gotham-bold-webfont.ttf') format('truetype'),
+         url('#{$base_url}/fonts/gotham/gotham-bold-webfont.svg#gotham_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
 
 body {
   background-color: white;
   text-align: center;
-  font-family: 'Gotham';
+  font-family: 'Gotham Bold';
   max-width: 100%;
 }
 
@@ -42,7 +42,7 @@ p {
 h1, h2 {
   text-align: center;
   letter-spacing: .1em;
-  font-family: 'Gotham Bold';
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -57,7 +57,7 @@ img {
 }
 
 .main {
-  padding: 50px;
+  padding: 60px;
 
 }
 
@@ -66,7 +66,13 @@ img {
 }
 
 
-//INDEX CATEGORIES
+//NAV BAR
+.navbar-default{
+  background-color: white;
+  padding: 10px;
+  font-family: 'Gotham';
+}
+
 //INDEX CATEGORIES
 .background-image {
   background-attachment: fixed;
@@ -117,7 +123,8 @@ img {
 .producttext {
   display: inline-block;
   // text-align: center;
-  max-width: 30%
+  max-width: 30%;
+  vertical-align: -webkit-baseline-middle;
 }
 
 //IMAGES

@@ -9,8 +9,9 @@
 
 <div class="producttext">
   <h1><%= @product.name%></h1>
-  <p> <%= @product.price %> </p>
   <p> <%= @product.description %> </p>
+  <h2> <%= @product.price %> </h2>
+
   <h3>Category</h3>
      <% @product.categories.each do |category| %>
      <%= link_to(category.name, category) %> <br>
@@ -19,23 +20,22 @@
      <% if @current_user.present? %>
      <h3>Whish List</h3>
      <%- unless @current_user.favorited_products.exists?(id: @product.id) -%>
-     <%= link_to image_tag("http://s8.postimg.org/c3kr0ngsh/corazon4.png"), favorite_products_path(product_id: @product), method: :post %>
+     <%= link_to image_tag("http://s8.postimg.org/c3kr0ngsh/corazon4.png", :class => "like"), favorite_products_path(product_id: @product), method: :post %>
      <%= @product.favorites.count %>
      <br><%= "Give me a like!" %>
-
      <%else %>
-     <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), favorite_product_path(@product), method: :delete %>
+     <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png", :class => "dislike"), favorite_product_path(@product), method: :delete %>
     <%= @product.favorites.count %>
      <br><%= "You loved it!" %>
      <% end %>
 
      <% else %>
-     <h3><%= "Login to like it!" %></h3>
+     <h3><button><%= link_to "Login to like it!", signup_path   %></h3></button>
      <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), login_path %>
     <%= @product.favorites.count %>
      <% end %>
-
      <br><hr><%= link_to('Back', products_path) %>
+
   </div>
 </div>
 

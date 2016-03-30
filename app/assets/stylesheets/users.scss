@@ -46,6 +46,8 @@ h1, h2 {
   font-weight: 400;
   margin-top: 30px;
   margin-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 img {
@@ -57,7 +59,7 @@ img {
 }
 
 .main {
-  padding: 60px;
+  padding: 80px 40px 40px 60px;
 
 }
 
@@ -72,6 +74,12 @@ img {
   padding: 10px;
   font-family: 'Gotham';
 }
+
+.navbar-default a{
+  padding: 20px;
+  text-align: center;
+}
+
 
 //INDEX CATEGORIES
 .background-image {
@@ -101,6 +109,7 @@ img {
   margin: -1.5px;
 }
 
+
 // SHOW CATEGORIES
 
 .banner img {
@@ -108,9 +117,12 @@ img {
   max-width: 100%;
 }
 
+
+
 // INDEX PRODUCTS
 .products {
   display: inline-block;
+  margin-bottom: 30px;
 }
 
 // SHOW PRODUCTS
@@ -122,11 +134,21 @@ img {
 
 .producttext {
   display: inline-block;
-  // text-align: center;
-  max-width: 30%;
   vertical-align: -webkit-baseline-middle;
+  background-color: rgba(220, 220, 220, 0.37);
+  padding: 10px;
+  max-width: 500px;
 }
 
+@media (max-width: 1100px) {
+  .producttext {
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle;
+  background-color: rgba(220, 220, 220, 0);
+  padding: 10px;
+  max-width: 500px;
+  }
+}
 //IMAGES
 .thumb {
   width: 15em;
@@ -163,14 +185,20 @@ fieldset {
 
 //FOOTER
 .footer{
-  background-color: gainsboro;
+  background-color: #ECECEC;
   padding: 2%;
+  max-width: 100%;
 }
+
+
 .socialmedia {
-  margin-top: 60px;
-  margin-bottom: 100px;
-  display: inline-block;
-  text-align: right;
+  text-align: end;
+  margin-bottom: 20px;
+}
+
+.pic img {
+  max-width: 50%;
+  display: flex;
 }
 
 .socialmedia img:hover {
@@ -178,9 +206,14 @@ fieldset {
   border-radius: 25px;
 }
 
-.information {
-  display: inline-block;
-  text-align: left;
-  margin-left: -100px;
-  padding-right: 100px;
+button{
+ text-decoration:none;
+ text-align:center;
+ padding:14px 16px;
+ border:none;
+
+ font:17px Arial, Helvetica, sans-serif;
+ font-weight:bold;
+ color:#ffffff;
+ background:#000000;
 }

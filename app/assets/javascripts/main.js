@@ -10,3 +10,23 @@ $(document).ready(function() {
 // if($('body.pages').length === 0){
 //   return;
 // }
+
+
+
+$(document).ready(function() {
+  $('.like').on('click', function() {
+    swal({title: "You Love It",
+         text: "Now it's in your WishList",
+         timer: 90000,
+        showConfirmButton: true});
+    });
+  });
+
+$(document).ready(function() {
+  $('.dislike').on('click', function() {
+    swal({title: "You remove it from your wish list",
+         text: "Click again to add it",
+         timer: 90000,
+        showConfirmButton: true});
+  });
+});

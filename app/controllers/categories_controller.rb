@@ -7,11 +7,15 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    image = Cloudinary::Uploader.upload(params[:image])
-    banner = Cloudinary::Uploader.upload(params[:banner])
     category = Category.create category_params
-    category.image = image["url"]
-    category.banner = banner["url"]
+    if params[:image].present?
+      image = Cloudinary::Uploader.upload(params[:image])
+      category.image = image["url"]
+    end
+    if params[:banner].present?
+      banner = Cloudinary::Uploader.upload(params[:banner])
+      category.imageshow = imageshow["url"]
+    end
     category.save
     redirect_to category
   end
@@ -26,11 +30,15 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    image = Cloudinary::Uploader.upload(params[:image])
-    banner = Cloudinary::Uploader.upload(params[:banner])
     category = Category.find params[:id]
-    category.image = image["url"]
-    category.banner = banner["url"]
+    if params[:image].present?
+      image = Cloudinary::Uploader.upload(params[:image])
+      category.image = image["url"]
+    end
+    if params[:banner].present?
+      banner = Cloudinary::Uploader.upload(params[:banner])
+      category.banner = imageshow["url"]
+    end
     category.update category_params
     redirect_to category
   end

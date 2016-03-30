@@ -7,14 +7,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    image = Cloudinary::Uploader.upload(params[:image])
-    imageshow = Cloudinary::Uploader.upload(params[:imageshow])
     product = Product.create product_params
-    product.image = image["url"]
-    product.imageshow = imageshow["url"]
-    product.save
+    if params[:image].present?
+      image = Cloudinary::Uploader.upload(params[:image])
+      product.update(:image => image["url"])
+    end
+    if params[:imageshow].present?
+      imageshow = Cloudinary::Uploader.upload(params[:imageshow])
+      product.imageshow = imageshow["url"]
+    end
     redirect_to product
   end
+
 
   def index
     @products = Product.all.sort_by do |product|
@@ -27,14 +31,19 @@ class ProductsController < ApplicationController
   end
 
   def update
-    image = Cloudinary::Uploader.upload(params[:image])
-    imageshow = Cloudinary::Uploader.upload(params[:imageshow])
     product = Product.find params[:id]
-    product.image = image["url"]
-    product.imageshow = imageshow["url"]
+    if params[:image].present?
+      image = Cloudinary::Uploader.upload(params[:image])
+      product.image = image["url"]
+    end
+    if params[:imageshow].present?
+      imageshow = Cloudinary::Uploader.upload(params[:imageshow])
+      product.imageshow = imageshow["url"]
+    end
     product.update product_params
     redirect_to product
   end
+
 
   def show
     @product = Product.find params[:id]

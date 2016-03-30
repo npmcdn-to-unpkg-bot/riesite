@@ -15,12 +15,14 @@
 <hr>
 
 <h2> Whish List  </h2>
-<p> <%= @user.favorites.count%> products</p>
+<p> <%= pluralize(@user.favorites.count, 'product')%> </p>
 <div class="products">
 <% @user.favorites.each do |favorite| %>
   <% if favorite.favorited && favorite.favorited.image %>
     <%= link_to(image_tag(favorite.favorited.image, :class => "thumb"), product_path(Product.find(favorite.favorited_id))) %>
+  <p>  <%= link_to "Remove", favorite_product_path(Product.find(favorite.favorited_id)), method: :delete %></p>
+  </div>
+
   <% end %>
 <% end %>
-    </div>
   </div>

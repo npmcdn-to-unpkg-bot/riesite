@@ -5,7 +5,7 @@
     <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
     <p> <%= link_to(image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), product) %>
     <%= product.favorites.count %></p>
-    <p><%= product.name %></p>
+    <p><%= link_to product.name, product %></p>
     <p><%= product.price %> <p>
   </div>
   <% end %>

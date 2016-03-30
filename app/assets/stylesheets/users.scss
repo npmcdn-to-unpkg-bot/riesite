@@ -32,6 +32,15 @@ h1, h2 {
   margin-bottom: 20px;
   padding-right: 10px;
   padding-left: 10px;
+  text-shadow: 2px 2px 2px white;
+}
+
+a{
+  color: grey;
+}
+
+a:hover{
+  color: orange;
 }
 
 img {
@@ -88,6 +97,7 @@ img {
   background-color: white;
 }
 
+
 .index-categories img{
   margin: -1.5px;
 }
@@ -120,7 +130,9 @@ img {
   vertical-align: -webkit-baseline-middle;
   background-color: rgba(220, 220, 220, 0.37);
   padding: 10px;
-  max-width: 500px;
+  width: 350px;
+  height: 500px;
+  text-align: center;
 }
 
 @media (max-width: 1100px) {
@@ -174,7 +186,11 @@ input[type="file"]{
   display: inline-block;
 }
 
-
+.signup{
+  padding: 80px 40px 40px 60px;
+  display: inline-block;
+  vertical-align: top;
+}
 
 //FOOTER
 .footer{
@@ -199,14 +215,17 @@ input[type="file"]{
   border-radius: 25px;
 }
 
-button{
+button, html input[type="button"], input[type="reset"], input[type="submit"]{
  text-decoration:none;
  text-align:center;
  padding:14px 16px;
  border:none;
-
  font:17px Arial, Helvetica, sans-serif;
  font-weight:bold;
  color:#ffffff;
  background:#000000;
+ border-radius: 2%;
+ margin-top: 20px;
+ margin-bottom: 20px;
+
 }

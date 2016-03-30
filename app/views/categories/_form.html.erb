@@ -1,8 +1,8 @@
-<%= form_for @category do |f| %>
+<%= form_for(@category, html: {multipart: true}) do |f| %>
 <fieldset> <%= f.label :name %> <%= f.text_field :name %> </fieldset>
-<fieldset> <%= f.label :image %> <%= f.url_field :image %> </fieldset>
-<fieldset> <%= f.label :banner %> <%= f.url_field :banner %> </fieldset>
 <fieldset> <%= f.label :description %> <%= f.text_field :description %> </fieldset>
+<fieldset><%= label_tag "Image:" %> <%= file_field_tag :image %> </fieldset>
+<fieldset> <%= label_tag "Banner"%> <%= file_field_tag :banner %> </fieldset>
 
 <fieldset>
   <%= f.label :product_ids, "Products:" %>

@@ -5,7 +5,7 @@
 <div class="main">
   <% @category.products.each do |product| %>
     <div class="products">
-      <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
+      <%= link_to(image_tag(product.image, :class => 'thumb2'), product) %>
       <p><%= link_to product.name, product %></p>
       <p> <%= link_to(image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), product) %>
       <%= product.favorites.count %></p>

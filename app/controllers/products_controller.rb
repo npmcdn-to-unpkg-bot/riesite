@@ -7,7 +7,12 @@ class ProductsController < ApplicationController
   end
 
   def create
+    image = Cloudinary::Uploader.upload(params[:image])
+    imageshow = Cloudinary::Uploader.upload(params[:imageshow])
     product = Product.create product_params
+    product.image = image["url"]
+    product.imageshow = imageshow["url"]
+    product.save
     redirect_to product
   end
 
@@ -22,7 +27,11 @@ class ProductsController < ApplicationController
   end
 
   def update
+    image = Cloudinary::Uploader.upload(params[:image])
+    imageshow = Cloudinary::Uploader.upload(params[:imageshow])
     product = Product.find params[:id]
+    product.image = image["url"]
+    product.imageshow = imageshow["url"]
     product.update product_params
     redirect_to product
   end
@@ -39,7 +48,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :image, :imageshow, :description, :category_ids => [])
+    params.require(:product).permit(:name, :price, :description, :category_ids => [])
   end
 
   def authorise

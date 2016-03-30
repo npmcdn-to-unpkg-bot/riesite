@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: rany
+  api_key: '857946195663763'
+  api_secret: QyfDV4w7QoViFgHlF7FtsRVCjhc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: rany
+  api_key: '857946195663763'
+  api_secret: QyfDV4w7QoViFgHlF7FtsRVCjhc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: rany
+  api_key: '857946195663763'
+  api_secret: QyfDV4w7QoViFgHlF7FtsRVCjhc
+  enhance_image_tag: true
+  static_image_support: false

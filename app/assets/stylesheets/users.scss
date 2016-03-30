@@ -64,7 +64,7 @@ img {
 }
 
 .main2{
-  padding-bottom: 30px;
+  padding: 150px 60px 150px 60px;
 }
 
 
@@ -151,9 +151,15 @@ img {
 }
 //IMAGES
 .thumb {
-  width: 15em;
+  width: 20em;
   border: 2px solid white;
-  box-shadow: 2px 2px 2px black;
+  display: inline-block;
+  margin: 10px;
+}
+
+.thumb2 {
+  width: 25em;
+  border: 2px solid white;
   display: inline-block;
   margin: 10px;
 }
@@ -179,6 +185,10 @@ label {
 fieldset {
   border: none;
   min-width: 60px;
+}
+
+input[type="file"]{
+  display: inline-block;
 }
 
 

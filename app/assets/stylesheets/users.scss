@@ -40,7 +40,7 @@ a{
 }
 
 a:hover{
-  color: orange;
+  color: black;
 }
 
 img {
@@ -71,6 +71,16 @@ img {
   padding: 20px;
   text-align: center;
 }
+
+.navbar-default .navbar-nav>li>a{
+  color: black;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+  color: grey;
+}
+
+
 
 
 //INDEX CATEGORIES

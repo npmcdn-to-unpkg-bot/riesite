@@ -8,26 +8,11 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-$base_url: "../../media";
-//@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
-@import url("#{$base_url}/css/font-awesome/css/font-awesome.min.css");
-//@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300");
-@font-face {
-    font-family: 'Gotham Bold';
-    src: url('#{$base_url}/fonts/gotham/gotham-bold-webfont.eot');
-    src: url('#{$base_url}/fonts/gotham/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('#{$base_url}/fonts/gotham/gotham-bold-webfont.woff') format('woff'),
-         url('#{$base_url}/fonts/gotham/gotham-bold-webfont.ttf') format('truetype'),
-         url('#{$base_url}/fonts/gotham/gotham-bold-webfont.svg#gotham_boldregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-}
 
 body {
   background-color: white;
   text-align: center;
-  font-family: 'Gotham Bold';
+  font-family: 'Montserrat', sans-serif;
   max-width: 100%;
 }
 

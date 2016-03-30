@@ -32,7 +32,7 @@
 
      <% else %>
      <%= button_to "Login to like it!", signup_path   %>
-     <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), signin_path %>
+     <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), signup_path %>
     <%= @product.favorites.count %>
      <% end %>
      <br><hr><%= link_to('Back', products_path) %>

@@ -240,3 +240,18 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]{
  margin-bottom: 20px;
 
 }
+
+
+.loginbutton{
+  width: 250px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+}
+
+.loginbutton:hover{
+  width: 250px;
+  margin-top: 30px;
+  box-shadow: 2px 2px 2px gray;
+  margin-bottom: 10px;
+}

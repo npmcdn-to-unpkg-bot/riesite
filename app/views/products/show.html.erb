@@ -31,7 +31,7 @@
      <% end %>
 
      <% else %>
-     <%= button_to "Login to like it!", signup_path   %>
+     <%= link_to image_tag("http://res.cloudinary.com/rany/image/upload/v1459381843/Captura_de_Tela_2016-03-31_a%CC%80s_10.49.01_zdnrmh.png", :class => "loginbutton"), signup_path%><br>
      <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), signup_path %>
     <%= @product.favorites.count %>
      <% end %>

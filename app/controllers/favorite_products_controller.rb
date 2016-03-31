@@ -11,7 +11,7 @@ class FavoriteProductsController < ApplicationController
 
   def destroy
     Favorite.where(favorited_id: @product.id, user_id: @current_user.id).first.destroy
-    redirect_to @product
+    redirect_to :back
   end
 
   private

@@ -53,7 +53,6 @@ img {
 
 .main {
   padding: 80px 40px 40px 60px;
-
 }
 
 .main2{
@@ -80,9 +79,6 @@ img {
   color: grey;
 }
 
-
-
-
 //INDEX CATEGORIES
 .background-image {
   background-attachment: fixed;
@@ -91,15 +87,14 @@ img {
   background-repeat: no-repeat;
   position: relative;
   background-position: center;
-
   padding-top: 10%;
   padding-bottom: 50%;
   margin: 0 auto;
-
 }
 
 .index-description img{
   max-width: 100%;
+  background-color: #ECECEC;
 }
 
 .index-categories{
@@ -107,21 +102,17 @@ img {
   background-color: white;
 }
 
-
 .index-categories img{
   margin: -1.5px;
 }
 
 
 // SHOW CATEGORIES
-
 .banner img {
   margin-top: 50px;
   max-width: 100%;
   margin-top: 83px;
 }
-
-
 
 // INDEX PRODUCTS
 .products {
@@ -155,6 +146,20 @@ img {
   max-width: 500px;
   }
 }
+
+.loginbutton{
+  width: 250px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.loginbutton:hover{
+  width: 250px;
+  margin-top: 30px;
+  box-shadow: 2px 2px 2px gray;
+  margin-bottom: 10px;
+}
+
 //IMAGES
 .thumb {
   width: 20em;
@@ -241,17 +246,19 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]{
 
 }
 
+@media (max-width: 1160px) {
+  div.index-categories a {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
 
-.loginbutton{
-  width: 250px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-
+  div.index-categories img {
+  width: 25%;
+  margin: 0 auto;
+  margin-right: -4px;
 }
-
-.loginbutton:hover{
-  width: 250px;
-  margin-top: 30px;
-  box-shadow: 2px 2px 2px gray;
-  margin-bottom: 10px;
+  div.index-categories a img {
+    width: 100%;
+  }
 }

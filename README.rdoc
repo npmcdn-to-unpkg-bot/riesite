@@ -1,28 +1,17 @@
-== README
+== SOMOS RIE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Add Products 
+ - And link it to Categories
 
-Things you may want to cover:
+* Add Categories 
+ - And link Products
 
-* Ruby version
+* Create Users and Admin 
+ - Users can like Products and add it to a WishList
+ - Admin can add Products/Categories and also has a Wish List
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Favorites 
+ - List of most liked Products
+ - Display in the User Profile as a Wish List
+ 
+ 

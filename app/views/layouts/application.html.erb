@@ -57,7 +57,7 @@
          <li><%= link_to "LOGOUT #{@current_user.username.upcase}", login_path, :method => :delete%></li>
           <li class="dropdown">
             <% if @current_user.admin? %>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">A <b class="caret"></b></a>
             <ul class="dropdown-menu">
             <li class="dropdown-header">Admin</li>
               <li><%= link_to "Add Product", new_product_path %></a></li>

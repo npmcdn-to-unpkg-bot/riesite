@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
     end
     if params[:banner].present?
       banner = Cloudinary::Uploader.upload(params[:banner])
-      category.imageshow = banner["url"]
+      category.banner = banner["url"]
     end
     category.save
     redirect_to category

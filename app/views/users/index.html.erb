@@ -1,6 +1,7 @@
-<div class="main">
+<div class="alluser">
   <h1>All users</h1>
   <% @users.each do |user| %>
-  <p> <%= user.email %> since <%= user.created_at %></p>
+  <p> USER EMAIL:: <%= user.email %> ::SINCE:: <%= user.created_at %>
+  <%= link_to '   => DELETE PROFILE <= ', user, :method => :delete %></p>
 <% end %>
 </div>

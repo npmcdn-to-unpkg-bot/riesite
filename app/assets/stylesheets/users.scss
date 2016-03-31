@@ -15,6 +15,16 @@ body {
   max-width: 100%;
 }
 
+.alluser {
+  padding: 80px 40px 40px 60px;
+}
+
+.alluser a{
+  color:blue;
+}
+.alluser a:hover{
+  color:red;
+}
 
 .fb-like{
 text-align: right;
@@ -157,6 +167,7 @@ img {
   vertical-align: -webkit-baseline-middle;
   background-color: rgba(220, 220, 220, 0);
   padding: 10px;
+  box-shadow: 0px 0px 0px white;
   max-width: 500px;
   }
 }

@@ -2,22 +2,14 @@
 <div class="main">
 
 <h1>EDIT USER</h1>
-  <%= form_for @user do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %><br>
+  <%= form_for @user, html: {multipart: true} do |f| %>
+<fieldset> <%= f.label :email %><%= f.email_field :email %></fieldset>
+<fieldset> <%= f.label :username %><%= f.text_field :username, :required => true %></fieldset>
+<fieldset> <%= f.label :password %><%= f.password_field :password, :required => true %></fieldset>
+<fieldset> <%= f.label :password_confirmation %><%= f.password_field :password_confirmation, :required => true %></fieldset>
+<fieldset><%= f.label :image %><%= file_field_tag :image %> </fieldset>
 
-  <%= f.label :username %>
-  <%= f.text_field :username, :required => true %><br>
+<fieldset><%= f.submit %></fieldset>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, :required => true %><br>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, :required => true %><br>
-
-  <%= f.label :image%>
-  <%= f.url_field :image %><br><br>
-
-  <%= f.submit %><br><br>
 <% end %>
 </div>

@@ -98,6 +98,7 @@ img {
 }
 
 .index-categories{
+  margin: 40px 0px 40px 0px;
   padding: 30px;
   background-color: white;
 }
@@ -131,6 +132,7 @@ img {
   display: inline-block;
   vertical-align: -webkit-baseline-middle;
   background-color: rgba(220, 220, 220, 0.37);
+  box-shadow: 2px 2px 2px gainsboro;
   padding: 10px;
   width: 350px;
   height: 500px;

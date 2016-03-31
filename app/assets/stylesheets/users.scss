@@ -15,6 +15,14 @@ body {
   max-width: 100%;
 }
 
+.navbar-default a.logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -40px;
+  top: 20px;
+  padding: 0;
+}
+
 .fb-like{
 text-align: right;
 }
@@ -69,7 +77,10 @@ img {
 .navbar-default a{
   padding: 20px;
   text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
 }
+
 
 .navbar-default .navbar-nav>li>a{
   color: black;
@@ -263,4 +274,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]{
   div.index-categories a img {
     width: 100%;
   }
+}
+
+@media (max-width: 1000px){
+  .navbar-default a{
+    padding: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
 }

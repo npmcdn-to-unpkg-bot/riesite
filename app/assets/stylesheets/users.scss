@@ -15,13 +15,6 @@ body {
   max-width: 100%;
 }
 
-.navbar-default a.logo {
-  position: absolute;
-  left: 50%;
-  margin-left: -40px;
-  top: 20px;
-  padding: 0;
-}
 
 .fb-like{
 text-align: right;
@@ -74,13 +67,21 @@ img {
   padding: 10px;
 }
 
+
 .navbar-default a{
   padding: 20px;
   text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
+.navbar-default a.logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -43px;
+  top: 20px;
+  padding: 0;
+}
 
 .navbar-default .navbar-nav>li>a{
   color: black;

@@ -8,7 +8,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= cloudinary_js_config %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="http://s19.postimg.org/i20kwj02n/logo30x30.png"/>
+  <link rel="shortcut icon" href="https://s19.postimg.org/i20kwj02n/logo30x30.png"/>
 
 </head>
 <body class="<% params[:controller] %>">
@@ -33,7 +33,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="center-block logo" href="/">
-        <img class="logo" src="http://s19.postimg.org/ck9te80mb/logorie.png" alt="" />
+          <%=image_tag('logorie.png', :class => "logo") %>
         </a>
       </div>
       <div class="navbar-collapse collapse">
@@ -91,7 +91,7 @@
 
 <div class="footer">
   <div class="pic">
-<%= image_tag("http://res.cloudinary.com/rany/image/upload/v1459384309/rodape_ahutvp.png") %>
+<%= image_tag("rodape.png") %>
 
   </div>
   <div class="socialmedia">

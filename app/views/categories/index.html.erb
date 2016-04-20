@@ -1,20 +1,19 @@
 
 <div class="banner">
   <div class="left panel"></div>
-  <div class="handle"> <img src="https://cdn4.iconfinder.com/data/icons/outline-2/64/arrow-two-way-512.png" alt="" />
-</div>
+  <div class="handle"><%=image_tag('arrow.png') %></div>
   <div class="right panel"></div>
 </div>
 
 
 <div class="index-description">
-  <img src="http://res.cloudinary.com/rany/image/upload/v1459385833/meiofaixa_nnrxpl.jpg" alt="" />
+<%= image_tag('meiofaixa.jpg') %>
 </div>
 
 
 <div class="index-categories">
-  <%= image_tag("http://cdn.makeagif.com/media/3-27-2016/h7qlAE.gif") %>
-  <%= image_tag("http://cdn.makeagif.com/media/3-28-2016/FMU7wk.gif") %>
+  <%= image_tag("gifShop.gif") %>
+  <%= image_tag("gifTexture.gif") %>
   <% @categories.each do |category| %>
     <%= link_to(image_tag(category.image, :class => 'category', :title => category.name), category) %>
   <% end %>

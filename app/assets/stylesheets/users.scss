@@ -103,17 +103,17 @@ img {
 }
 
 //INDEX CATEGORIES
-.background-image {
-  background-attachment: fixed;
-  background-image: url("http://s19.postimg.org/fpnj1th5v/1300backazul.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  background-position: center;
-  padding-top: 10%;
-  padding-bottom: 50%;
-  margin: 0 auto;
-}
+// .background-image {
+//   background-attachment: fixed;
+//   background-image: url("http://s19.postimg.org/fpnj1th5v/1300backazul.jpg");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   background-position: center;
+//   padding-top: 10%;
+//   padding-bottom: 50%;
+//   margin: 0 auto;
+// }
 
 .index-description img{
   max-width: 100%;
@@ -121,6 +121,7 @@ img {
 
 .index-description{
   background-color: #ECECEC;
+  z-index: 100;
 }
 
 .index-categories{

@@ -1,0 +1,22 @@
+//FOOTER
+.footer{
+  background-color: #ECECEC;
+  padding: 2%;
+  max-width: 100%;
+}
+
+
+.socialmedia {
+  text-align: end;
+  margin-bottom: 20px;
+}
+
+.pic img {
+  max-width: 50%;
+  display: flex;
+}
+
+.socialmedia img:hover {
+  background: white;
+  border-radius: 25px;
+}

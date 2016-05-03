@@ -55,10 +55,6 @@ a:hover{
   color: grey;
 }
 
-img {
-  max-width: 100%;
-}
-
 .logo {
   width: 80px;
 }
@@ -72,123 +68,19 @@ img {
 }
 
 
-//NAV BAR
-.navbar-default{
-  background-color: white;
-  padding: 10px;
+
+p, h3{
+  font-size: 15px;
 }
 
-
-.navbar-default a{
-  padding: 20px;
-  text-align: center;
-  margin-left: 60px;
-  margin-right: 60px;
+h2, h1,{
+  font-size: 17px;
 }
 
-.navbar-default a.logo {
-  position: absolute;
-  left: 50%;
-  margin-left: -43px;
-  top: 20px;
-  padding: 0;
+.loginbutton {
+  max-width: 60%;
 }
 
-.navbar-default .navbar-nav>li>a{
-  color: black;
-}
-
-.navbar-default .navbar-nav>li>a:hover{
-  color: grey;
-}
-
-//INDEX CATEGORIES
-// .background-image {
-//   background-attachment: fixed;
-//   background-image: url("http://s19.postimg.org/fpnj1th5v/1300backazul.jpg");
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   position: relative;
-//   background-position: center;
-//   padding-top: 10%;
-//   padding-bottom: 50%;
-//   margin: 0 auto;
-// }
-
-.index-description img{
-  max-width: 100%;
-}
-
-.index-description{
-  background-color: #ECECEC;
-  z-index: 100;
-}
-
-.index-categories{
-  margin: 40px 0px 40px 0px;
-  padding: 30px;
-  background-color: white;
-}
-
-.index-categories img{
-  margin: -1.5px;
-}
-
-
-// SHOW CATEGORIES
-.banner img {
-  margin-top: 50px;
-  max-width: 100%;
-  margin-top: 71px;
-}
-
-// INDEX PRODUCTS
-.products {
-  display: inline-block;
-  margin-bottom: 30px;
-}
-
-// SHOW PRODUCTS
-.productimage {
-  display: inline-block;
-  padding-right: 50px;
-  margin-top: 30px;
-}
-
-.producttext {
-  display: inline-block;
-  vertical-align: -webkit-baseline-middle;
-  background-color: rgba(220, 220, 220, 0.37);
-  box-shadow: 2px 2px 2px gainsboro;
-  padding: 10px;
-  width: 350px;
-  height: 500px;
-  text-align: center;
-}
-
-@media (max-width: 1020px) {
-  .producttext {
-  display: inline-block;
-  vertical-align: -webkit-baseline-middle;
-  background-color: rgba(220, 220, 220, 0);
-  box-shadow: 0px 0px 0px white;
-  max-width: 500px;
-  margin-left: -50px;
-  }
-
-  p, h3{
-    font-size: 15px;
-  }
-
-  h2, h1,{
-    font-size: 17px;
-  }
-
-  .loginbutton {
-    max-width: 60%;
-  }
-
-}
 
 .loginbutton{
   width: 250px;
@@ -203,32 +95,6 @@ img {
   margin-bottom: 10px;
 }
 
-//IMAGES
-.thumb {
-  width: 20em;
-  border: 2px solid white;
-  display: inline-block;
-  margin: 10px;
-}
-
-.thumb2 {
-  width: 25em;
-  border: 2px solid white;
-  display: inline-block;
-  margin: 10px;
-}
-
-.profilepic{
-  width: 15em;
-  height: 15em;
-  border-radius: 50%;
-  border: 4px solid #EE9A7A;
-}
-
-.feature {
-  border-radius: 10%;
-  max-width: 100%;
-}
 
 // FORMS
 label {
@@ -251,28 +117,7 @@ input[type="file"]{
   vertical-align: top;
 }
 
-//FOOTER
-.footer{
-  background-color: #ECECEC;
-  padding: 2%;
-  max-width: 100%;
-}
 
-
-.socialmedia {
-  text-align: end;
-  margin-bottom: 20px;
-}
-
-.pic img {
-  max-width: 50%;
-  display: flex;
-}
-
-.socialmedia img:hover {
-  background: white;
-  border-radius: 25px;
-}
 
 button, html input[type="button"], input[type="reset"], input[type="submit"]{
  text-decoration:none;

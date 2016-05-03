@@ -1,3 +1,49 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//INDEX CATEGORIES
+
+// .background-image {
+//   background-attachment: fixed;
+//   background-image: url("http://s19.postimg.org/fpnj1th5v/1300backazul.jpg");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   background-position: center;
+//   padding-top: 10%;
+//   padding-bottom: 50%;
+//   margin: 0 auto;
+// }
+
+.index-description img{
+  max-width: 100%;
+}
+
+.index-description{
+  background-color: #ECECEC;
+  z-index: 100;
+}
+
+.index-categories{
+  margin: 40px 0px 40px 0px;
+  padding: 30px;
+  background-color: white;
+}
+
+.index-categories img{
+  margin: -1.5px;
+}
+
+// SHOW CATEGORIES
+
+.banner img {
+  margin-top: 50px;
+  max-width: 100%;
+  margin-top: 71px;
+  position: relative;
+  left: 100%;
+  display: block;
+  margin-left: -20px
+
+}

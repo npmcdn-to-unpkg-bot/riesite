@@ -14,12 +14,13 @@
 
 .banner {
   width: 100%;
-    background-position: center;
-    // margin: 700px;
+  background-position: center;
 }
 
 .imageShowPage{
   margin-left: 40px;
+  width: 100%;
+  background-position: center;
 }
 
 
@@ -46,7 +47,11 @@
 }
 
 .left {
+<<<<<<< HEAD
   background-image: url(asset-path("1300azul.jpg"));
+=======
+  background-image: url(image-path("1300azul.jpg"));
+>>>>>>> 0474525cd5f03e0d747822e9282e13ebe43187e0
   background-size: cover;
   background-attachment: fixed;
   left: 0;
@@ -56,15 +61,22 @@
 .right {
   height: 100%;
   width: 100%;
+<<<<<<< HEAD
   background-image: url(asset-path("1300coral.jpg"));
+=======
+  background-image: url(image-path("1300coral.jpg"));
+>>>>>>> 0474525cd5f03e0d747822e9282e13ebe43187e0
   background-size: cover;
   background-attachment: fixed;
   right: 0;
   z-index: 0;
   overflow: hidden;
 }
+<<<<<<< HEAD
 
 .trying{
   min-height: 568px;
   background-color: #ECECEC;
 }
+=======
+>>>>>>> 0474525cd5f03e0d747822e9282e13ebe43187e0

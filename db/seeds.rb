@@ -1,9 +1,9 @@
 Favorite.destroy_all
 User.destroy_all
 User.create!([
-  {email: "david.feuillard@gmail.com", password_digest: "$2a$10$9676BuFIy7PGVEt6EgkdMuCWvIzmY5fvXbYCvnE1Eu2q/fiW/T7R.", admin: false, image: nil, username: "David"},
-  {email: "azevedo.rany@gmail.com", password_digest: "$2a$10$TtMJiSf9.4E7BnFBvYlN3uXJOaLR5WD8daYpTS9oMEV3E80dFy05W", admin: true, image: "https://scontent-syd1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/529492_4066538556637_438617894_n.jpg?oh=3d9bac98a4d90f1c9eaf8b8f67b7b243&oe=578332A0", username: "Rany"},
-  {email: "pauli@ga.co", password_digest: "$2a$10$ta3HCalqbXqqc/.VBkXNYeiBkKcrpdBdby7h53bojTHd7PVsOpHp.", admin: false, image: nil, username: "pauli"}
+  {email: "david.feuillard@gmail.com", password: "chicken12", admin: false, image: nil, username: "David"},
+  {email: "azevedo.rany@gmail.com", password: "chicken12", admin: true, image: "https://scontent-syd1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/529492_4066538556637_438617894_n.jpg?oh=3d9bac98a4d90f1c9eaf8b8f67b7b243&oe=578332A0", username: "Rany"},
+  {email: "pauli@ga.co", password: "chicken12", admin: false, image: nil, username: "pauli"}
 ])
 Category.destroy_all
 Category.create!([

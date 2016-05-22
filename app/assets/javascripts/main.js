@@ -30,3 +30,27 @@ $(document).ready(function() {
         showConfirmButton: true});
   });
 });
+
+//background-image
+$(document).ready(function() {
+
+var leftWidth = $(".left").width();
+var bannerClicked = false;
+
+$(".handle").on("mousedown", function () {
+  if (bannerClicked) {
+    bannerClicked = false;
+  }
+  bannerClicked = true;
+});
+
+$(document).on("mouseup", function () {
+  bannerClicked = false;
+});
+
+$(".banner").on("mousemove", function (e) {
+  if (!bannerClicked) { return; }
+  $(".handle").css("left", e.screenX);
+  $(".left").width( e.screenX );
+});
+});

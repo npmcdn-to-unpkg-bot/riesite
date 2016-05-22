@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Somos Rie</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -8,8 +9,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= cloudinary_js_config %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="http://s19.postimg.org/i20kwj02n/logo30x30.png"/>
-
+  <link rel="shortcut icon" href="https://s19.postimg.org/i20kwj02n/logo30x30.png"/>
+<meta name="google-site-verification" content="GqOKNE_Yb8M2wmK9MAai_b1SbPRutcp2TdGxizQwCVw" />
 </head>
 <body class="<% params[:controller] %>">
 
@@ -33,7 +34,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="center-block logo" href="/">
-        <img class="logo" src="http://s19.postimg.org/ck9te80mb/logorie.png" alt="" />
+          <%=image_tag('logorie.png', :class => "logo") %>
         </a>
       </div>
       <div class="navbar-collapse collapse">
@@ -66,8 +67,23 @@
                <% end %>
             </ul></li>
             <% else %>
-            <li><%= link_to "SIGN UP", signup_path %></li>
-           <li><%= link_to "LOGIN", signup_path %></li>
+           <li><%= link_to "SIGNUP", new_user_path %></li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header"></li>
+              <%= form_tag login_path do %>
+
+              <%= label_tag :email %>
+              <%= text_field_tag :email %>
+              <br>
+              <%= label_tag :senha %>
+              <%= password_field_tag :password %>
+              <br><br>
+              <%= submit_tag 'Entrar', :class => 'button' %>
+              <% end %>
+            </ul>
+          </li>
           <% end %>
         </ul>
         </ul>
@@ -86,12 +102,11 @@
 
   <% end %>
 
-    <%= yield %>
-
+<%= yield %>
 
 <div class="footer">
   <div class="pic">
-<%= image_tag("http://res.cloudinary.com/rany/image/upload/v1459384309/rodape_ahutvp.png") %>
+<%= image_tag("rodape.png") %>
 
   </div>
   <div class="socialmedia">

@@ -1,9 +1,9 @@
 <div class="main2">
   <div class="productimage">
     <% if @product.imageshow.present? %>
-    <%= image_tag(@product.imageshow) %>
+    <%= image_tag(@product.imageshow, :class => 'imageShowPage') %>
     <%else %>
-    <%= image_tag(@product.image) %>
+    <%= image_tag(@product.image, :class => 'imageShowPage') %>
     <% end %>
   </div>
 
@@ -13,7 +13,7 @@
   <p> <%= @product.description %> </p>
   <h2> <%= @product.price %> </h2>
 
-  <h3>Category</h3>
+  <h3><%= pluralize(@product.categories.count, "Category") %></h3>
      <% @product.categories.each do |category| %>
      <%= link_to(category.name, category) %> <br>
      <% end %>

@@ -1,3 +1,70 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.banner2 {
+  width: 100%;
+  margin-top: 70px;
+}
+
+.banner2 img{
+  min-height: 150px;
+}
+
+.banner {
+  width: 100%;
+    background-position: center;
+    // margin: 700px;
+}
+
+.imageShowPage{
+  margin-left: 40px;
+}
+
+
+.handle {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  // background: url(image-path("arrow.png"));
+  cursor: e-resize;
+  z-index: 8;
+  top: 50%;
+  left: 45%;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.panel {
+  width: 50%;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  background-position: center;
+  z-index: 3;
+}
+
+.left {
+  background-image: url(asset-path("1300azul.jpg"));
+  background-size: cover;
+  background-attachment: fixed;
+  left: 0;
+  z-index: 2;
+}
+
+.right {
+  height: 100%;
+  width: 100%;
+  background-image: url(asset-path("1300coral.jpg"));
+  background-size: cover;
+  background-attachment: fixed;
+  right: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.trying{
+  min-height: 568px;
+  background-color: #ECECEC;
+}

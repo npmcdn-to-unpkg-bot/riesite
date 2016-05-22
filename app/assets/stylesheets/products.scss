@@ -1,3 +1,40 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// INDEX PRODUCTS
+.products {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+// SHOW PRODUCTS
+.productimage {
+  display: inline-block;
+  padding-right: 50px;
+  margin-top: 30px;
+}
+
+.producttext {
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle;
+  background-color: rgba(220, 220, 220, 0.37);
+  box-shadow: 2px 2px 2px gainsboro;
+  padding: 10px;
+  width: 350px;
+  height: 500px;
+  text-align: center;
+}
+
+@media (max-width: 1020px) {
+  .producttext {
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle;
+  background-color: rgba(220, 220, 220, 0);
+  box-shadow: 0px 0px 0px white;
+  max-width: 500px;
+  margin-left: -20px;
+  margin-bottom: -150px;
+  }
+}

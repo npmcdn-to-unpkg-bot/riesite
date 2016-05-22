@@ -28,7 +28,6 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  // background: url(image-path("arrow.png"));
   cursor: e-resize;
   z-index: 8;
   top: 50%;
@@ -47,11 +46,7 @@
 }
 
 .left {
-<<<<<<< HEAD
   background-image: url(asset-path("1300azul.jpg"));
-=======
-  background-image: url(image-path("1300azul.jpg"));
->>>>>>> 0474525cd5f03e0d747822e9282e13ebe43187e0
   background-size: cover;
   background-attachment: fixed;
   left: 0;
@@ -61,11 +56,7 @@
 .right {
   height: 100%;
   width: 100%;
-<<<<<<< HEAD
   background-image: url(asset-path("1300coral.jpg"));
-=======
-  background-image: url(image-path("1300coral.jpg"));
->>>>>>> 0474525cd5f03e0d747822e9282e13ebe43187e0
   background-size: cover;
   background-attachment: fixed;
   right: 0;

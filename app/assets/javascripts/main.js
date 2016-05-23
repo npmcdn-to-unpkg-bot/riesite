@@ -53,4 +53,20 @@ $(".banner").on("mousemove", function (e) {
   $(".handle").css("left", e.screenX);
   $(".left").width( e.screenX );
 });
+
+
+
+// $( window ).load(function() {
+//   $(window).resize(function() {
+//       if($(window).width() > 1023) {
+//         skrollr.init({
+//           forceHeight: false,
+//           smoothScrolling: false
+//             });
+//       } else {
+//
+//       }
+//     }).resize();
+// });
+
 });

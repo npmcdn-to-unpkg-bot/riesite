@@ -65,6 +65,27 @@
 }
 
 .trying{
-  min-height: 568px;
+  min-height: 800px;
   background-color: #ECECEC;
+}
+
+@media (max-width: 800px) {
+  .trying{
+    min-height: 750px;
+  }
+  // .right, .left{
+  //   height: 400px;
+  // }
+  // .handle{
+  //   display: none;
+  // }
+  // .left{
+  //   background-image: none;
+  //   z-index: -4;
+  // }
+  // .right{
+  //   background-position: initial;
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  // }
 }

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>Somos Rie</title>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <script src="//npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= cloudinary_js_config %>
-    <%= csrf_meta_tags %>
-    <link rel="shortcut icon" href="https://s19.postimg.org/i20kwj02n/logo30x30.png"/>
-  <meta name="google-site-verification" content="GqOKNE_Yb8M2wmK9MAai_b1SbPRutcp2TdGxizQwCVw" />
-  </head>
-  <body class="<% params[:controller] %>">
-
+  <script src="//npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= cloudinary_js_config %>
+  <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="https://s19.postimg.org/i20kwj02n/logo30x30.png"/>
+<meta name="google-site-verification" content="GqOKNE_Yb8M2wmK9MAai_b1SbPRutcp2TdGxizQwCVw" />
+</head>
+<body class="<% params[:controller] %>">
 
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
@@ -49,8 +48,8 @@
               <li> <a href="/categories/25">Accessories</a></li>
               <li> <a href="/categories/26">Stationery</a></li>
               <li> <a href="/categories/27">Home</a></li>
-              <li> <a href="/categories/28">Clothes</a></li>
-            </ul>
+              <li> <a href="/categories/28">Clothes</a>
+            </li></ul>
           </li></ul>
           <ul class="nav navbar-nav navbar-right">
           <% if @current_user.present? %>
@@ -67,23 +66,8 @@
                <% end %>
             </ul></li>
             <% else %>
-           <li><%= link_to "SIGNUP", new_user_path %></li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-header"></li>
-              <%= form_tag login_path do %>
-
-              <%= label_tag :email %>
-              <%= text_field_tag :email %>
-              <br>
-              <%= label_tag :senha %>
-              <%= password_field_tag :password %>
-              <br><br>
-              <%= submit_tag 'Entrar', :class => 'button' %>
-              <% end %>
-            </ul>
-          </li>
+            <li><%= link_to "SIGN UP", signup_path %></li>
+           <li><%= link_to "LOGIN", signup_path %></li>
           <% end %>
         </ul>
         </ul>

@@ -9,12 +9,10 @@ Rails.application.routes.draw do
   resources :subscribers
 
   root :to => 'categories#index'
+  
   get '/signup' => 'users#new'
-
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
-
-
 
 end

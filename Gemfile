@@ -29,6 +29,8 @@ gem 'annotate'
 gem "animate-rails"
 gem 'seed_dump'
 gem 'sweet-alert'
+gem 'stripe'
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

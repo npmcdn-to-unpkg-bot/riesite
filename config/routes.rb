@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :favourites, :only => [:create, :destroy]
   resources :favorite_products, :only => [:create, :destroy]
-
+  resources :subscribers
 
   root :to => 'categories#index'
   get '/signup' => 'users#new'

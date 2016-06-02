@@ -9,6 +9,7 @@
 #  updated_at      :datetime
 #  admin           :boolean          default("false")
 #  image           :text
+#  username        :text
 #
 
 class User < ActiveRecord::Base

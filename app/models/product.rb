@@ -9,6 +9,7 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  imageshow   :text
 #
 
 class Product < ActiveRecord::Base

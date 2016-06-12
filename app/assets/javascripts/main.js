@@ -1,7 +1,7 @@
 // Animate loader off screen
 $(window).load(function() {
   $(".imageLoad").fadeOut("slow");
-  $(".handle").trigger("mousedown");
+  // $(".handle").trigger("mousedown");
 
 });
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
     if (!bannerClicked) {
       return;
     }
-    $(".handle").css("left", e.screenX - 70);
+    $(".handle").css("left", e.screenX);
     $(".left").width(e.screenX);
   });
 

@@ -1,0 +1,23 @@
+/*.left {
+  background-image: url(asset-path("1300azul.jpg"));
+  background-size: cover;
+  background-attachment: fixed;
+  left: 0;
+  z-index: 2;
+  width: 500px;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 4s;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+
+@-webkit-keyframes example {
+    from {width: 500px;}
+    to {width: 700px;}
+}
+
+@keyframes example {
+    from {width: 500px;}
+    to {width: 700px;}
+}*/

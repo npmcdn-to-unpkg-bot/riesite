@@ -20,3 +20,11 @@
   background: white;
   border-radius: 25px;
 }
+
+.imageLoad {
+	position: fixed;
+  width:100%;
+  height:100%;
+	z-index: 9999;
+	background: url(arrow.gif) center no-repeat #fff;
+}

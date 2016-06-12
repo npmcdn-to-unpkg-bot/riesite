@@ -28,13 +28,14 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  cursor: e-resize;
+  cursor: ew-resize;
   z-index: 8;
   top: 50%;
   left: 45%;
   margin-top: -10px;
   margin-left: -10px;
 }
+
 
 .panel {
   width: 50%;
@@ -69,23 +70,23 @@
   background-color: #ECECEC;
 }
 
-@media (max-width: 800px) {
-  .trying{
-    min-height: 750px;
-  }
-  // .right, .left{
-  //   height: 400px;
-  // }
-  // .handle{
-  //   display: none;
-  // }
-  // .left{
-  //   background-image: none;
-  //   z-index: -4;
-  // }
-  // .right{
-  //   background-position: initial;
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  // }
-}
+// @media (max-width: 800px) {
+//   .trying{
+//     min-height: 750px;
+//   }
+//   // .right, .left{
+//   //   height: 400px;
+//   // }
+//   // .handle{
+//   //   display: none;
+//   // }
+//   // .left{
+//   //   background-image: none;
+//   //   z-index: -4;
+//   // }
+//   // .right{
+//   //   background-position: initial;
+//   //   background-size: contain;
+//   //   background-repeat: no-repeat;
+//   // }
+// }

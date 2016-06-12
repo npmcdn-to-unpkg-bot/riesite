@@ -71,10 +71,10 @@
 
 .left {
   -webkit-animation-name: example;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
   animation-name: mover;
-  animation-duration: 2s;
-  animation-delay: 2s;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
   animation-iteration-count: 2;
    animation-direction: alternate;
 
@@ -82,10 +82,10 @@
 
 @-webkit-keyframes mover {
     from {width: 50%;}
-    to {width: 80%;}
+    to {width: 90%;}
 }
 
 @keyframes mover {
     from {width: 50%;}
-    to {width: 80%;}
+    to {width: 90%;}
 }

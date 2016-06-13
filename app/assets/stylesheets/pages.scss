@@ -28,11 +28,11 @@
 .handle {
   position: relative;
   left: 100%;
-  margin-left: -125px;
+  margin-left: -45px;
   height: 90px;
   width: 90px;
   display: block;
-  margin-top: 450px;
+  // margin-top: 450px;
   cursor: ew-resize;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
@@ -88,4 +88,9 @@
 @keyframes mover {
     from {width: 50%;}
     to {width: 90%;}
+}
+
+
+.aniv{
+  margin-left: 90px;
 }

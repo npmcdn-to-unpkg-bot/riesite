@@ -51,7 +51,7 @@ $(".navbar").hide();
   var leftWidth = $(".left").width();
   var bannerClicked = false;
 
-  $(".handle").on("mousedown", function() {
+  $(".banner").on("mousedown", function() {
     if (bannerClicked) {
       bannerClicked = false;
     }

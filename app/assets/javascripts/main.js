@@ -7,17 +7,17 @@ $(window).load(function() {
 
 
 $(document).ready(function() {
-//
-// // Navbar hidden
-// $(".navbar").hide();
-//   $(window).scroll(function () {
-// // set distance user needs to scroll before we fadeIn navbar
-//     if ($(this).scrollTop() > 400) {
-//       $('.navbar').fadeIn();
-//     } else {
-//       $('.navbar').fadeOut();
-//     }
-//   });
+
+// Navbar hidden
+$(".navbar").hide();
+  $(window).scroll(function () {
+// set distance user needs to scroll before we fadeIn navbar
+    if ($(this).scrollTop() > 50) {
+      $('.navbar').fadeIn();
+    } else {
+      $('.navbar').fadeOut();
+    }
+  });
 
 // 1. Animations in Social Media Links
   var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';

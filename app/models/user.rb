@@ -18,4 +18,6 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, :confirmation => true, :length => {:within => 6..15}
   has_many :favorites, :dependent => :destroy
   has_many :favorited_products, through: :favorites, source: :favorited, source_type: 'Product'
+  has_many :wishes
+  has_many :ShoppingCarts
 end

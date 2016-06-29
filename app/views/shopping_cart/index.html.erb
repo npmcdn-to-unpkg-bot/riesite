@@ -1,0 +1,26 @@
+<div class="main">
+<h1>Shopping Cart</h1>
+<% @total_price = 0 %>
+<% @total_tax = 0 %>
+
+  <% @cart_items.sort.each do |item| %>
+  <div class="products">
+    <% product = Product.find item.product_id %>
+    <% @total_price += (Integer(product.price) * item.quantity) %>
+      <%= image_tag(product.image, :class => 'thumb') %>
+      <p><%= product.name %></p>
+      <p>Quantity: <%= item.quantity %>
+        <%= link_to (button_tag "-"), update_item_path(:id => item.id, :sign => -1), :method => :put %>
+        <%= link_to (button_tag "+"), update_item_path(:id => item.id, :sign => 1), :method => :put %></p>
+      <p>Total Price: <%= number_to_currency(Integer(product.price) * item.quantity)  %></p>
+      <p><%= link_to ("Remove"), delete_item_path(:id => item.id), :method => :delete %></p>
+    </div>
+
+    <% end %>
+      <p></p>
+      <p>Grand Total: <%= number_to_currency(@total_price) %></p>
+      <p><%= link_to ("Clear Cart"), delete_cart_path(:id => @current_user.id), :method => :delete %></p>
+      <% if @total_price > 0 %>
+      <p><%= link_to (button_tag "Purchase Items"), new_wish_path %></p>
+      <% end %>
+</div>

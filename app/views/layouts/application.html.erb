@@ -61,18 +61,19 @@
           </li></ul>
           <ul class="nav navbar-nav navbar-right">
           <% if @current_user.present? %>
-         <li><a href="/users/<%=@current_user.id%>"> PROFILE</a></li>
-         <li><%= link_to "LOGOUT #{@current_user.username.upcase}", login_path, :method => :delete%></li>
           <li class="dropdown">
-            <% if @current_user.admin? %>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">PROFILE <b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li class="dropdown-header">Admin</li>
+            <li class="dropdown-header"></li>
+              <li><a href="/users/<%=@current_user.id%>"> Wish List</a></li>
+              <li> <a href="/cart">Shopping Cart</a></li>
+              <% if @current_user.admin? %>
               <li><%= link_to "Add Product", new_product_path %></a></li>
               <li><%= link_to "Add Category", new_category_path %></a></li>
               <li><%= link_to "All Users", users_path %></a></li>
-               <% end %>
-            </ul></li>
+              <% end %>
+            </li></ul>
+         <li><%= link_to "LOGOUT #{@current_user.username.upcase}", login_path, :method => :delete%></li>
             <% else %>
             <li><%= link_to "SIGN UP", signup_path %></li>
            <li><%= link_to "LOGIN", signup_path %></li>

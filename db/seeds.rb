@@ -14,15 +14,15 @@ Category.create!([
 ])
 Product.destroy_all
 Product.create!([
-  {name: "Abacaxi & Piñas", price: "R$100,00", image: "http://res.cloudinary.com/rany/image/upload/v1459323383/elkx40idw91rsz48mkmq.jpg", description: "", imageshow: nil},
-  {name: "Sugar Loaf Print", price: "R$80,00", image: "http://res.cloudinary.com/rany/image/upload/v1459323443/ccpcqvfyjowps4nabooe.jpg", description: "", imageshow: nil},
-  {name: "Tudo Legal!", price: "R$10,00", image: "http://res.cloudinary.com/rany/image/upload/v1459323413/rbnh0veimqgmmpa4c3ab.jpg", description: "", imageshow: nil},
-  {name: "In Rio We Trust", price: "R$80,00", image: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/12794375_250904708575510_7312499421155626775_n.jpg?oh=162f692ac6d01d9d156af42842bc4694&oe=5781EB1A&__gda__=1468297107_7be3b716e399840f8a6659eb317f3beb", description: "", imageshow: nil},
-  {name: "Peraí, só um click! Ipanema", price: "R$10,00", image: "http://res.cloudinary.com/rany/image/upload/v1459323499/n94ud3fmnvohxg9saxff.jpg", description: "", imageshow: nil},
-  {name: "From Ipanema with Love", price: "R$10,00", image: "http://res.cloudinary.com/rany/image/upload/v1459384482/cy2knm4eedlsmyf8g7kj.jpg", description: "", imageshow: nil},
-  {name: "Corcovado Pop", price: "R$50,00", image: "http://res.cloudinary.com/rany/image/upload/v1459323547/l87iglonhptzigxwmuh0.jpg", description: "", imageshow: nil},
-  {name: "Abacaxi Lined", price: "R$50,00", image: "http://res.cloudinary.com/rany/image/upload/v1459323521/dvrz0ulh7k4ffv0pcpuj.jpg", description: "", imageshow: nil},
-  {name: "Coco Coqueiro", price: "R$100,00", image: "http://res.cloudinary.com/rany/image/upload/v1459323469/sgyxtwqyhh58ixczkozy.png", description: "", imageshow: "http://s19.postimg.org/ktlosmucj/testprodutos.png"}
+  {name: "Abacaxi & Piñas", inventory: "10", price: "100", image: "http://res.cloudinary.com/rany/image/upload/v1459323383/elkx40idw91rsz48mkmq.jpg", description: "", imageshow: nil},
+  {name: "Sugar Loaf Print", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1459323443/ccpcqvfyjowps4nabooe.jpg", description: "", imageshow: nil},
+  {name: "Tudo Legal!", inventory: "10", price: "10", image: "http://res.cloudinary.com/rany/image/upload/v1459323413/rbnh0veimqgmmpa4c3ab.jpg", description: "", imageshow: nil},
+  {name: "In Rio We Trust", inventory: "10", price: "80", image: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/12794375_250904708575510_7312499421155626775_n.jpg?oh=162f692ac6d01d9d156af42842bc4694&oe=5781EB1A&__gda__=1468297107_7be3b716e399840f8a6659eb317f3beb", description: "", imageshow: nil},
+  {name: "Peraí, só um click! Ipanema", inventory: "10", price: "10", image: "http://res.cloudinary.com/rany/image/upload/v1459323499/n94ud3fmnvohxg9saxff.jpg", description: "", imageshow: nil},
+  {name: "From Ipanema with Love", inventory: "10", price: "10", image: "http://res.cloudinary.com/rany/image/upload/v1459384482/cy2knm4eedlsmyf8g7kj.jpg", description: "", imageshow: nil},
+  {name: "Corcovado Pop", inventory: "10", price: "50", image: "http://res.cloudinary.com/rany/image/upload/v1459323547/l87iglonhptzigxwmuh0.jpg", description: "", imageshow: nil},
+  {name: "Abacaxi Lined", inventory: "10", price: "50", image: "http://res.cloudinary.com/rany/image/upload/v1459323521/dvrz0ulh7k4ffv0pcpuj.jpg", description: "", imageshow: nil},
+  {name: "Coco Coqueiro", inventory: "10", price: "100", image: "http://res.cloudinary.com/rany/image/upload/v1459323469/sgyxtwqyhh58ixczkozy.png", description: "", imageshow: "http://s19.postimg.org/ktlosmucj/testprodutos.png"}
 ])
 Category::HABTM_Products.create!([
   {category_id: Category.all.sample.id, product_id: Product.all.sample.id},

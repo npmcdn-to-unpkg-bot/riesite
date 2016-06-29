@@ -1,0 +1,30 @@
+<div class="main">
+<% wish_status(@wish.id) %>
+<h1>Update Order Status</h1>
+
+<p>Order_id: <%= @wish.id %></p>
+
+<% @purchased_items.each do |item| %>
+        <p>Product id: <%= item.product_id %></p>
+        <p>Quantity: <%= item.quantity %></p>
+        <p>Total Price: <%= number_to_currency(item.unit_cost * item.quantity)  %></p>
+<% end %>
+          <p>Total Price: <%= number_to_currency(@wish.total_cost) %></p>
+
+<p>Order Status: <%= @wish.wish_status %></p>
+<%= form_for @wish do |f| %>
+      <%= f.label :purchased %>
+      <%= f.date_field :purchase_date %>
+      <br>
+      <%= f.label :paid %>
+      <%= f.date_field :payment_date %>
+      <br>
+      <%= f.label :shipped %>
+      <%= f.date_field :shipped_date %>
+      <br>
+      <%= f.label :finalised %>
+      <%= f.date_field :finalised_date %>
+      <br>
+      <%= f.submit %>
+<% end %>
+</div>

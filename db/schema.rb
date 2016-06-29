@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523072549) do
+ActiveRecord::Schema.define(version: 20160622144104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,12 +68,24 @@ ActiveRecord::Schema.define(version: 20160523072549) do
 
   create_table "products", force: :cascade do |t|
     t.text     "name"
-    t.text     "price"
+    t.string   "price"
     t.text     "image"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "imageshow"
+    t.integer  "inventory"
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.integer  "quantity"
+    t.float    "unit_cost"
+    t.integer  "wish_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.float    "unit_price"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,6 +96,25 @@ ActiveRecord::Schema.define(version: 20160523072549) do
     t.boolean  "admin",           default: false
     t.text     "image"
     t.text     "username"
+  end
+
+  create_table "wishes", force: :cascade do |t|
+    t.text     "invoice_number"
+    t.float    "total_cost"
+    t.float    "total_tax"
+    t.float    "discount_amount"
+    t.integer  "user_id"
+    t.integer  "order_status_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.text     "order_status"
+    t.date     "purchase_date"
+    t.date     "payment_date"
+    t.date     "shipped_date"
+    t.date     "finalised_date"
+    t.float    "total_revenue"
+    t.text     "delivery_address"
+    t.string   "shipping_id"
   end
 
   add_foreign_key "favorites", "users"

@@ -11,7 +11,11 @@
 <div class="producttext">
   <h1><%= @product.name%></h1>
   <p> <%= @product.description %> </p>
-  <h2> <%= @product.price %> </h2>
+  <h2> R$<%= @product.price %>,00 </h2>
+
+
+  <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+  <%= link_to ("Add to Bag"), cart_add_path(:id => @product.id, :page => 'show') %></p>
 
   <h3><%= pluralize(@product.categories.count, "Category") %></h3>
      <% @product.categories.each do |category| %>

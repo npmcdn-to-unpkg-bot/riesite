@@ -9,6 +9,7 @@ $(window).load(function() {
 $(document).ready(function() {
 
 // Navbar hidden
+if ($('.banner').length > 0){
 $(".navbar").hide();
   $(window).scroll(function () {
 // set distance user needs to scroll before we fadeIn navbar
@@ -18,6 +19,7 @@ $(".navbar").hide();
       $('.navbar').fadeOut();
     }
   });
+}
 
 // 1. Animations in Social Media Links
   var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';

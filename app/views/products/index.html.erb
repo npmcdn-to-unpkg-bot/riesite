@@ -1,23 +1,19 @@
 <div class="main">
-
-
-<section class="products-index">
-  <div class="row">
-    <div class="column large-12">
-      <div class="row">
-          <% @products.reverse.each do |product| %>
-          <div class="column large-4 medium-6 end">
-          <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
-          <p> <%= link_to(image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), product) %>
-          <%= product.favorites.count %></p>
-          <p><%= link_to product.name, product %></p>
-          <p>R$ <%= product.price %>,00 <p>
+  <section class="products-index">
+    <div class="row">
+      <div class="column large-12">
+        <div class="row">
+            <% @products.reverse.each do |product| %>
+            <div class="column large-4 medium-6 end">
+            <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
+            <p> <%= link_to(image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), product) %>
+            <%= product.favorites.count %></p>
+            <p><%= link_to product.name, product %></p>
+            <p>R$ <%= product.price %>,00 <p>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
 </div>

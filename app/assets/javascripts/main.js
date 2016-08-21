@@ -57,7 +57,7 @@ $(document).ready(function() {
 
 
 // 3. Re-size Background-image
-  var leftWidth = $(".left").width();
+  var leftWidth = $(".left-image").width();
   var bannerClicked = false;
 
   $(".banner").on("mousedown", function() {
@@ -76,6 +76,6 @@ $(document).ready(function() {
       return;
     }
     $(".handle").css("left", e.screenX);
-    $(".left").width(e.screenX);
+    $(".left-image").width(e.screenX);
   });
 });

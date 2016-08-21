@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require foundation
+//= require masonry/jquery.masonry
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

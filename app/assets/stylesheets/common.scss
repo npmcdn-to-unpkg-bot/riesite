@@ -1,0 +1,65 @@
+.row {
+  max-width: 90% !important;
+  margin: 0 auto !important;
+}
+
+.main {
+  padding: 80px 0px 40px 0px;
+}
+
+.with-margin-top{
+  margin-top: 60px;
+}
+
+#myCarousel{
+  width: 80%;
+  min-width: 350px;
+  .carousel-control{
+    background-image: none;
+  }
+  .carousel-indicators li{
+    border: 1px solid black;
+  }
+
+  img{
+    min-width: 100px;
+  }
+  .carousel-control {
+    .glyphicon-chevron-right{
+      .carousel-control {
+        .icon-next {
+          margin-right: -30px;
+        }
+      }
+    }
+  }
+  .carousel-control{
+     .glyphicon-chevron-left{
+        .carousel-control {
+          .icon-prev {
+            margin-left: -40px !important;
+        }
+      }
+    }
+  }
+ }
+
+
+ .button {
+   &.black{
+    border: 2px solid black !important;
+    background-color:black !important;
+    padding:1em !important;
+    font-size: 12px;
+    transition: 0.5s ease-in-out;
+    width: 80%;
+    margin-left: 10%;
+		&:hover {
+			border: 2px solid black !important;
+			color:white !important;
+			background-color: white !important;
+      color: black !important;
+      text-decoration: none;
+		}
+  }
+}

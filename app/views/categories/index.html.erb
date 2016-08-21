@@ -1,21 +1,52 @@
-<div class="banner">
+<div class="main-page">
 
-    <div class="left panel">
-      <div class="handle"><%=image_tag('setinha.png') %></div>
-
+  <section class="banner">
+    <div class="row">
+      <div class="column large-12">
+        <div class="left-image panel">
+          <div class="handle"><%=image_tag('setinha.png') %></div>
+        </div>
+        <div class="right-image panel">
+        </div>
+      </div>
     </div>
-    <div class="right panel"></div>
-  </div>
+  </section>
 
-<div class="index-description">
-  <%= image_tag('meiofaixa.jpg') %>
-</div>
+  <section class="index-description">
+    <p>
+      <span class="blue-text">Rie.</span>
+      <span class="black-text">Porque o Rio continua lindo</span>
+      <span class="blue-text">:)</span>
+    </p>
+    <h2> Na Rie acreditamos que rir deixa a alma mais leve</h2>
+    <p class="gray-text"> e você, já riu muito hoje? </p>
+  </section>
 
+  <section class="categories-links">
+    <div class="grid">
+      <div class="column large-12">
+        <div class="row large-collapse">
+          <div class="grid-item">
+            <%= image_tag("gifShop.gif") %>
+          </div>
+          <div class="grid-item">
+            <a href="/categories/28"><%=image_tag("clothes.jpg")%></a>
+          </div>
+          <div class=" grid-item">
+            <a href="/categories/27"><%= link_to(image_tag("home.jpg")) %></a>
+          </div>
+          <div class=" grid-item">
+            <a href="/categories/26"><%= link_to(image_tag("stationaty.jpg")) %></a>
+          </div>
+          <div class="grid-item">
+            <a href="/categories/25"><%= link_to(image_tag("acessories.jpg")) %></a>
+          </div>
+          <div class="grid-item">
+            <%= image_tag("gifTexture.gif") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="index-categories">
-  <%= image_tag("gifShop.gif") %>
-  <%= image_tag("gifTexture.gif") %>
-  <% @categories.each do |category| %>
-    <%= link_to(image_tag(category.image, :class => 'category', :title => category.name), category) %>
-  <% end %>
 </div>

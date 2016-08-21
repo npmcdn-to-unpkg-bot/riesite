@@ -5,21 +5,28 @@ $(window).load(function() {
 
 });
 
+$(window).load(function(){
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    isResizable: true
+  });
+});
+
 
 $(document).ready(function() {
 
 // Navbar hidden
-if ($('.banner').length > 0){
-$(".navbar").hide();
-  $(window).scroll(function () {
-// set distance user needs to scroll before we fadeIn navbar
-    if ($(this).scrollTop() > 50) {
-      $('.navbar').fadeIn();
-    } else {
-      $('.navbar').fadeOut();
-    }
-  });
-}
+// if ($('.banner').length > 0){
+//   $(".navbar").hide();
+//     $(window).scroll(function () {
+//   // set distance user needs to scroll before we fadeIn navbar
+//       if ($(this).scrollTop() > 50) {
+//         $('.navbar').fadeIn();
+//       } else {
+//         $('.navbar').fadeOut();
+//       }
+//     });
+//   }
 
 // 1. Animations in Social Media Links
   var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -71,8 +78,4 @@ $(".navbar").hide();
     $(".handle").css("left", e.screenX);
     $(".left").width(e.screenX);
   });
-
-
-
-
 });

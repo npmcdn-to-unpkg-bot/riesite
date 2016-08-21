@@ -1,22 +1,32 @@
-
-.index-description img{
-  max-width: 100%;
-}
-
 .index-description{
   background-color: #ECECEC;
   z-index: 100;
+  padding: 60px;
+
+  h2{
+    font-size: 1.6vw;
+  }
+  .gray-text{
+    font-size: 3.2vw;
+    letter-spacing: normal;
+    color: #909092;
+    text-shadow: none;
+    font-weight: 800;
+  }
+  .blue-text{
+    font-size: 2.4vw;
+    color: #6e93fa;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+  .black-text{
+    font-size: 2.4vw;
+    font-weight: 700;
+  }
 }
 
-.index-categories{
-  margin: 40px 0px 40px 0px;
-  padding: 30px;
-  background-color: white;
-}
 
-.index-categories img{
-  margin: -1.5px;
-}
 
 .banner img {
   margin-top: 50px;
@@ -24,4 +34,31 @@
   margin-top: 350px;
   position: relative;
   display: block;
+}
+
+.categories-links{
+  .grid {
+    margin: 5%;
+  }
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .grid-item {
+    float: left;
+  }
+  .grid-item img {
+    display: block;
+    max-width: 100%;
+  }
+  img{
+    transition: 0.5s ease-in-out;
+    &:hover{
+    opacity: 0.7;
+  }
+ }
+ .row{
+   margin: 0 auto;
+ }
 }

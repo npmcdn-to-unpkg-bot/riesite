@@ -1,48 +1,76 @@
-<div class="main2">
-  <div class="productimage">
-    <% if @product.imageshow.present? %>
-    <%= image_tag(@product.imageshow, :class => 'imageShowPage') %>
-    <%else %>
-    <%= image_tag(@product.image, :class => 'imageShowPage') %>
-    <% end %>
-  </div>
+<div class="main with-margin-top">
+
+    <div class="row">
+      <div class="column large-7 medium-7 small-12 text-center	">
+
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <% if @product.imageshow.present? %>
+              <div class="item active">
+                <%= image_tag(@product.imageshow) %>
+              </div>
+              <% end %>
+              <% if @product.image.present? %>
+              <div class="item">
+                <%= image_tag(@product.image) %>
+              </div>
+              <% end %>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+      <div class="product-description column large-4 end medium-3">
+        <h1><%= @product.name%></h1>
+        <h2> R$<%= @product.price %>,00 </h2>
+        <p> <%= @product.description %> </p>
 
 
-<div class="producttext">
-  <h1><%= @product.name%></h1>
-  <p> <%= @product.description %> </p>
-  <h2> R$<%= @product.price %>,00 </h2>
+        <%= link_to ("Adicionar na Bolsa"), cart_add_path(:id => @product.id, :page => 'show'), :class => 'button black' %></p>
 
+           <% if @current_user.present? %>
+           <%- unless @current_user.favorited_products.exists?(id: @product.id) -%>
+           <%= link_to image_tag("http://s8.postimg.org/c3kr0ngsh/corazon4.png", :class => "like"), favorite_products_path(product_id: @product), method: :post %>
+           <%= @product.favorites.count %>
+           <br><%= "Give me a like!" %>
+           <%else %>
+           <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png", :class => "dislike"), favorite_product_path(@product), method: :delete %>
+          <%= @product.favorites.count %>
+           <br><%= "You loved it!" %>
+           <% end %>
 
-  <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-  <%= link_to ("Add to Bag"), cart_add_path(:id => @product.id, :page => 'show') %></p>
+           <% else %>
+           <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), signup_path %>
+          <%= link_to ('Login para Salvar'), signup_path%><br>
 
-  <h3><%= pluralize(@product.categories.count, "Category") %></h3>
-     <% @product.categories.each do |category| %>
-     <%= link_to(category.name, category) %> <br>
-     <% end %>
-
-     <% if @current_user.present? %>
-     <h3>Whish List</h3>
-     <%- unless @current_user.favorited_products.exists?(id: @product.id) -%>
-     <%= link_to image_tag("http://s8.postimg.org/c3kr0ngsh/corazon4.png", :class => "like"), favorite_products_path(product_id: @product), method: :post %>
-     <%= @product.favorites.count %>
-     <br><%= "Give me a like!" %>
-     <%else %>
-     <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png", :class => "dislike"), favorite_product_path(@product), method: :delete %>
-    <%= @product.favorites.count %>
-     <br><%= "You loved it!" %>
-     <% end %>
-
-     <% else %>
-     <%= link_to image_tag("http://res.cloudinary.com/rany/image/upload/v1459381843/Captura_de_Tela_2016-03-31_a%CC%80s_10.49.01_zdnrmh.png", :class => "loginbutton"), signup_path%><br>
-     <%= link_to image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), signup_path %>
-    <%= @product.favorites.count %>
-     <% end %>
-     <br><hr><%= link_to('Back', products_path) %>
-
+           <% end %>
+           <br><hr><%= link_to('Voltar', products_path) %>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
 
 
 <% if @current_user.present? %>

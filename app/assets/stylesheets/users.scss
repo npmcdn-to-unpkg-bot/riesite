@@ -34,18 +34,17 @@ p {
   color: black;
 }
 
-h1, h2 {
-  text-align: center;
+h1 {
   letter-spacing: .1em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding-right: 10px;
-  padding-left: 10px;
-  text-shadow: 2px 2px 2px white;
-
+  font-size: 30px !important;
 }
+
+h2{
+  font-size: 22px !important;
+}
+
 
 a{
   color: black;
@@ -59,13 +58,7 @@ a:hover{
   width: 80px;
 }
 
-.main {
-  padding: 80px 40px 40px 60px;
-}
 
-.main2{
-  padding: 80px 60px 50px 60px;
-}
 
 
 
@@ -132,23 +125,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]{
  margin-top: 20px;
  margin-bottom: 20px;
 
-}
-
-@media (max-width: 1160px) {
-  div.index-categories a {
-    width: 50%;
-    margin: 0 auto;
-    display: block;
-  }
-
-  div.index-categories img {
-  width: 25%;
-  margin: 0 auto;
-  margin-right: -4px;
-}
-  div.index-categories a img {
-    width: 100%;
-  }
 }
 
 @media (max-width: 1000px){

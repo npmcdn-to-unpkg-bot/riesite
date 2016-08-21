@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+
 .banner2 {
   width: 100%;
   margin-top: 70px;
@@ -19,11 +21,7 @@
   cursor: ew-resize;
 }
 
-.imageShowPage{
-  margin-left: 40px;
-  width: 100%;
-  background-position: center;
-}
+
 
 
 .handle {
@@ -48,7 +46,7 @@
   width: 50%;
 }
 
-.right {
+.right-image {
   height: 100%;
   width: 100%;
   background-image: url(asset-path("1300coral.jpg"));
@@ -60,24 +58,19 @@
 }
 
 
-.left {
+.left-image {
   background-image: url(asset-path("1300azul.jpg"));
   background-size: cover;
   background-attachment: fixed;
   left: 0;
   z-index: 2;
-}
-
-
-.left {
   -webkit-animation-name: example;
   -webkit-animation-duration: 1.5s;
   animation-name: mover;
   animation-duration: 1.5s;
   animation-delay: 1s;
   animation-iteration-count: 2;
-   animation-direction: alternate;
-
+  animation-direction: alternate;
 }
 
 @-webkit-keyframes mover {
@@ -88,9 +81,4 @@
 @keyframes mover {
     from {width: 50%;}
     to {width: 90%;}
-}
-
-
-.aniv{
-  margin-left: 90px;
 }

@@ -47,32 +47,32 @@
         <ul class="nav navbar-nav navbar-left">
           <li><%= link_to "SOMOS RIE", root_path %></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">PRODUCTS <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">PRODUTOS <b class="caret"></b></a>
             <ul class="dropdown-menu">
             <li class="dropdown-header"></li>
-              <li><%= link_to "All Products", products_path %></a></li>
+              <li><%= link_to "Todos Produtos", products_path %></a></li>
               <li role="separator" class="divider"></li>
-              <li> <a href="/categories/25">Accessories</a></li>
-              <li> <a href="/categories/26">Stationery</a></li>
-              <li> <a href="/categories/27">Home</a></li>
-              <li> <a href="/categories/28">Clothes</a>
+              <li> <a href="/categories/25">Bolsas</a></li>
+              <li> <a href="/categories/26">Cartões Postais</a></li>
+              <li> <a href="/categories/27">Almofadas</a></li>
+              <li> <a href="/categories/28">Posters</a>
             </li></ul>
           </li></ul>
           <ul class="nav navbar-nav navbar-right">
           <% if @current_user.present? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">PROFILE <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">PERFIL <b class="caret"></b></a>
             <ul class="dropdown-menu">
             <li class="dropdown-header"></li>
-              <li><a href="/users/<%=@current_user.id%>"> Wish List</a></li>
-              <li> <a href="/cart">Shopping Cart</a></li>
+              <li><a href="/users/<%=@current_user.id%>">Desejos</a></li>
+              <li> <a href="/cart">Carrinho</a></li>
               <% if @current_user.admin? %>
-              <li><%= link_to "Add Product", new_product_path %></a></li>
-              <li><%= link_to "Add Category", new_category_path %></a></li>
-              <li><%= link_to "All Users", users_path %></a></li>
+              <li><%= link_to "Add Produtos", new_product_path %></a></li>
+              <li><%= link_to "Add Categoria", new_category_path %></a></li>
+              <li><%= link_to "Todos Usuários", users_path %></a></li>
               <% end %>
             </li></ul>
-         <li><%= link_to "LOGOUT #{@current_user.username.upcase}", login_path, :method => :delete%></li>
+         <li><%= link_to "SAIR #{@current_user.username.upcase}", login_path, :method => :delete%></li>
             <% else %>
             <li><%= link_to "SIGN UP", signup_path %></li>
            <li><%= link_to "LOGIN", signup_path %></li>

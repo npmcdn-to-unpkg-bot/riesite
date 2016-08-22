@@ -1,29 +1,35 @@
 <div class="main">
 
-<h1><%= @user.username.capitalize %></h1>
+<div class="row">
+  <div class="column large-5">
+    <h1><%= @user.username.capitalize %></h1>
+    <% if @current_user.image.present? %>
+    <%= image_tag(@user.image,  :class => 'profilepic') %><br><br>
+    <%end %>
+    <p> <%= @user.email%></p>
+    <hr>
+    <p><%= link_to 'Editar Perfil', edit_user_path %><p>
+    <p><%= link_to 'Deletar Perfil', @user, :method => :delete %></p>
+    <hr>
+  </div>
 
-<% if @current_user.image.present? %>
-<%= image_tag(@user.image,  :class => 'profilepic') %><br><br>
-<%end %>
-<p> <%= @user.email%></p>
+  <div class="column large-7">
+    <h2> Favoritos  </h2>
+    <p> <%= pluralize(@user.favorites.count, 'produto')%> </p>
+    <div class="favorite-show">
+    <% @user.favorites.each do |favorite| %>
+      <% if favorite.favorited && favorite.favorited.image %>
+        <div class="thumb">
+          <%= link_to(image_tag(favorite.favorited.image), product_path(Product.find(favorite.favorited_id))) %>
+          <p>  <%= link_to "Deletar", favorite_product_path(Product.find(favorite.favorited_id)), method: :delete %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 
-<hr>
-<p><%= link_to 'Edit Profile', edit_user_path %><p>
-<p><%= link_to 'Delete Profile', @user, :method => :delete %></p>
 
-<hr>
 
-<h2> Whish List  </h2>
-<p> <%= pluralize(@user.favorites.count, 'product')%> </p>
-<div class="products">
-<% @user.favorites.each do |favorite| %>
-  <% if favorite.favorited && favorite.favorited.image %>
-    <div class="thumb">
-      <%= link_to(image_tag(favorite.favorited.image), product_path(Product.find(favorite.favorited_id))) %>
-      <p>  <%= link_to "Remove", favorite_product_path(Product.find(favorite.favorited_id)), method: :delete %></p>
-    </div>
-  <% end %>
-<% end %>
   </div>
 </div>

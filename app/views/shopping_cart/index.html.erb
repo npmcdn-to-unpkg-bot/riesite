@@ -1,26 +1,36 @@
 <div class="main">
-<h1>Shopping Cart</h1>
-<% @total_price = 0 %>
-<% @total_tax = 0 %>
+  <div class="row">
+    <div class="column large-12">
+      <h1>Shopping Cart</h1>
+      <% @total_price = 0 %>
+      <% @total_tax = 0 %>
 
-  <% @cart_items.sort.each do |item| %>
-  <div class="products">
-    <% product = Product.find item.product_id %>
-    <% @total_price += (Integer(product.price) * item.quantity) %>
-      <%= image_tag(product.image, :class => 'thumb') %>
-      <p><%= product.name %></p>
-      <p>Quantity: <%= item.quantity %>
-        <%= link_to (button_tag "-"), update_item_path(:id => item.id, :sign => -1), :method => :put %>
-        <%= link_to (button_tag "+"), update_item_path(:id => item.id, :sign => 1), :method => :put %></p>
-      <p>Total Price: <%= number_to_currency(Integer(product.price) * item.quantity)  %></p>
-      <p><%= link_to ("Remove"), delete_item_path(:id => item.id), :method => :delete %></p>
-    </div>
+      <table>
+        <tbody>
+          <% @cart_items.sort.each do |item| %>
+            <% product = Product.find item.product_id %>
+            <% @total_price += (Integer(product.price) * item.quantity) %>
+              <tr>
+                <td class="center"><%= image_tag(product.image, :class => 'mini-img') %></td>
+                <td><%= product.name %></td>
+                <td>
+                  <%= link_to (button_tag "-" , :class => "circle-button"), update_item_path(:id => item.id, :sign => -1), :method => :put %>
+                  <%= item.quantity %>
+                  <%= link_to (button_tag "+", :class => "circle-button"), update_item_path(:id => item.id, :sign => 1), :method => :put %></td>
+                <td> Valor: <%= number_to_currency(Integer(product.price) * item.quantity)  %></td>
+                <td><%= link_to ("X"), delete_item_path(:id => item.id), :method => :delete %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
 
-    <% end %>
-      <p></p>
-      <p>Grand Total: <%= number_to_currency(@total_price) %></p>
-      <p><%= link_to ("Clear Cart"), delete_cart_path(:id => @current_user.id), :method => :delete %></p>
+    <div class="column large-12">
+      <h2>Preço Final: <%= number_to_currency(@total_price) %></h2>
+      <!-- <p><%= link_to ("Clear Cart"), delete_cart_path(:id => @current_user.id), :method => :delete %></p> -->
       <% if @total_price > 0 %>
-      <p><%= link_to (button_tag "Purchase Items"), new_wish_path %></p>
+      <p><%= link_to (button_tag "Comprar"), new_wish_path %></p>
       <% end %>
+    </div>
+  </div>
 </div>

@@ -17,3 +17,9 @@
     </div>
   </section>
 </div>
+<% @products.each do |prod| %>
+<ol>
+<li><%= prod.name %></li>
+</ol>
+
+<% end %>

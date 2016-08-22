@@ -97,16 +97,32 @@
 <%= yield %>
 
 <div class="footer">
-  <div class="pic">
-<%= image_tag("rodape.png") %>
+  <div class="row">
+    <div class="footer-left">
+      <div class="row">
+        <div class="column large-2 medium-3 small-5">
+          <%= image_tag("logo-g.png", :class => "logo-bigger") %>
+        </div>
+        <div class="column large-3 medium-6 small-6">
+          <p>Produtos feitos com muito amor na Cidade Maravilhosa </p>
+          <p> Rio de Janeiro, Brasil </p>
+        </div>
+        <div class="column large-7">
+          <div class="socialmedia">
+             <a href="https://www.facebook.com/somos.rie/" target="_blank"><img src="https://media-public.canva.com/MAAkOkcVoNM/2/thumbnail.png" alt="tumblr" class="social-media"></a>
+             <a href="https://www.instagram.com/rie.store/" target="_blank"><img src="https://media-public.canva.com/MAAkOoMEZes/2/thumbnail.png" alt="instagram" class="social-media"></a>
+             <a href="mailto:contac@rie.com"><img src="https://media-public.canva.com/MAAkOgkJpj4/2/thumbnail.png" alt="email" class="social-media"></a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="column large-12">
+      <div class="fb-like" data-href="https://www.facebook.com/somos.rie/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
+    </div>
   </div>
-  <div class="socialmedia">
-     <a href="https://www.facebook.com/somos.rie/" target="_blank"><img src="https://media-public.canva.com/MAAkOkcVoNM/2/thumbnail.png" alt="tumblr" class="social-media"></a>
-     <a href="https://www.instagram.com/rie.store/" target="_blank"><img src="https://media-public.canva.com/MAAkOoMEZes/2/thumbnail.png" alt="instagram" class="social-media"></a>
-     <a href="mailto:contac@rie.com"><img src="https://media-public.canva.com/MAAkOgkJpj4/2/thumbnail.png" alt="email" class="social-media"></a>
-  </div>
-  <div class="fb-like" data-href="https://www.facebook.com/somos.rie/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
 
 
 </div>

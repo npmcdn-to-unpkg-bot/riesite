@@ -12,16 +12,17 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-              <% if @product.imageshow.present? %>
-              <div class="item active">
-                <%= image_tag(@product.imageshow) %>
-              </div>
-              <% end %>
               <% if @product.image.present? %>
               <div class="item">
                 <%= image_tag(@product.image) %>
               </div>
               <% end %>
+              <% if @product.imageshow.present? %>
+              <div class="item active">
+                <%= image_tag(@product.imageshow) %>
+              </div>
+              <% end %>
+
             </div>
 
             <!-- Left and right controls -->

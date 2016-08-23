@@ -1,16 +1,14 @@
 
 <%= form_for(@product, html: {multipart: true}) do |f| %>
-<fieldset> <%= f.label :name %> <%= f.text_field :name %> </fieldset>
-<fieldset> <%= f.label :price %> <%= f.text_field :price %> </fieldset>
-<fieldset> <%= f.label :inventory %> <%= f.text_field :inventory %> </fieldset>
-<fieldset> <%= f.label :description %> <%= f.text_field :description %> </fieldset>
-<fieldset><%= label_tag "Image:" %> <%= file_field_tag :image %> </fieldset>
-<fieldset> <%= label_tag "Image Show"%> <%= file_field_tag :imageshow %> </fieldset>
+ <%= f.label :Nome %> <%= f.text_field :name %>
+ <%= f.label :Preço %> <%= f.text_field :price %>
+ <%= f.label :Estoque %> <%= f.text_field :inventory %>
+ <%= f.label :Descrição %>   <%= f.text_field :description %>
+<%= label_tag "Foto:" %> <%= file_field_tag :image %>
+ <%= label_tag "Foto2 "%> <%= file_field_tag :imageshow %>
 
-<fieldset>
   <%= f.label :category_ids, "Categories:" %>
-  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name%>
-</fieldset>
+  <p class="inline-checkbox"><%= f.collection_check_boxes :category_ids, Category.all, :id, :name%></p>
 
 <fieldset><%= f.submit %></fieldset>
 

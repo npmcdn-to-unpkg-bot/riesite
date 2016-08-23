@@ -11,15 +11,7 @@
     <% end %>
 </div>
 
-<div class="signup">
-  <h1>Login</h1>
-    <%= form_tag login_path do %>
-      <%= label_tag :email %> <%= text_field_tag :email %><br>
-      <%= label_tag :password %> <%= password_field_tag :password %><br>
-      <%= submit_tag 'Login' %><br>
-      <%= link_to "Forgot my Password", "mailto:contact@rie.com" %>
-    <% end %>
-</div>
+
 
 <% if @user.errors.any? %>
   <ol> <% @user.errors.full_messages.each do |msg| %>

@@ -8,62 +8,8 @@ form {
     margin-left:auto;
     margin-right:auto;
     width: 343px;
-    padding:30px;
-    border: 1px solid rgba(0,0,0,.2);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    background: white;
-    -moz-box-shadow: 2px 1px 3px 1px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 2px 1px 3px 1px rgba(0,0,0,0.5);
-    box-shadow: 2px 1px 3px 1px rgba(0,0,0,0.5);
-    overflow: hidden;
 }
 
-textarea{
-    background: gainsboro;
-   width: 276px;
-    height: 110px;
-    border: 1px solid rgba(255,255,255,.6);
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    display:block;
-    font-family: 'Montserrat', sans-serif;
-    font-size:18px;
-    color:#fff;
-    padding-left:45px;
-    padding-right:20px;
-    padding-top:12px;
-    margin-bottom:20px;
-    overflow:hidden;
-}
-
-input {
-    width: 276px;
-    height: 48px;
-    border: 1px solid gainsboro;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    display:block;
-    font-family: 'Montserrat', sans-serif;
-    font-size:12px;
-    color:#fff;
-    padding-left:20px;
-    padding-right:20px;
-    margin-bottom:20px;
-}
-
-input[type=submit] {
-    cursor:pointer;
+.inline-checkbox{
+  width: 130px;
 }

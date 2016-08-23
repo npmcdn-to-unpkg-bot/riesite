@@ -26,7 +26,7 @@
   height: 100px;
   width: 100px;
   display: block;
-  background: url("setinha.png");
+  background: url(asset-path("setinha.png"));
   background-size: 100%;
   background-repeat: no-repeat;
   cursor: ew-resize;
@@ -86,10 +86,10 @@
 
 @-webkit-keyframes mover {
     from {width: 50%;}
-    to {width: 90%;}
+    to {width: 100%;}
 }
 
 @keyframes mover {
     from {width: 50%;}
-    to {width: 90%;}
+    to {width: 100%;}
 }

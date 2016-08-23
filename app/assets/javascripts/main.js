@@ -8,15 +8,10 @@ $(window).load(function() {
 $(window).load(function(){
   $('.grid').masonry({
     itemSelector: '.grid-item',
-    isResizable: true
+    isResizable: true,
   });
 
 });
-
-$(window).resize(function () {
-  $('.grid').masonry('bindResize');
-});
-
 
 $(document).ready(function() {
 

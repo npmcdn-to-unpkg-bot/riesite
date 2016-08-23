@@ -37,9 +37,9 @@
 }
 
 .categories-links{
-  .grid {
-    margin: 5% 0 5% 7%;
-  }
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 6% 0 6% 0;
   .grid:after {
     content: '';
     display: block;

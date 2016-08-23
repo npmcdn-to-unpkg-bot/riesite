@@ -6,7 +6,7 @@
 
 <fieldset>
   <%= f.label :product_ids, "Products:" %>
-  <%= f.collection_check_boxes :product_ids, Product.all, :id, :name%>
+  <p class="inline-checkbox"><%= f.collection_check_boxes :product_ids, Product.all, :id, :name%></p>
 </fieldset>
 
 <fieldset><%= f.submit %></fieldset>

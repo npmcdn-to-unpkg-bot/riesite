@@ -19,17 +19,32 @@
 
 
 
-
-.handle {
+#handle {
   position: relative;
   left: 100%;
-  margin-left: -45px;
-  height: 90px;
-  width: 90px;
+  margin-left: -50px;
+  height: 100px;
+  width: 100px;
   display: block;
+  background: url("setinha.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
   cursor: ew-resize;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
+  margin-top: -100px;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+    right: -45px;
+    top: 70%;
+    display: block;
+  }
+  .ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
 }
 
 .panel {

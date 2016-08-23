@@ -10,6 +10,11 @@ $(window).load(function(){
     itemSelector: '.grid-item',
     isResizable: true
   });
+
+});
+
+$(window).resize(function () {
+  $('.grid').masonry('bindResize');
 });
 
 

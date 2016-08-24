@@ -10,11 +10,12 @@
   height: 200px;
 }
 
-  .banner {
-    width: 100%;
-    background-position: center;
-    height: 95vh;
-    cursor: ew-resize;
+
+.banner {
+  width: 100%;
+  background-position: center;
+  height: 95vh;
+  cursor: ew-resize;
 
   #handle {
     position: relative;
@@ -64,7 +65,6 @@
     z-index: 0;
     overflow: hidden;
   }
-
 
   .left-image {
     background-image: url(asset-path("1300left.jpg"));

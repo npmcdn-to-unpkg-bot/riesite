@@ -1,9 +1,9 @@
 // Animate loader off screen
-$(window).load(function() {
-  $(".imageLoad").fadeOut("slow");
-  // $(".handle").trigger("mousedown");
-
-});
+// $(window).load(function() {
+//   $(".imageLoad").fadeOut("slow");
+//   // $(".handle").trigger("mousedown");
+//
+// });
 
 $(window).load(function(){
   $('.grid').masonry({

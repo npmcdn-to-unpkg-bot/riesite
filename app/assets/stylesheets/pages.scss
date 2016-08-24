@@ -10,86 +10,84 @@
   height: 200px;
 }
 
-.banner {
-  width: 100%;
-  background-position: center;
-  height: 95vh;
-  cursor: ew-resize;
-}
+  .banner {
+    width: 100%;
+    background-position: center;
+    height: 95vh;
+    cursor: ew-resize;
 
-
-
-#handle {
-  position: relative;
-  left: 100%;
-  margin-left: -50px;
-  height: 100px;
-  width: 100px;
-  display: block;
-  background: url(asset-path("setinha.png"));
-  background-size: 100%;
-  background-repeat: no-repeat;
-  cursor: ew-resize;
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  margin-top: -100px;
-}
-
-.ui-resizable-e {
-    cursor: e-resize;
-    right: -45px;
-    top: 70%;
+  #handle {
+    position: relative;
+    left: 100%;
+    margin-left: -50px;
+    height: 100px;
+    width: 100px;
     display: block;
+    background: url(asset-path("setinha.png"));
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: ew-resize;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    margin-top: -100px;
   }
-  .ui-resizable-handle {
+
+  .ui-resizable-e {
+      cursor: e-resize;
+      right: -45px;
+      top: 70%;
+      display: block;
+    }
+    .ui-resizable-handle {
+      position: absolute;
+      font-size: 0.1px;
+      display: block;
+  }
+
+  .panel {
+    width: 50%;
+    top: 0;
+    height: 100vh;
     position: absolute;
-    font-size: 0.1px;
-    display: block;
-}
+    background-position: center;
+    z-index: 3;
+    width: 50%;
+  }
 
-.panel {
-  width: 50%;
-  top: 0;
-  height: 100vh;
-  position: absolute;
-  background-position: center;
-  z-index: 3;
-  width: 50%;
-}
-
-.right-image {
-  height: 100%;
-  width: 100%;
-  background-image: url(asset-path("1300right.jpg"));
-  background-size: cover;
-  background-attachment: fixed;
-  right: 0;
-  z-index: 0;
-  overflow: hidden;
-}
+  .right-image {
+    height: 100%;
+    width: 100%;
+    background-image: url(asset-path("1300right.jpg"));
+    background-size: cover;
+    background-attachment: fixed;
+    right: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
 
 
-.left-image {
-  background-image: url(asset-path("1300left.jpg"));
-  background-size: cover;
-  background-attachment: fixed;
-  left: 0;
-  z-index: 2;
-  -webkit-animation-name: example;
-  -webkit-animation-duration: 1.5s;
-  animation-name: mover;
-  animation-duration: 1.5s;
-  animation-delay: 1s;
-  animation-iteration-count: 2;
-  animation-direction: alternate;
-}
+  .left-image {
+    background-image: url(asset-path("1300left.jpg"));
+    background-size: cover;
+    background-attachment: fixed;
+    left: 0;
+    z-index: 2;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 1.5s;
+    animation-name: mover;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+  }
 
-@-webkit-keyframes mover {
-    from {width: 50%;}
-    to {width: 98%;}
-}
+  @-webkit-keyframes mover {
+      from {width: 50%;}
+      to {width: 98%;}
+  }
 
-@keyframes mover {
-    from {width: 50%;}
-    to {width: 98%;}
+  @keyframes mover {
+      from {width: 50%;}
+      to {width: 98%;}
+  }
 }

@@ -1,0 +1,2 @@
+<%= image_tag('bag.png', :class => 'imagebag') %>
+<div class="circle"><%= @cart_items.length %></div>

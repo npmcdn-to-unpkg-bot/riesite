@@ -24,6 +24,23 @@
     font-size: 2.4vw;
     font-weight: 700;
   }
+  .normal-text{
+    font-size: 2vw;
+  }
+  @media screen and (max-width:550px){
+    .gray-text{
+      font-size: 30px;
+    }
+    .blue-text{
+      font-size: 24px;
+    }
+    .black-text{
+      font-size: 24px;
+    }
+    .normal-text{
+      font-size: 17px;
+    }
+  }
 }
 
 
@@ -68,4 +85,25 @@
   width: 556px;
   height: 1800px;
  }
+}
+
+@media screen and (max-width:550px){
+  .hide-small{
+    display: none;
+  }
+  .image-b{
+    img{
+      width: 550px;
+    }
+  }
+  .image-g{
+    img{
+      width: 550px;
+    }
+  }
+  .categories-links{
+      width: 400px;
+      height: 2000px;
+      margin-top: -260px;
+   }
 }

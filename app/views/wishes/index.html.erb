@@ -5,12 +5,18 @@
     <% if wish.user_id.present? %>
         <% user = User.find wish.user_id %>
     <% end %>
-    <hr>
     <div class='row'>
-      <div>Invoice: <%= wish.invoice_number %></div>
-      <div>Date: <%= wish.purchase_date %></div>
-      <div>Price: <%= number_to_currency(wish.total_revenue) %></div>
-      <div><%= link_to(button_tag("View"), wish_path(wish.id)) %></div>
+      <table>
+        <tbody>
+          <tr>
+            <td>Invoice: <%= wish.invoice_number %></td>
+            <td>Date: <%= wish.purchase_date %></td>
+            <td>Price: <%= number_to_currency(wish.total_revenue) %></td>
+            <td><%= link_to(button_tag("View"), wish_path(wish.id)) %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-<% end %>
+    <% end %>
+
 </div>

@@ -60,6 +60,12 @@ class WishesController < ApplicationController
     end
   end
 
+  def destroy_wish
+    wish = Wish.find params[:id]
+    wish.destroy
+    redirect_to wish_path
+  end
+
 private
 def authorise
   redirect_to root_path unless (@current_user.present?)

@@ -6,12 +6,11 @@
         <% user = User.find wish.user_id %>
     <% end %>
     <hr>
-    <div class='wish-index-line row'>
-        <div class="col-sm-2">Invoice: <%= wish.invoice_number %></div>
-        <div class="col-sm-2">Date: <%= wish.purchase_date %></div>
-        <div class="col-sm-2">Price: <%= number_to_currency(wish.total_revenue) %></div>
-        <div class="col-sm-3">Order Status: <%= wish.wish_status %></div>
-        <div class="col-sm-1"><%= link_to(button_tag("View"), wish_path(wish.id)) %></div>
+    <div class='row'>
+      <div>Invoice: <%= wish.invoice_number %></div>
+      <div>Date: <%= wish.purchase_date %></div>
+      <div>Price: <%= number_to_currency(wish.total_revenue) %></div>
+      <div><%= link_to(button_tag("View"), wish_path(wish.id)) %></div>
     </div>
 <% end %>
 </div>

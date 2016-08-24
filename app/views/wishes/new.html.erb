@@ -4,7 +4,7 @@
       <% wish_url(@wish.id) %>
       <h1>Order</h1>
         <%= form_for(@wish) do |f| %>
-          <%= f.label :delivery_address %> <%= f.text_field :delivery_address %>
+          <%= f.label :delivery_address %> <%= f.text_field :delivery_address, :required => true %>
           <% inv = 'INV' + @wish.id.to_s.rjust(5, '0') %>
           <%= f.hidden_field :invoice_number, :value => inv %>
           <%= f.submit "Submit" %>

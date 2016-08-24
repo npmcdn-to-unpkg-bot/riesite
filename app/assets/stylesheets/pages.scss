@@ -66,7 +66,7 @@
     position: absolute;
     background-position: center;
     z-index: 3;
-    width: 35%;
+    width: 50%;
   }
 
   .right-image {
@@ -96,12 +96,12 @@
   }
 
   @-webkit-keyframes mover {
-      from {width: 35%;}
+      from {width: 50%;}
       to {width: 98%;}
   }
 
   @keyframes mover {
-      from {width: 35%;}
+      from {width: 50%;}
       to {width: 98%;}
   }
 }

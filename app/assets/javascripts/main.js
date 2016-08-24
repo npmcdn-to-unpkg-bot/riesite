@@ -13,6 +13,13 @@ $(window).load(function(){
 
 });
 
+$(window).resize(function(){
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    isResizable: true,
+  });
+});
+
 $(document).ready(function() {
 
 // Navbar hidden

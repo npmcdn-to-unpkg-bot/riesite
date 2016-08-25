@@ -1,7 +1,6 @@
 .index-description{
   background-color: #ECECEC;
-  z-index: 100;
-  padding: 60px 0 23px 0;
+  padding: 20px 0;
 
   h2{
     font-size: 1.6vw;
@@ -29,16 +28,13 @@
   }
   @media screen and (max-width:550px){
     .gray-text{
-      font-size: 30px;
-    }
-    .blue-text{
       font-size: 24px;
     }
-    .black-text{
-      font-size: 24px;
+    .black-text, .blue-text{
+      font-size: 22px;
     }
     .normal-text{
-      font-size: 17px;
+      font-size: 15px;
     }
   }
 }

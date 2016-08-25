@@ -1,5 +1,5 @@
 <div class="main">
-<h1>Orders</h1>
+<h1>Meus Pedidos</h1>
 
 <% @wishes.reverse_order.each do |wish| %>
     <% if wish.user_id.present? %>
@@ -12,8 +12,14 @@
             <td>Invoice: <%= wish.invoice_number %></td>
             <td>Date: <%= wish.purchase_date %></td>
             <td>Price: <%= number_to_currency(wish.total_revenue) %></td>
-            <td><%= link_to(button_tag("View"), wish_path(wish.id)) %></td>
-          </tr>
+            <td>Status: <%= wish.order_status %> </td>
+            <td>Status: <%= wish.shipped_date %> </td>
+            <td><%= link_to "View", wish_path(wish.id) %></td>
+            <% if @current_user.present? & @current_user.admin? %>
+            <td>User: <%= wish.user_id %></td>
+            <td> <%= link_to 'Atualizar', edit_wish_path(wish.id)  %></td>
+              <% end %>
+           </tr>
         </tbody>
       </table>
     </div>

@@ -43,7 +43,7 @@
         <p> <%= @product.description %> </p>
 
           <%= link_to ("Adicionar na Bolsa"), cart_add_path(:id => @product.id, :page => 'show'), :class => 'button black' %></p>
-      
+
 
            <% if @current_user.present? %>
            <%- unless @current_user.favorited_products.exists?(id: @product.id) -%>

@@ -1,15 +1,22 @@
 <div class="main">
-<% wish_status(@wish.id) %>
+<% wish_url(@wish.id) %>
 <h1>Order</h1>
 
-<% @purchased_items.each do |item| %>
+<table>
+  <tbody>
+    <% @purchased_items.each do |item| %>
       <% product = Product.find item.product_id %>
-        <%= link_to(image_tag(product.image, :class => 'thumb'), product_path(product.id)) %>
-        <p><%= product.name %></p>
-        <p>Quantity: <%= item.quantity %></p>
-        <p>Total Price: <%= number_to_currency(item.unit_price * item.quantity)  %></p>
-<% end %>
-          <p>Total Price: <%= number_to_currency(@wish.total_revenue) %></p>
+        <tr>
+          <td class="center"><%= link_to(image_tag(product.image, :class => 'mini-img'), product_path(product.id)) %></td>
+          <td><%= product.name %></td>
+          <td>Quantity: <%= item.quantity %></td>
+          <td> Valor: <%= number_to_currency(Integer(product.price) * item.quantity)  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+    <p>Total Price: <%= number_to_currency(@wish.total_revenue) %></p>
 
 <%= form_for(@wish) do |f| %>
       <%= f.label :delivery_address %>
@@ -20,4 +27,6 @@
       <%= f.hidden_field :invoice_number, :value => inv %>
       <%= f.submit "Submit" %>
 <% end %>
-</div
+</div>
+
+<%= link_to 'Delete', @wish, :method => :delete %>

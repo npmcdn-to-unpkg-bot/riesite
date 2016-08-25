@@ -60,10 +60,10 @@ class WishesController < ApplicationController
     end
   end
 
-  def destroy_wish
+  def destroy
     wish = Wish.find params[:id]
     wish.destroy
-    redirect_to wish_path
+    redirect_to wishes_path
   end
 
 private

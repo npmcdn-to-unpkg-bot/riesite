@@ -12,3 +12,7 @@
     </div>
   </div>
 </div>
+
+<% @purchased_items.all do |prod| %>
+<%= prod.product_id %>
+<% end %>

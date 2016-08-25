@@ -7,19 +7,15 @@ class ShoppingCartController < ApplicationController
 
   def add_cart
     product = Product.find params[:id]
-
     # If a person is not logged in
-      # Set a temporary value on there (temp_cart_id) - get that from session[:temp_cart_id]
-
-
-    # session[:cart_id] = "lskndlnskdkldn"
+    #   Set a temporary value on there (temp_cart_id) - get that from session[:temp_cart_id]
+    session[:cart_id] = "temp"
 
     line = ShoppingCart.create :product_id => product.id, :quantity => 1, :user_id => @current_user.id, :unit_cost => product.price
     # if product.on_sale?
     #   line.unit_price = product.price_sale
     # else
       line.unit_price = product.price
-
     # end
     # unless product.tax_applies == false
     #   business = Business.find product.business_id
@@ -27,9 +23,9 @@ class ShoppingCartController < ApplicationController
     # end
     line.save
     if params[:page] == 'index'
-        redirect_to cart_path
+      redirect_to cart_path
     else
-        redirect_to product_path(params[:id])
+      redirect_to product_path(params[:id])
     end
   end
 

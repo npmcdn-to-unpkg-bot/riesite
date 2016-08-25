@@ -3,7 +3,7 @@ class ApplicationMailer < ActionMailer::Base
 
   def welcome_email(user)
     @user = user
-    @url  = 'http://somosrie.herokuapp.com/login'
+    @url  = 'http://somosrie.herokuapp.com'
     mail(to: @user.email, subject: 'Bem vindo a Somos Rie')
   end
 end

@@ -104,4 +104,18 @@
       from {width: 50%;}
       to {width: 98%;}
   }
+  @media screen and (max-width:700px){
+    #handle{
+      display: none;
+    }
+    .left-image {
+      background-image: none;
+      z-index: -1;
+      animation: none;
+    }
+    .right-image{
+      background-image: url(asset-path("450_bannerhello.jpg"));
+    }
+  }
+
 }

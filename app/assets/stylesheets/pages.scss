@@ -111,7 +111,7 @@
     .left-image {
       background-image: none;
       z-index: -1;
-      animation: none;
+      animation-name: none;
     }
     .right-image{
       background-image: url(asset-path("450_bannerhello.jpg"));

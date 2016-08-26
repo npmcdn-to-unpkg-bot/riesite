@@ -104,20 +104,20 @@
       from {width: 50%;}
       to {width: 98%;}
   }
-  @media only screen and (max-width:770px){
-    #handle{
-      display: none;
-    }
-    .left-image {
-      background-image: none;
-      z-index: -1;
-      animation-name: none;
-    }
-    .right-image{
-      background-image: url(asset-path("450_bannerhello.jpg"));
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
+  // @media only screen and (max-width:770px){
+  //   #handle{
+  //     display: none;
+  //   }
+  //   .left-image {
+  //     background-image: none;
+  //     z-index: -1;
+  //     animation-name: none;
+  //   }
+  //   .right-image{
+  //     background-image: url(asset-path("450_bannerhello.jpg"));
+  //     background-size:auto;
+  //     background-repeat: no-repeat;
+  //   }
+  // }
 
 }

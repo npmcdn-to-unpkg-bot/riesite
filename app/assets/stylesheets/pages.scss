@@ -104,7 +104,7 @@
       from {width: 50%;}
       to {width: 98%;}
   }
-  @media screen and (max-width:700px){
+  @media screen and (max-width:770px){
     #handle{
       display: none;
     }
@@ -115,7 +115,6 @@
     }
     .right-image{
       background-image: url(asset-path("450_bannerhello.jpg"));
-      background-size: cover;
     }
   }
 

@@ -115,6 +115,7 @@
     }
     .right-image{
       background-image: url(asset-path("450_bannerhello.jpg"));
+          background-size: contain;
     }
   }
 

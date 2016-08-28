@@ -130,11 +130,17 @@ form {
 }
 
 @media (max-width: 1000px){
-  .navbar-default a{
-    padding: 20px;
-    text-align: center;
-    margin-left: 0px;
-    margin-right: 0px;
+  .navbar-default {
+    .navbar-nav {
+     li {
+       a{
+        padding: 22px;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        }
+      }
+    }
   }
 }
 

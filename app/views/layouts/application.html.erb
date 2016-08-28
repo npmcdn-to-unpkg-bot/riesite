@@ -81,7 +81,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li class="dropdown-header"></li>
-                  <%= form_tag login_path do %>
+                  <%= form_tag login_path, :class => 'form-login' do %>
                   <%= label_tag :email %>
                   <%= text_field_tag :email %>
                   <%= label_tag :senha %>
@@ -113,15 +113,15 @@
   <div class="row">
     <div class="footer-left">
       <div class="row">
-        <div class="column large-2 medium-3 small-5">
+        <div class="column large-2 medium-3 show-for-medium">
           <%= image_tag("logo-g.png", :class => "logo-bigger") %>
         </div>
-        <div class="column large-4 medium-6 small-6">
+        <div class="column large-6 medium-6 small-12">
           <p>Somos Rie</p>
-          <p>Uma marca tropical-mente inquieta.<p>
+          <p>Uma marca tropical-mente inquieta.</p>
           <p>Rio de Janeiro, Brasil</p>
         </div>
-        <div class="column large-6">
+        <div class="column large-4">
           <div class="socialmedia">
              <a href="https://www.facebook.com/somos.rie/" target="_blank"><img src="https://media-public.canva.com/MAAkOkcVoNM/2/thumbnail.png" alt="tumblr" class="social-media"></a>
              <a href="https://www.instagram.com/rie.store/" target="_blank"><img src="https://media-public.canva.com/MAAkOoMEZes/2/thumbnail.png" alt="instagram" class="social-media"></a>

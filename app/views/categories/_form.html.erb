@@ -1,14 +1,14 @@
 <%= form_for(@category, html: {multipart: true}) do |f| %>
-<fieldset> <%= f.label :name %> <%= f.text_field :name %> </fieldset>
-<fieldset> <%= f.label :description %> <%= f.text_field :description %> </fieldset>
-<fieldset><%= label_tag "Image:" %> <%= file_field_tag :image %> </fieldset>
-<fieldset> <%= label_tag "Banner"%> <%= file_field_tag :banner %> </fieldset>
+ <%= f.label :name %> <%= f.text_field :name %>
+ <%= f.label :description %> <%= f.text_field :description %>
+ <%= label_tag "Image:" %> <%= file_field_tag :image %>
+ <%= label_tag "Banner"%> <%= file_field_tag :banner %>
 
-<fieldset>
+
   <%= f.label :product_ids, "Products:" %>
-  <p class="inline-checkbox"><%= f.collection_check_boxes :product_ids, Product.all, :id, :name%></p>
-</fieldset>
+  <div class="inline-checkbox"><%= f.collection_check_boxes :product_ids, Product.all, :id, :name%></div>
 
-<fieldset><%= f.submit %></fieldset>
+
+<%= f.submit "Editar", :class => "button black"  %>
 
 <% end %>

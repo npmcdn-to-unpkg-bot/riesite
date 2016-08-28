@@ -1,7 +1,7 @@
-<div class="main">
+<div class="main profile">
 
 <div class="row">
-  <div class="column large-5">
+  <div class="column large-5 medium-5">
     <h1><%= @user.username.capitalize %></h1>
     <% if @current_user.image.present? %>
     <%= image_tag(@user.image,  :class => 'profilepic') %><br><br>
@@ -13,22 +13,25 @@
     <hr>
   </div>
 
-  <div class="column large-7">
+  <div class="column large-7 medium-7">
     <h2> Favoritos  </h2>
-    <p> <%= pluralize(@user.favorites.count, 'produto')%> </p>
+    <div class="row">
+          <p> <%= pluralize(@user.favorites.count, 'produto')%> </p>
     <div class="favorite-show">
     <% @user.favorites.each do |favorite| %>
+    <div class="column large-4 medium-4 small-4 end ">
       <% if favorite.favorited && favorite.favorited.image %>
-        <div class="thumb">
-          <%= link_to(image_tag(favorite.favorited.image), product_path(Product.find(favorite.favorited_id))) %>
-
+          <%= link_to(image_tag(favorite.favorited.image, :class => "favorite-img"), product_path(Product.find(favorite.favorited_id))) %>
           <p>
-            <%= link_to ("Adicionar na Bolsa"), cart_add_path(:id => Product.find(favorite.favorited_id), :page => 'show') %> |
+            <%= link_to ("Comprar"), cart_add_path(:id => Product.find(favorite.favorited_id), :page => 'show') %> |
             <%= link_to "x", favorite_product_path(Product.find(favorite.favorited_id)), method: :delete %></p>
-        </div>
-      <% end %>
+        <% end %>
+
+    </div>
     <% end %>
   </div>
+</div>
+
 </div>
 
 

@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 .row {
   max-width: 90% !important;
@@ -25,7 +25,7 @@
 
   img{
     min-width: 100px;
-    margin-left: 3%;
+    margin: 0 auto;
   }
   .carousel-control {
     .glyphicon-chevron-right{
@@ -55,7 +55,6 @@
     padding:1em !important;
     font-size: 12px;
     transition: 0.5s ease-in-out;
-    margin-left: 10%;
 		&:hover {
 			border: 2px solid black !important;
 			color:white !important;
@@ -64,4 +63,72 @@
       text-decoration: none;
 		}
   }
+}
+
+
+
+// FORMS
+form {
+  margin: 0 auto !important;
+  width: 343px;
+  padding: 30px;
+  label {
+    font-size: 15px;
+    font-weight: normal;
+  }
+	input {
+		background:transparent;
+		border-top:none !important;
+    border-left: none !important;
+    border-right: none !important;
+		border-bottom:2px solid gainsboro !important;
+		padding:10px;
+		color:black;
+		text-align:left;
+		width:100%;
+		display:inline-block;
+		box-shadow:none !important;
+		&:focus, &:hover {
+			background:transparent;
+			border:0;
+			border-bottom:2px solid darken(gainsboro,20%);
+			box-shadow:none;
+		}
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    }
+	}
+  input[type="checkbox"] {
+    margin: 10px;
+  }
+  .inline-checkbox{
+    display: flex;
+    width: 300px;
+    overflow: scroll;
+  }
+
+}
+
+.form-login{
+  padding: 20px;
+}
+
+.signup{
+  padding: 80px 40px 40px 60px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media (max-width: 1000px){
+  .navbar-default a{
+    padding: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.favorite-show{
+  max-height: 400px;
+  overflow: scroll;
 }

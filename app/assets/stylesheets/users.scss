@@ -46,84 +46,13 @@ h2{
   font-size: 22px !important;
 }
 
-
 a{
   color: black;
-}
-
-a:hover{
-  color: grey;
+  &:hover{
+    color: gainsboro;
+  }
 }
 
 .logo {
   width: 80px;
-}
-
-.loginbutton {
-  max-width: 60%;
-}
-
-
-.loginbutton{
-  width: 250px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.loginbutton:hover{
-  width: 250px;
-  margin-top: 30px;
-  box-shadow: 2px 2px 2px gray;
-  margin-bottom: 10px;
-}
-
-
-// FORMS
-label {
-  font-size: 15px;
-  display: inline-block;
-}
-
-fieldset {
-  border: none;
-  min-width: 60px;
-}
-
-input[type="file"]{
-  display: inline-block;
-}
-
-.signup{
-  padding: 80px 40px 40px 60px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-button, html input[type="button"], input[type="reset"], input[type="submit"]{
- text-decoration:none;
- text-align:center;
- padding:14px 16px;
- border:none;
- font:17px Arial, Helvetica, sans-serif;
- font-weight:bold;
- color:#ffffff;
- background: black;
- border-radius: 2%;
- margin-top: 20px;
- margin-bottom: 20px;
-
-}
-
-@media (max-width: 1000px){
-  .navbar-default a{
-    padding: 20px;
-    text-align: center;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-}
-
-.favorite-show{
-  max-height: 400px;
-  overflow: scroll;
 }

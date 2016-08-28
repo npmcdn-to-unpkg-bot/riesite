@@ -9,29 +9,29 @@
     margin: 0;
   }
   .gray-text{
-    font-size: 40px;
+    font-size: 5.4vh;
     letter-spacing: normal;
     color: #909092;
     text-shadow: none;
     font-weight: 800;
   }
   .blue-text{
-    font-size: 30px;
+    font-size: 4vh;
     color: #29b8bc;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
 
   }
   .black-text{
-    font-size: 30px;
+    font-size: 4vh;
     font-weight: 700;
   }
   .normal-text{
-    font-size: 20px;
+    font-size: 2.7vh;
   }
   @media screen and (max-width:550px){
     .gray-text{
-      font-size: 3.5vh;
+      font-size: 4vh;
     }
     .black-text, .blue-text{
       font-size: 3vh;

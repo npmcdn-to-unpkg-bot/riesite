@@ -3,13 +3,13 @@
  <%= f.label :Nome %> <%= f.text_field :name %>
  <%= f.label :Preço %> <%= f.text_field :price %>
  <%= f.label :Estoque %> <%= f.text_field :inventory %>
- <%= f.label :Descrição %>   <%= f.text_field :description %>
-<%= label_tag "Foto:" %> <%= file_field_tag :image %>
- <%= label_tag "Foto2 "%> <%= file_field_tag :imageshow %>
+ <%= f.label :Descrição %> <%= f.text_field :description %>
+ <%= label_tag :Foto %> <%= file_field_tag :image %>
+ <%= label_tag :Foto2 %> <%= file_field_tag :imageshow %>
 
   <%= f.label :category_ids, "Categories:" %>
-  <p class="inline-checkbox"><%= f.collection_check_boxes :category_ids, Category.all, :id, :name%></p>
+  <div class="inline-checkbox"><%= f.collection_check_boxes :category_ids, Category.all, :id, :name%></div>
 
-<fieldset><%= f.submit %></fieldset>
+  <%= f.submit "Editar", :class => "button black"  %>
 
 <% end %>

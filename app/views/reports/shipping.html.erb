@@ -1,0 +1,40 @@
+<div class="main">
+<h1>Orders to be shipped</h1>
+
+<% @wishes.each do |order| %>
+    <div class='row'>
+    <div class='col-lg-2 col-sm-1'></div>
+    <div class='col-lg-2 col-sm-3'>Payment Date: <%= order.payment_date %></div>
+    <% user = User.find order.user_id  %>
+    <div class='col-lg-1 col-sm-2'>Name: <%= user.name %></div>
+    <div class='col-lg-3 col-sm-3'>Delivery Address: <%= order.delivery_address %></div>
+    <div class='col-lg-2 col-sm-2'><%= link_to(button_tag("View Order"), order_path(order.id)) %></div>
+    <div class='col-lg-2 col-sm-1'></div>
+    </div>
+    <br>
+    <% lines = ShoppingCart.where(:order_id => order.id) %>
+    <% lines.each do |line| %>
+        <div class='row'>
+            <div class='col-lg-4 col-sm-3'></div>
+            <% product = Product.find line.product_id %>
+            <div class='col-lg-2 col-sm-3'>Product Name: <%= product.name %></div>
+            <div class='col-lg-2 col-sm-3'>Quantity: <%= line.quantity %></div>
+            <div class='col-lg-4 col-sm-3'></div>
+        </div>
+        <br>
+    <% end %>
+    <br>
+    <div class='row'>
+        <div class='col-lg-2 col-sm-2'></div>
+        <%= form_for(order) do |f| %>
+            <div class='col-lg-4 col-sm-5'><%= f.label :shipping_identification %>
+            <%= f.text_field :shipping_id %></div>
+            <%= f.hidden_field :shipped_date, :value => DateTime.now %>
+            <div class='col-lg-2 col-sm-2'><%= f.submit "Mark as Shipped" %></div>
+        <% end %>
+        <div class='col-lg-4 col-sm-3'></div>
+    </div>
+    <hr>
+    <br>
+<% end %>
+</div>

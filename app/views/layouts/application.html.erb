@@ -72,6 +72,12 @@
               <li><%= link_to "Add Produtos", new_product_path %></a></li>
               <li><%= link_to "Add Categoria", new_category_path %></a></li>
               <li><%= link_to "Todos Usuários", users_path %></a></li>
+              <li> <%= link_to "Estoque", reports_inventory_path %></li>
+              <li> <%= link_to "Pagos", reports_finalise_path %></li>
+              <li> <%= link_to "Vendas",  reports_sales_path %></li>
+              <li> <%= link_to "Frete", reports_shipping_path %></li>
+              <li> <%= link_to "Profit", reports_profit_path %></li>
+
               <% end %>
             </li></ul>
          <li><%= link_to "SAIR #{@current_user.username.upcase}", login_path, :method => :delete%></li>

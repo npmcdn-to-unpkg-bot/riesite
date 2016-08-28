@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   get '/reports/inventory' => 'reports#inventory'
-
+  get '/reports/sales' => 'reports#sales'
+  get '/reports/profit' => 'reports#profit'
+  get '/reports/shipping' => 'reports#shipping'
+  get '/reports/finalise' => 'reports#finalise'
 
 end

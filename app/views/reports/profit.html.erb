@@ -1,0 +1,44 @@
+<div class="admin">
+<h1>Profit Report</h1>
+
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-2"><h5>Total Sales: <%= number_to_currency(@grand_total_revenue) %></h4></div>
+<div class="col-md-2"><h5>Total Tax: <%= number_to_currency(@grand_total_tax) %></h4></div>
+<div class="col-md-2"><h5>Total Cost: <%= number_to_currency(@grand_total_cost) %></h4></div>
+<div class="col-md-2"><h5>Gross Profit: <%= number_to_currency(@gross_profit) %></h4></div>
+<div class="col-md-2"><h5>GP%: <%= number_to_percentage(@gross_profit_percentage * 100) %></h4></div>
+<div class="col-md-1"></div>
+</div>
+
+<% @products.each do |product| %>
+    <% total_revenue = 0 %>
+    <% total_cost = 0 %>
+    <% total_tax = 0 %>
+    <% total_quantity = 0 %>
+    <% lines = @line_items.where(:product_id => product.id) %>
+    <% lines.each do |item| %>
+        <% total_revenue += item.unit_price * item.quantity %>
+        <% total_cost += item.unit_cost * item.quantity %>
+        <% total_tax += item.unit_tax * item.quantity %>
+        <% total_quantity += item.quantity %>
+    <% end %>
+    <% gross_profit = total_revenue - total_tax - total_cost %>
+    <hr>
+    <div class="row">
+    <div class="col-sm-3"><%= image_tag product.image, :class => 'report-image'  %>
+    <p>Name: <%= product.name %></p></div>
+    <div class="col-sm-9 row">
+        <div class="col-sm-4 p-report">Sales (units): <%= total_quantity %></div>
+        <div class="col-sm-4 p-report">Sales: <%= number_to_currency(total_revenue) %></div>
+        <div class="col-sm-4 p-report">Cost: <%= number_to_currency(total_cost) %></div>
+        <div class="col-sm-4 p-report">Tax: <%= number_to_currency(total_tax) %></div>
+        <% unless (total_revenue == 0) %>
+            <div class="col-sm-4 p-report">Gross Profit: <%= number_to_currency(gross_profit) %></div>
+            <div class="col-sm-4 p-report">GP%: <%= number_to_percentage(gross_profit / (total_revenue - total_tax) * 100) %></div>
+        <% end %>
+    </div>
+    </div>
+    <br>
+<% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="main">
+<h1>Sales Report</h1>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4"><h4>Total Unit Sales: <%= @grand_total_units %></h4></div>
+    <div class="col-md-4"><h4>Total Revenue: <%= number_to_currency(@grand_total) %></h4></div>
+    <div class="col-md-2"></div>
+</div>
+<% @products.each do |product| %>
+<hr>
+<div class="row">
+    <% total_revenue = 0 %>
+    <% total_quantity = 0 %>
+    <% lines = @line_items.where(:product_id => product.id) %>
+    <% lines.each do |item| %>
+        <% total_revenue += item.unit_price * item.quantity %>
+        <% total_quantity += item.quantity %>
+    <% end %>
+    <div class="col-md-2 "></div>
+    <div class="col-md-2 report"><%= image_tag product.image, :class => 'report-image'  %></div>
+    <div class="col-md-2 report"><p>Name: <%= product.name %></p></div>
+    <div class="col-md-2 report"><p>Total Sales (units): <%= total_quantity %></p></div>
+    <div class="col-md-2 report"><p>Total Sales: <%= number_to_currency(total_revenue) %></p></div>
+    <div class="col-md-2"></div>
+    <br>
+</div>
+<% end %>
+</div>

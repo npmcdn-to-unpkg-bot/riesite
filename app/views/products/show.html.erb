@@ -42,8 +42,11 @@
         <h2> R$<%= @product.price %>,00 </h2>
         <p> <%= @product.description %> </p>
 
+        <% unless @product.inventory === 0 %>
           <%= link_to ("Adicionar na Bolsa"), cart_add_path(:id => @product.id, :page => 'show'), :class => 'button black' %></p>
-
+          <% else %>
+          <p> esgotado </p>
+        <% end %>
 
            <% if @current_user.present? %>
            <%- unless @current_user.favorited_products.exists?(id: @product.id) -%>

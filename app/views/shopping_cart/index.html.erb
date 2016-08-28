@@ -1,9 +1,12 @@
 <div class="main">
   <div class="row">
+    <h1>Shopping Cart</h1>
+
     <div class="column large-12">
-      <h1>Shopping Cart</h1>
       <% @total_price = 0 %>
       <% @total_tax = 0 %>
+
+      <% if @cart_items.exists? %>
 
       <table>
         <tbody>
@@ -32,5 +35,15 @@
       <p><%= link_to (button_tag "Comprar", :class => 'button black'), new_wish_path %></p>
       <% end %>
     </div>
+
+      <% else %>
+      <div class="column large-12">
+        <div class="empty-page">
+          <p>Seu carrinho está vazio! </p>
+          <p> Parece uma boa hora para <%= link_to('começar a comprar', products_path) %> .<p>
+        </div>
+      </div>
+      <% end %>
+
   </div>
 </div>

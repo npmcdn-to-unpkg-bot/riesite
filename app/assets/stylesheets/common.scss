@@ -13,6 +13,16 @@
   margin-top: 60px;
 }
 
+.empty-page{
+  padding: 120px;
+  a{
+    color: gray;
+    &:hover{
+      color: darken(gray, 30%);
+    }
+  }
+}
+
 #myCarousel{
   width: 80%;
   min-width: 350px;
@@ -131,4 +141,21 @@ form {
 .favorite-show{
   max-height: 400px;
   overflow: scroll;
+}
+
+tbody {
+  border: none !important;
+  tr:nth-child(even) {
+    background-color: white !important;
+  }
+  tr{
+    border-bottom: 1px solid gainsboro !important;
+  }
+  td{
+    text-align: left;
+    &.center{
+      text-align: center;
+    }
+  }
+
 }

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :charges
 
 
+
   get '/cart' => 'shopping_cart#index'
   get '/cart/add' => 'shopping_cart#add_cart'
   put '/cart/:id/:sign' => 'shopping_cart#change_qty', :as => 'update_item'
@@ -25,5 +26,8 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
+  get '/reports/inventory' => 'reports#inventory'
+
 
 end

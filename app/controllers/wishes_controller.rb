@@ -3,35 +3,35 @@ class WishesController < ApplicationController
 
   def index
     if @current_user.present? && @current_user.admin?
-        @wishes = Wish.all
+      @wishes = Wish.all
     elsif @current_user.present? && @current_user.admin.blank?
-        @wishes = Wish.where(:user_id => @current_user.id)
+      @wishes = Wish.where(:user_id => @current_user.id)
     elsif params[:id].present?
-        @wishes = Wish.where(:user_id => params[:id])
+      @wishes = Wish.where(:user_id => params[:id])
     else
-        redirect_to root_path
+      redirect_to root_path
     end
   end
 
   def new
-      @cart_items = ShoppingCart.where(:wish_id => nil).where(:user_id => @current_user.id)
-      @wish = Wish.create :user_id => @current_user.id
-      total_price = 0
-      total_cost = 0
-      @cart_items.each do |item|
-          product = Product.find item.product_id
-          product.inventory -= item.quantity
-          product.save
-          item.wish_id = @wish.id
-          item.save
-          total_price += (item.unit_price * item.quantity)
-          total_cost += (item.unit_cost * item.quantity)
-      end
-      @wish.total_revenue = total_price
-      @wish.total_cost = total_cost
-      @wish.purchase_date = DateTime.now
-      @wish.save
-      @purchased_items = ShoppingCart.where(:wish_id => @wish.id)
+    @cart_items = ShoppingCart.where(:wish_id => nil).where(:user_id => @current_user.id)
+    @wish = Wish.create :user_id => @current_user.id
+    total_price = 0
+    total_cost = 0
+    @cart_items.each do |item|
+        product = Product.find item.product_id
+        product.inventory -= item.quantity
+        product.save
+        item.wish_id = @wish.id
+        item.save
+        total_price += (item.unit_price * item.quantity)
+        total_cost += (item.unit_cost * item.quantity)
+    end
+    @wish.total_revenue = total_price
+    @wish.total_cost = total_cost
+    @wish.purchase_date = DateTime.now
+    @wish.save
+    @purchased_items = ShoppingCart.where(:wish_id => @wish.id)
   end
 
   def edit

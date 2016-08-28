@@ -1,0 +1,25 @@
+
+
+<div class="main">
+  <div class="row">
+    <h1>Inventório</h1>
+
+    <div class="column large-12">
+      <% i = 0 %>
+      <table>
+        <tbody>
+          <% @products.each do |product| %>
+              <tr>
+                <td>Produto: <%= product.name %></td>
+                <td>Total estoque: <%= product.inventory + @product_inventory_awaiting_delivery[i] %></td>
+                <td>Estoque esperando enviar: <%= @product_inventory_awaiting_delivery[i] %></td>
+                <td>Estoque para vendas: <%= product.inventory %></td>
+                <td><% i += 1 %></td>
+              </tr>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
+</div>
+</div>

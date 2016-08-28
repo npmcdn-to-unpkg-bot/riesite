@@ -1,18 +1,36 @@
 <div class="main">
   <div class="row">
-    <div class="column large-12">
+    <h1>Order</h1>
+
+    <div class="column large-7">
       <% wish_url(@wish.id) %>
-      <h1>Order</h1>
+          <table>
+            <tbody>
+              <% @purchased_items.each do |item| %>
+              <% product = Product.find item.product_id %>
+                  <tr>
+                    <td class="center"><%= link_to(image_tag(product.image, :class => 'mini-img'), product_path(product.id)) %></td>
+                    <td><%= product.name %></td>
+                    <td>Quantidade: <%= item.quantity %>
+                    <td> Valor: <%= number_to_currency(Integer(product.price) * item.quantity)  %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+
+            <p>Total Price:
+              <%= number_to_currency(@wish.total_revenue) %></p>
+
+
+</div>
+<div class="column large-4">
         <%= form_for(@wish) do |f| %>
-          <%= f.label :delivery_address %> <%= f.text_field :delivery_address, :required => true %>
+          <%= f.label :endereço_de_entrega %> <%= f.text_field :delivery_address, :required => true %>
           <% inv = 'INV' + @wish.id.to_s.rjust(5, '0') %>
           <%= f.hidden_field :invoice_number, :value => inv %>
-          <%= f.submit "Submit" %>
+          <%= f.submit "Comprar", :class => "button black"  %>
         <% end %>
     </div>
   </div>
 </div>
-
-<% @purchased_items.all do |prod| %>
-<%= prod.product_id %>
-<% end %>

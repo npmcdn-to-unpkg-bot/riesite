@@ -22,11 +22,8 @@ class ShoppingCartController < ApplicationController
     #   line.unit_tax = line.unit_price - (line.unit_price * (1 - (1 / (1 + business.tax_rate))))
     # end
     line.save
-    if params[:page] == 'index'
       redirect_to cart_path
-    else
-      redirect_to product_path(params[:id])
-    end
+    
   end
 
   def change_qty

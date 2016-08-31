@@ -12,8 +12,6 @@ class UsersController < ApplicationController
      respond_to do |format|
        if @user.save
          session[:user_id] = @user.id
-         # The line below is the only additional line we need in our Users controller.
-         UserMailer.welcome_email(@user).deliver_now
          format.html { redirect_to root_path }
          format.json { render :show, status: :created, location: @user }
        else

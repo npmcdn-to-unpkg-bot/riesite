@@ -1,0 +1,15 @@
+
+<div class="main">
+  <fieldset>
+  <legend>Please Enter Your Details</legend>
+  <%= form_for(@order) do |f| %>
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+        <br>
+        <br>
+        <%= f.submit "Submit" %>
+  <% end %>  </fieldset>
+
+  <%= link_to 'Back', orders_path %>
+
+</div>

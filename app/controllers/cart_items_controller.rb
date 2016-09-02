@@ -1,4 +1,4 @@
-class ShoppingCartController < ApplicationController
+class CartItemsController < ApplicationController
   before_action :require_login
 
   def index

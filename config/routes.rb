@@ -10,15 +10,12 @@ Rails.application.routes.draw do
   resources :orders
   resources :charges
 
-
-
-  get '/cart' => 'shopping_cart#index'
-  get '/cart/add' => 'shopping_cart#add_cart'
-  put '/cart/:id/:sign' => 'shopping_cart#change_qty', :as => 'update_item'
-  delete '/cart/:id' => 'shopping_cart#destroy', :as => 'delete_item'
-  delete '/cart/:id/all' => 'shopping_cart#destroy_cart', :as => 'delete_cart'
-  resources :shopping_carts
-
+  get '/cart' => 'cart_items#index'
+  get '/cart/add' => 'cart_items#add_cart'
+  put '/cart/:id/:sign' => 'cart_items#change_qty', :as => 'update_item'
+  delete '/cart/:id' => 'cart_items#destroy', :as => 'delete_item'
+  delete '/cart/:id/all' => 'cart_items#destroy_cart', :as => 'delete_cart'
+  resources :cart_items
 
   root :to => 'categories#index'
 

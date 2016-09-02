@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="row">
+    <h1>Order</h1>
+
+    <div class="column large-7">
+      <table>
+        <tbody>
+          <%@purchased_items.each do |item| %>
+          <% product = Product.find item.product_id %>
+          <tr>
+            <td class="center"><%= link_to(image_tag(product.image, :class => 'mini-img'), product_path(product.id)) %></td>
+            <td><%= product.name %></td>
+            <td>Quantidade:
+              <%= item.quantity %>
+              <td>
+                Valor:
+                <%= number_to_currency(Integer(product.price) * item.quantity)  %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <p>Total Price:
+          <%= number_to_currency(@order.total_revenue) %></p>
+      </div>
+
+      <div class="column large-4">
+        <%= form_for(@order) do |f| %>
+        <%= f.label :endereço_de_entrega %>
+        <%= f.text_field :delivery_address, :required => true %>
+        <% inv = 'INV' + @order.id.to_s.rjust(5, '0') %>
+        <%= f.hidden_field :invoice_number, :value => inv %>
+        <%= f.submit "Comprar", :class => "button black"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>

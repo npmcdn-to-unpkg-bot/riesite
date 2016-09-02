@@ -47,7 +47,7 @@ $(document).ready(function() {
   $('.like').on('click', function() {
     swal({
       title: "You Love It",
-      text: "Now it's in your WishList",
+      text: "Now it's in your orderList",
       timer: 90000,
       showConfirmButton: true
     });
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
   $('.dislike').on('click', function() {
     swal({
-      title: "You remove it from your wish list",
+      title: "You remove it from your order list",
       text: "Click again to add it",
       timer: 90000,
       showConfirmButton: true

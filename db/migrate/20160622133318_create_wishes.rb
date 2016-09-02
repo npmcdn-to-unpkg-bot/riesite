@@ -1,6 +1,6 @@
-class CreateWishes < ActiveRecord::Migration
+class Createorders < ActiveRecord::Migration
   def change
-    create_table :wishes do |t|
+    create_table :orders do |t|
      t.text     :invoice_number
      t.float    :total_cost
      t.float    :total_tax

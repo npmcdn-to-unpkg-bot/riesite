@@ -1,5 +1,5 @@
-class AddWishStatusToWishes < ActiveRecord::Migration
+class AddorderStatusToorders < ActiveRecord::Migration
   def change
-    add_column :wishes, :wish_status, :string
+    add_column :orders, :order_status, :string
   end
 end

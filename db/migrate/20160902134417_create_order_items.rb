@@ -1,6 +1,6 @@
-class CreateShoppingCarts < ActiveRecord::Migration
+class CreateOrderItems < ActiveRecord::Migration
   def change
-    create_table :shopping_carts do |t|
+    create_table :order_items do |t|
       t.integer  "quantity"
       t.float    "unit_cost"
       t.integer  "order_id"

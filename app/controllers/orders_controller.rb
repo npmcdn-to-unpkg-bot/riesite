@@ -1,89 +1,78 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :authorise
 
-  # GET /orders
-  # GET /orders.json
   def index
-    @orders = Order.all
-  end
-
-  # GET /orders/1
-  # GET /orders/1.json
-  def show
-  end
-
-  # GET /orders/new
-  def new
-  @cart = current_cart
-  if @cart.line_items.empty?
-    redirect_to store_url, notice: "Your cart is empty"
-    return
-  end
-    @order = Order.new
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @order }
-    end
-  end
-
-  # GET /orders/1/edit
-  def edit
-  end
-
-  # POST /orders
-  # POST /orders.json
-  def create
-    @order = Order.new(params[:order])
-    @order.add_line_items_from_cart(current_cart)
-    respond_to do |format|
-    if @order.save
-      Cart.destroy(session[:cart_id])
-      session[:cart_id] = nil
-      format.html { redirect_to store_url, notice:
-      'Thank you for your order.' }
-      format.json { render json: @order, status: :created,
-      location: @order }
+    if @current_user.present? && @current_user.admin?
+      @orders = Order.all
+    elsif @current_user.present? && @current_user.admin.blank?
+      @orders = Order.where(:user_id => @current_user.id)
+    elsif params[:id].present?
+      @orders = Order.where(:user_id => params[:id])
     else
-      @cart = current_cart
-      format.html { render action: "new" }
-      format.json { render json: @order.errors,
-      status: :unprocessable_entity }
-      end
+      redirect_to root_path
     end
   end
 
-  # PATCH/PUT /orders/1
-  # PATCH/PUT /orders/1.json
+  def new
+    @cart_items = @current_user.cart_items
+    @order = Order.create user_id: @current_user.id
+    total_price = 0
+    total_cost = 0
+    @cart_items.each do |item|
+        product = Product.find item.product_id
+        product.inventory -= item.quantity
+        product.save
+        item.order_id = @order.id
+        item.save
+        total_price += (item.unit_price * item.quantity)
+        total_cost += (item.unit_cost * item.quantity)
+    end
+    @order.total_revenue = total_price
+    @order.total_cost = total_cost
+    @order.purchase_date = DateTime.now
+    @order.save
+    @purchased_items = CartItem.where(:order_id => @order.id)
+  end
+
+  def edit
+    @order = Order.find params[:id]
+    @purchased_items = CartItem.where(:order_id => @order.id)
+  end
+
+  def show
+    @order = Order.find params[:id]
+    @customer = User.where(:order_id => @order.id)
+    @purchased_items = CartItem.where(:order_id => @order.id)
+  end
+
   def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    order = Order.find params[:id]
+    order.update order_params
+    session[:order_id] = order.id
+    if order.finalised_date.present?
+        redirect_to reports_finalise_path
+    elsif order.shipped_date.present?
+        redirect_to reports_shipping_path
+    elsif order.payment_date.nil?
+        redirect_to new_charge_path
+    else
+        redirect_to order_path(order.id)
     end
   end
 
-  # DELETE /orders/1
-  # DELETE /orders/1.json
   def destroy
-    @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    order = Order.find params[:id]
+    order.destroy
+    redirect_to orders_path
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
+private
+def authorise
+  redirect_to root_path unless (@current_user.present?)
+end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.fetch(:order, {})
-    end
+def order_params
+  params.require(:order).permit(:purchase_date, :payment_date, :shipped_date, :finalised_date, :delivery_address, :shipping_id, :invoice_number)
+end
+
 end

@@ -32,7 +32,7 @@
       <h2>Preço Final: <%= number_to_currency(@total_price) %></h2>
       <!-- <p><%= link_to ("Clear Cart"), delete_cart_path(:id => @current_user.id), :method => :delete %></p> -->
       <% if @total_price > 0 %>
-      <p><%= link_to (button_tag "Comprar", :class => 'button black'), new_wish_path %>
+      <p><%= link_to (button_tag "Comprar", :class => 'button black'), new_order_path %>
       <%= link_to (button_tag "Continue Shopping", :class => 'button black'), products_path %></p>
 
       <% end %>

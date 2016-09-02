@@ -1,5 +1,5 @@
 <div class="main">
 <h2><%= @user.username %>, thanks for your payment of <%= number_to_currency(@amount/100) %>!</h2>
-<p> Your invoice number is: <%= @wish.invoice_number %><p>
- <p> And your products will be develiry to: <%= @wish.delivery_address %> in few days<p>
+<p> Your invoice number is: <%= @order.invoice_number %><p>
+ <p> And your products will be develiry to: <%= @order.delivery_address %> in few days<p>
 </div>

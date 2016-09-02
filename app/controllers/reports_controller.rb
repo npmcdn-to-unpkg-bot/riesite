@@ -4,11 +4,11 @@ class ReportsController < ApplicationController
 def inventory
     @products = Product.all
     @product_inventory_awaiting_delivery =[]
-    wishes_awaiting_delivery = Wish.where(:shipped_date => nil )
+    orders_awaiting_delivery = order.where(:shipped_date => nil )
     @products.each do |product|
         quantity = 0
-        wishes_awaiting_delivery.each do |wish|
-            items = ShoppingCart.where(:wish_id => wish.id).where(:product_id => product.id)
+        orders_awaiting_delivery.each do |order|
+            items = ShoppingCart.where(:order_id => order.id).where(:product_id => product.id)
             quantity += items.sum(:quantity)
         end
         @product_inventory_awaiting_delivery.push(quantity)
@@ -18,13 +18,13 @@ end
 def sales
     @products = Product.all
     @line_items = ShoppingCart.all
-    @wishes = Wish.all
+    @orders = order.all
     @grand_total = 0
     @grand_total_units = 0
-    @wishes.each do |wish|
-        @grand_total += wish.total_revenue
+    @orders.each do |order|
+        @grand_total += order.total_revenue
         @line_items.each do |item|
-          if item.wish_id == wish.id
+          if item.order_id == order.id
             @grand_total_units += item.quantity
           end
         end
@@ -34,17 +34,17 @@ end
 def profit
   @products = Product.all
   @line_items = ShoppingCart.all
-  @wishes = Wish.all
+  @orders = order.all
   @grand_total_revenue = 0
   @grand_total_cost = 0
   @grand_total_tax = 0
   @gross_profit = 0
   @gross_profit_percentage = 0
-  @wishes.each do |wish|
-      @grand_total_revenue += wish.total_revenue
-      @grand_total_cost += wish.total_cost
-      @grand_total_tax += wish.total_tax
-      profit = wish.total_revenue - wish.total_tax - wish.total_cost
+  @orders.each do |order|
+      @grand_total_revenue += order.total_revenue
+      @grand_total_cost += order.total_cost
+      @grand_total_tax += order.total_tax
+      profit = order.total_revenue - order.total_tax - order.total_cost
       @gross_profit += profit
   end
   unless @grand_total_revenue == 0
@@ -53,11 +53,11 @@ def profit
   end
 
   def shipping
-    @wishes = Wish.where(:shipped_date => nil).where.not(:payment_date => nil)
+    @orders = order.where(:shipped_date => nil).where.not(:payment_date => nil)
   end
 
   def finalise
-    @wishes = Wish.where(:finalised_date => nil).where.not(:shipped_date => nil)
+    @orders = order.where(:finalised_date => nil).where.not(:shipped_date => nil)
   end
 
   private

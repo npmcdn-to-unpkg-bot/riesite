@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :favourites, :only => [:create, :destroy]
   resources :favorite_products, :only => [:create, :destroy]
   resources :subscribers
-  resources :wishes
+  resources :orders
   resources :charges
 
 

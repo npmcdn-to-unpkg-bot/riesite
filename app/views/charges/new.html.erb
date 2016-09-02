@@ -9,16 +9,16 @@
     <h1>Order</h1>
 
     <p>Order Name: <%= @user.username %></p>
-    <p>Invoice: <%= @wish.invoice_number %></p>
-    <p>Delivery Address: <%= @wish.delivery_address %></p>
-    <p>Total Price: <%= number_to_currency(@wish.total_revenue) %></p>
+    <p>Invoice: <%= @order.invoice_number %></p>
+    <p>Delivery Address: <%= @order.delivery_address %></p>
+    <p>Total Price: <%= number_to_currency(@order.total_revenue) %></p>
   </article>
 
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Invoice: <%= @wish.invoice_number %>"
-          data-amount="<%= @wish.total_revenue * 100 %>"
+          data-description="Invoice: <%= @order.invoice_number %>"
+          data-amount="<%= @order.total_revenue * 100 %>"
           data-email="<%= @user.email %>"
           data-locale="auto"></script>
 <% end %>

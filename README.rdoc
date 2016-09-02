@@ -7,11 +7,11 @@
  - And link Products
 
 * Create Users and Admin 
- - Users can like Products and add it to a WishList
- - Admin can add Products/Categories and also has a Wish List
+ - Users can like Products and add it to a orderList
+ - Admin can add Products/Categories and also has a order List
 
 * Favorites 
  - List of most liked Products
- - Display in the User Profile as a Wish List
+ - Display in the User Profile as a order List
  
  

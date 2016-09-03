@@ -1,5 +1,5 @@
 class RenameWishesToOrders < ActiveRecord::Migration
   def change
-    rename_table :orders, :orders
+    rename_table :wishes, :orders
   end
 end

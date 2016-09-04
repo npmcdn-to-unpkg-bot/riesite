@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
   before_action :authorise
 
-def inventory
+  def inventory
     @products = Product.all
     @product_inventory_awaiting_delivery =[]
     orders_awaiting_delivery = Order.where(shipped_date: nil )
@@ -13,12 +13,12 @@ def inventory
         end
         @product_inventory_awaiting_delivery.push(quantity)
     end
-end
+  end
 
-def sales
+  def sales
     @products = Product.all
     @line_items = CartItem.all
-    @orders = order.all
+    @orders = Order.all
     @grand_total = 0
     @grand_total_units = 0
     @orders.each do |order|
@@ -29,12 +29,12 @@ def sales
           end
         end
     end
-end
+  end
 
 def profit
   @products = Product.all
   @line_items = CartItem.all
-  @orders = order.all
+  @orders = Order.all
   @grand_total_revenue = 0
   @grand_total_cost = 0
   @grand_total_tax = 0
@@ -53,11 +53,11 @@ def profit
   end
 
   def shipping
-    @orders = order.where(:shipped_date => nil).where.not(:payment_date => nil)
+    @orders = Order.where(shipped_date: nil).where.not(payment_date: nil)
   end
 
   def finalise
-    @orders = order.where(:finalised_date => nil).where.not(:shipped_date => nil)
+    @orders = Order.where(finalised_date: nil).where.not(shipped_date: nil)
   end
 
   private

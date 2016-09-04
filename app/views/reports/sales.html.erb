@@ -1,28 +1,46 @@
 <div class="main">
-<h1>Sales Report</h1>
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-4"><h4>Total Unit Sales: <%= @grand_total_units %></h4></div>
-    <div class="col-md-4"><h4>Total Revenue: <%= number_to_currency(@grand_total) %></h4></div>
-    <div class="col-md-2"></div>
-</div>
-<% @products.each do |product| %>
-<hr>
-<div class="row">
-    <% total_revenue = 0 %>
-    <% total_quantity = 0 %>
-    <% lines = @line_items.where(:product_id => product.id) %>
-    <% lines.each do |item| %>
-        <% total_revenue += item.unit_price * item.quantity %>
-        <% total_quantity += item.quantity %>
-    <% end %>
-    <div class="col-md-2 "></div>
-    <div class="col-md-2 report"><%= image_tag product.image, :class => 'report-image'  %></div>
-    <div class="col-md-2 report"><p>Name: <%= product.name %></p></div>
-    <div class="col-md-2 report"><p>Total Sales (units): <%= total_quantity %></p></div>
-    <div class="col-md-2 report"><p>Total Sales: <%= number_to_currency(total_revenue) %></p></div>
-    <div class="col-md-2"></div>
-    <br>
-</div>
-<% end %>
+  <div class="row">
+
+    <h1>Vendas</h1>
+
+    <div class="column large-12">
+      <div class="row">
+        <div class="column large-6">
+          <h4>Produtos Vendidos: <%= @grand_total_units %></h4>
+        </div>
+        <div class="column large-6">
+          <h4>Lucro total: <%= number_to_currency(@grand_total) %></h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="column large-12 text-center">
+      <table>
+        <tbody>
+          <tr>
+           <th>Image</th>
+           <th>Name</th>
+           <th>Quantidade</th>
+           <th>Total Venda</th>
+         </tr>
+          <% @products.each do |product| %>
+            <% total_revenue = 0 %>
+            <% total_quantity = 0 %>
+            <% lines = @line_items.where(product_id: product.id) %>
+              <% lines.each do |item| %>
+                <% total_revenue += item.unit_price * item.quantity %>
+                <% total_quantity += item.quantity %>
+              <% end %>
+            <tr>
+              <td><%= image_tag product.image, :class => 'mini-img'  %></td>
+              <td><%= product.name %></td>
+              <td><%= total_quantity %></td>
+              <td><%= number_to_currency(total_revenue) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

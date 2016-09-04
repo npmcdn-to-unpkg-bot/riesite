@@ -4,11 +4,11 @@ class ReportsController < ApplicationController
 def inventory
     @products = Product.all
     @product_inventory_awaiting_delivery =[]
-    orders_awaiting_delivery = Order.where(:shipped_date => nil )
+    orders_awaiting_delivery = Order.where(shipped_date: nil )
     @products.each do |product|
         quantity = 0
         orders_awaiting_delivery.each do |order|
-            items = ShoppingCart.where(:order_id => order.id).where(:product_id => product.id)
+            items = CartItem.where(order_id: order.id, product_id: product.id)
             quantity += items.sum(:quantity)
         end
         @product_inventory_awaiting_delivery.push(quantity)
@@ -17,7 +17,7 @@ end
 
 def sales
     @products = Product.all
-    @line_items = ShoppingCart.all
+    @line_items = CartItem.all
     @orders = order.all
     @grand_total = 0
     @grand_total_units = 0
@@ -33,7 +33,7 @@ end
 
 def profit
   @products = Product.all
-  @line_items = ShoppingCart.all
+  @line_items = CartItem.all
   @orders = order.all
   @grand_total_revenue = 0
   @grand_total_cost = 0

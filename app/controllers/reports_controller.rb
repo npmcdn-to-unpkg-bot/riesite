@@ -42,10 +42,12 @@ class ReportsController < ApplicationController
     @gross_profit = 0
     @gross_profit_percentage = 0
     @orders.each do |order|
+      if order.total_revenue? && order.total_cost?
         @grand_total_revenue += order.total_revenue
         @grand_total_cost += order.total_cost
         profit = order.total_revenue - order.total_cost
         @gross_profit += profit
+      end
     end
     unless @grand_total_revenue == 0
         @gross_profit_percentage = @gross_profit / (@grand_total_revenue)

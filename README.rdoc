@@ -1,8 +1,8 @@
-# SOMOS RIE
+ SOMOS RIE
 
 Ecommerce Website
 
-__Gems__
+Gems
 - Rails (4.2.6)
 - Stripe
 - Foundation
@@ -10,4 +10,4 @@ __Gems__
 - Sweet Alert
 
 
-[Somos Rie Website](www.somosrie.com)
+somosrie.com

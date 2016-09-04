@@ -5,8 +5,13 @@
         <div class="row" data-equalizer data-equalize-on="large" id="test-eq">
             <% @products.reverse.each do |product| %>
             <div class="column large-4 medium-6 end">
-              <div class="" data-equalizer-watch>
-                <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
+              <div class="products-image" data-equalizer-watch>
+                <div class="firstImg">
+                  <%= link_to(image_tag(product.image, :class => 'thumb'), product) %>
+                </div>
+                <div class="secondImg">
+                  <%= link_to(image_tag(product.imageshow, :class => 'thumb'), product) %>
+                </div>
                 <p> <%= link_to(image_tag("http://s29.postimg.org/npu90mir7/corazon6.png"), product) %>
                 <%= product.favorites.count %></p>
                 <p><%= link_to product.name, product %></p>

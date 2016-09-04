@@ -5,3 +5,17 @@
 .product-description{
   text-align: left;
 }
+
+.products-image {
+  position: relative;
+  float: left;
+  .secondImg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+  }
+  &:hover .secondImg {
+      display: block;
+  }
+}

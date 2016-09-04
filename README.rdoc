@@ -1,17 +1,13 @@
-== SOMOS RIE
+# SOMOS RIE
 
-* Add Products 
- - And link it to Categories
+Ecommerce Website
 
-* Add Categories 
- - And link Products
+__Gems__
+- Rails (4.2.6)
+- Stripe
+- Foundation
+- Masonry
+- Sweet Alert
 
-* Create Users and Admin 
- - Users can like Products and add it to a orderList
- - Admin can add Products/Categories and also has a order List
 
-* Favorites 
- - List of most liked Products
- - Display in the User Profile as a order List
- 
- 
+[Somos Rie Website](www.somosrie.com)

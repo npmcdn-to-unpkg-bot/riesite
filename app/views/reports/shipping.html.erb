@@ -20,7 +20,7 @@
               <td><%= user.username %></td>
               <td><%= order.delivery_address %></td>
               <td><%= link_to(button_tag("Ver Pedido"), order_path(order.id)) %></td>
-            <% lines = ItemCart.where(order_id: order.id) %>
+            <% lines = CartItem.where(order_id: order.id) %>
             <% lines.each do |line| %>
             <% product = Product.find line.product_id %>
               <td><%= product.name %></td>

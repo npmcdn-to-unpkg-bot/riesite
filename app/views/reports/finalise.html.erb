@@ -1,21 +1,31 @@
 <div class="main">
 <h1>Finalise Orders</h1>
 
-<% @orders.each do |order| %>
-    <div class='row'>
+
+  <div class="column large-12">
+    <table>
+      <tbody>
+        <tr>
+         <th>Cliente</th>
+         <th>Data de Envio:</th>
+         <th>Shipping Id</th>
+         <th>Estoque para vendas:</th>
+       </tr>
+        <% @orders.each do |order| %>
         <% user = User.find order.user_id  %>
-        <div class='col-md-1'></div>
-        <div class='col-md-2'>Name: <%= user.username %></div>
-        <div class='col-md-2'>Shipped Date: <%= order.payment_date %></div>
-        <div class='col-md-2'>Shipping Identification: <%= order.shipping_id %></div>
-        <div class='col-md-2'><%= link_to(button_tag("View Order"), order_path(order.id)) %></div>
-        <div class='col-md-2'><%= form_for(order) do |f| %>
-            <%= f.hidden_field :finalised_date, :value => DateTime.now %>
-            <%= f.submit "Mark as Finalised" %>
-        <% end %></div>
-        <div class='col-lg-1'></div>
-    </div>
-    <hr>
-    <br>
-<% end %>
+          <tr>
+            <td><%= user.username %></td>
+            <td><%= order.payment_date %><</td>
+            <td> <%= order.shipping_id %></td>
+            <td><%= link_to(button_tag("View Order", class: "button black"), order_path(order.id)) %></td>
+            <%= form_for(order) do |f| %>
+            <td><%= f.hidden_field :finalised_date, :value => DateTime.now %></td>
+            <td><%= f.submit "Mark as Finalised", class: "button black" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
 </div>

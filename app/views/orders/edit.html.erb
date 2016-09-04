@@ -18,7 +18,7 @@
     <%= f.date_field :shipped_date %>
     <%= f.label :finalised %>
     <%= f.date_field :finalised_date %>
-    <%= f.submit %>
+    <%= f.submit 'Atualizar', class: "button black" %>
   <% end %>
-  <%= link_to 'Delete', @order, :method => :delete, :class => "button black" %>
+  <%= link_to 'Delete', @order, :method => :delete, class: "button black" %>
 </div>

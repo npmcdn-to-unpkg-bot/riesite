@@ -6,13 +6,19 @@
     <div class="column large-12">
       <table>
         <tbody>
+          <tr>
+           <th>Produto</th>
+           <th>Total Estoque</th>
+           <th>Estoque esperando enviar</th>
+           <th>Estoque para vendas</th>
+         </tr>
           <% i = 0 %>
           <% @products.each do |product| %>
             <tr>
               <td><%= product.name %></td>
-              <td>Total estoque: <%= product.inventory + @product_inventory_awaiting_delivery[i] %></td>
-              <td>Estoque esperando enviar: <%= @product_inventory_awaiting_delivery[i] %></td>
-              <td>Estoque para vendas: <%= product.inventory %></td>
+              <td><%= product.inventory%></td>
+              <td><%= @product_inventory_awaiting_delivery[i] %></td>
+              <td><%= product.inventory %></td>
               <td><% i += 1 %></td>
             </tr>
           <% end %>

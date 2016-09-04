@@ -7,22 +7,25 @@ User.create!([
 ])
 Category.destroy_all
 Category.create!([
-  {name: "Accessories", banner: "http://res.cloudinary.com/rany/image/upload/v1459380743/omrr0gq3qgpdhrkdqz2b.jpg", description: "", image: "http://s19.postimg.org/nmaayx5b7/275accessories.jpg"},
-  {name: "Stationary", banner: "http://res.cloudinary.com/rany/image/upload/v1459380787/ikqf1o1klpdmxau3wtks.jpg", description: "", image: "http://res.cloudinary.com/rany/image/upload/v1459368703/t0yocyx0aegiibbuniiu.jpg"},
-  {name: "Home", banner: "http://res.cloudinary.com/rany/image/upload/v1459380764/yxuyazcnnoo77e6ejm3v.jpg", description: "", image: "http://s19.postimg.org/qhne5s9b7/550home.jpg"},
-  {name: "Clothes", banner: "http://res.cloudinary.com/rany/image/upload/v1459380523/rskaoplgezjfefanotvq.jpg", description: "", image: "http://s19.postimg.org/jbvn3c083/275clothes.jpg"}
+  {name: "Bolsas", banner: "http://res.cloudinary.com/rany/image/upload/v1472065004/iewl4zrfenj5lympekib.jpg", description: "", image: nil},
+  {name: "Postais", banner: "http://res.cloudinary.com/rany/image/upload/v1472065290/jtxix2ephkx5jq4nqgkc.jpg", description: "", image: nil},
+  {name: "Home", banner: "http://res.cloudinary.com/rany/image/upload/v1472065053/t3bjzmiiq6yslhmqcrkz.jpg", description: "", image: nil},
+  {name: "Posters", banner: "http://res.cloudinary.com/rany/image/upload/v1472065070/deg7xfvrlfyjcwosj4zi.jpg", description: "", image: nil}
 ])
 Product.destroy_all
 Product.create!([
-  {name: "Abacaxi & Piñas", inventory: "10", price: "100", image: "http://res.cloudinary.com/rany/image/upload/v1459323383/elkx40idw91rsz48mkmq.jpg", description: "", imageshow: nil},
-  {name: "Sugar Loaf Print", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1459323443/ccpcqvfyjowps4nabooe.jpg", description: "", imageshow: nil},
-  {name: "Tudo Legal!", inventory: "10", price: "10", image: "http://res.cloudinary.com/rany/image/upload/v1459323413/rbnh0veimqgmmpa4c3ab.jpg", description: "", imageshow: nil},
-  {name: "In Rio We Trust", inventory: "10", price: "80", image: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/12794375_250904708575510_7312499421155626775_n.jpg?oh=162f692ac6d01d9d156af42842bc4694&oe=5781EB1A&__gda__=1468297107_7be3b716e399840f8a6659eb317f3beb", description: "", imageshow: nil},
-  {name: "Peraí, só um click! Ipanema", inventory: "10", price: "10", image: "http://res.cloudinary.com/rany/image/upload/v1459323499/n94ud3fmnvohxg9saxff.jpg", description: "", imageshow: nil},
-  {name: "From Ipanema with Love", inventory: "10", price: "10", image: "http://res.cloudinary.com/rany/image/upload/v1459384482/cy2knm4eedlsmyf8g7kj.jpg", description: "", imageshow: nil},
-  {name: "Corcovado Pop", inventory: "10", price: "50", image: "http://res.cloudinary.com/rany/image/upload/v1459323547/l87iglonhptzigxwmuh0.jpg", description: "", imageshow: nil},
-  {name: "Abacaxi Lined", inventory: "10", price: "50", image: "http://res.cloudinary.com/rany/image/upload/v1459323521/dvrz0ulh7k4ffv0pcpuj.jpg", description: "", imageshow: nil},
-  {name: "Coco Coqueiro", inventory: "10", price: "100", image: "http://res.cloudinary.com/rany/image/upload/v1459323469/sgyxtwqyhh58ixczkozy.png", description: "", imageshow: "http://s19.postimg.org/ktlosmucj/testprodutos.png"}
+  {name: "Tote Bag Copacabana", inventory: "10", price: "40", image: "http://res.cloudinary.com/rany/image/upload/v1471890380/ewy3ylkbsttov67353yz.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471890704/qv0yr8z5xpo6teh2w39f.jpg"},
+  {name: "Tote Bag Dois Irmãos", inventory: "10", price: "40", image: "http://res.cloudinary.com/rany/image/upload/v1471901045/rakkhgvend7jnife5koa.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471901311/vlpeegpfv74styipbteh.jpg"},
+  {name: "Tote BAg Rio Geométrico", inventory: "10", price: "40", image: "http://res.cloudinary.com/rany/image/upload/v1471901225/wgyzhshnzgxagxszbtqi.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471901258/idntrh0gfcpbfgwgdxbh.jpg"},
+  {name: "Postal Rio Geométrico", inventory: "10", price: "3", image: "http://res.cloudinary.com/rany/image/upload/v1471815104/orozzasl5fdc3irhu7pf.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471822072/pctkeybtrmjiistxxrrf.jpg"},
+  {name: "Postal Saudade", inventory: "10", price: "3", image: "http://res.cloudinary.com/rany/image/upload/v1471814947/qtmxsfstuzeivjhm4aof.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471823364/trzn5bownfiuqplvs0w4.jpg"},
+  {name: "Postal Corcovado", inventory: "10", price: "3", image: "http://res.cloudinary.com/rany/image/upload/v1471815067/l6brudvzrjyiwcsxblh7.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471823632/qz1zawae8dpv20vb4srt.jpg"},
+  {name: "Almofada Corcovado", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1471816386/rq4tbvxyjjflrmttu4dd.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471827671/ncfgiaycikkesatnqv60.jpg"},
+  {name: "Almofada Abacaxi Lined", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1471807364/hxeujshntvx5kqbzxm2k.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471827777/mwbgxwjmrimw5nndeyhh.jpg"},
+  {name: "Almofada Folha", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1471808461/uabh3dsuqtfomd1eetap.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1471827943/jttk08mbpk8fjfnfyepq.jpg"},
+  {name: "Poster Rio Geométrico", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1471916173/ua3ookkl0xri4j0qq03p.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1472141011/nqfyhyyr09zdgu7fhexd.jpg"},
+  {name: "Poster Abacaxi Lined", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1472136887/jwn9axafnftikcknyvgw.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1472137264/ficsl4oj1lok4iiccsm3.jpg"},
+  {name: "Poster Dois Irmãos", inventory: "10", price: "80", image: "http://res.cloudinary.com/rany/image/upload/v1471817859/eb1219zhcfmeuk1qpsl8.jpg", description: "", imageshow: "http://res.cloudinary.com/rany/image/upload/v1472141961/at6i4sdy0gfhznhlxpmx.jpg"}
 ])
 Category::HABTM_Products.create!([
   {category_id: Category.all.sample.id, product_id: Product.all.sample.id},

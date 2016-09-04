@@ -17,7 +17,7 @@
          <% user = User.find order.user_id  %>
             <tr>
               <td><%= order.payment_date %></td>
-              <td><%= user.name %></td>
+              <td><%= user.username %></td>
               <td><%= order.delivery_address %></td>
               <td><%= link_to(button_tag("Ver Pedido"), order_path(order.id)) %></td>
             <% lines = ItemCart.where(order_id: order.id) %>
@@ -33,5 +33,3 @@
     </div>
   </div>
 </div>
-
-    

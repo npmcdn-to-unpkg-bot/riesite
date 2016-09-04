@@ -13,7 +13,7 @@
            <th>Estoque para vendas:</th>
          </tr>
           <% i = 0 %>
-          <% @products.each do |product| %>
+          <% @products.order("name ASC").each do |product| %>
             <tr>
               <td><%= link_to product.name,product %></td>
               <td><%= product.inventory %></td>

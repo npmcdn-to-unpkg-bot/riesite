@@ -31,39 +31,39 @@ class ReportsController < ApplicationController
     end
   end
 
-def profit
-  @products = Product.all
-  @line_items = CartItem.all
-  @orders = Order.all
-  @grand_total_revenue = 0
-  @grand_total_cost = 0
-  @grand_total_tax = 0
-  @gross_profit = 0
-  @gross_profit_percentage = 0
-  @orders.each do |order|
-      @grand_total_revenue += order.total_revenue
-      @grand_total_cost += order.total_cost
-      @grand_total_tax += order.total_tax
-      profit = order.total_revenue - order.total_tax - order.total_cost
-      @gross_profit += profit
-  end
-  unless @grand_total_revenue == 0
-      @gross_profit_percentage = @gross_profit / (@grand_total_revenue - @grand_total_tax)
+  def profit
+    @products = Product.all
+    @line_items = CartItem.all
+    @orders = Order.all
+    @grand_total_revenue = 0
+    @grand_total_cost = 0
+    @grand_total_tax = 0
+    @gross_profit = 0
+    @gross_profit_percentage = 0
+    @orders.each do |order|
+        @grand_total_revenue += order.total_revenue
+        @grand_total_cost += order.total_cost
+        @grand_total_tax += order.total_tax
+        profit = order.total_revenue - order.total_tax - order.total_cost
+        @gross_profit += profit
     end
-  end
+    unless @grand_total_revenue == 0
+        @gross_profit_percentage = @gross_profit / (@grand_total_revenue - @grand_total_tax)
+      end
+    end
 
-  def shipping
-    @orders = Order.where(shipped_date: nil).where.not(payment_date: nil)
-  end
+    def shipping
+      @orders = Order.where(shipped_date: nil).where.not(payment_date: nil)
+    end
 
-  def finalise
-    @orders = Order.where(finalised_date: nil).where.not(shipped_date: nil)
-  end
+    def finalise
+      @orders = Order.where(finalised_date: nil).where.not(shipped_date: nil)
+    end
 
-  private
+    private
 
-  def authorise
-    redirect_to root_path unless (@current_user.present? && @current_user.admin?)
-  end
+    def authorise
+      redirect_to root_path unless (@current_user.present? && @current_user.admin?)
+    end
 
 end

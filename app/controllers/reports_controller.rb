@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
 def inventory
     @products = Product.all
     @product_inventory_awaiting_delivery =[]
-    orders_awaiting_delivery = order.where(:shipped_date => nil )
+    orders_awaiting_delivery = Order.where(:shipped_date => nil )
     @products.each do |product|
         quantity = 0
         orders_awaiting_delivery.each do |order|

@@ -10,4 +10,4 @@ Gems
 - Sweet Alert
 
 
- www.somosrie.com
+somosrie.com

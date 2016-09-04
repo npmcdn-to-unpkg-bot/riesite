@@ -22,7 +22,9 @@ class ReportsController < ApplicationController
     @grand_total = 0
     @grand_total_units = 0
     @orders.each do |order|
+      if order.total_revenue?
         @grand_total += order.total_revenue
+      end
         @line_items.each do |item|
           if item.order_id == order.id
             @grand_total_units += item.quantity

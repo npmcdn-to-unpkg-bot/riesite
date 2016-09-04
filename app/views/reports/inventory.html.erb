@@ -16,9 +16,9 @@
           <% @products.each do |product| %>
             <tr>
               <td><%= link_to product.name,product %></td>
-              <td><%= product.inventory + @product_inventory_awaiting_delivery[i] %></td>
-              <td><%= @product_inventory_awaiting_delivery[i] %></td>
               <td><%= product.inventory %></td>
+              <td><%= @product_inventory_awaiting_delivery[i] %></td>
+              <td><%= product.inventory - @product_inventory_awaiting_delivery[i] %></td>
               <td><% i += 1 %></td>
             </tr>
           <% end %>

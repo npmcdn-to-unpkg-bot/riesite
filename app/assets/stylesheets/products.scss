@@ -10,12 +10,16 @@
   position: relative;
   float: left;
   .secondImg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      display: none;
-  }
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+        -webkit-transition: all 10s ease;
+        -moz-transition: all 10s ease;
+        -ms-transition: all 10s ease;
+        transition: all 10s ease;
+    }
   &:hover .secondImg {
-      display: block;
+    display: block;
   }
 }

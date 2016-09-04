@@ -68,15 +68,35 @@
     display: block;
     max-width: 100%;
   }
-  .link-img{
-    transition: 0.5s ease-in-out;
-    &:hover{
-    opacity: 0.7;
-  }
- }
  .row{
    margin: 0 auto;
  }
+}
+
+.frame {
+  height: 275px;
+  width: 275px;
+  overflow: hidden;
+}
+.frame2 {
+  height: 550px;
+  width: 550px;
+  overflow: hidden;
+}
+.zoomin img {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 3s ease;
+  -moz-transition: all 3s ease;
+  -ms-transition: all 3s ease;
+  transition: all 3s ease;
+  &:hover {
+    transform:scale(1.1);
+       -ms-transform:scale(1.1); /* IE 9 */
+       -moz-transform:scale(1.1); /* Firefox */
+       -webkit-transform:scale(1.1); /* Safari and Chrome */
+       -o-transform:scale(1.1); /* Opera */
+  }
 }
 
 @media screen and (max-width:1200px){

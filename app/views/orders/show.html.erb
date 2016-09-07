@@ -19,7 +19,7 @@
     <p>Total Price: <%= number_to_currency(@order.total_revenue) %></p>
 
 <% if @order.payment_date == nil %>
-<%= form_for(@order) do |f| %>
+  <%= form_for(@order) do |f| %>
       <%= f.label :delivery_address %>
       <%= f.text_field :delivery_address %>
       <br>
@@ -27,6 +27,6 @@
       <% inv = 'INV' + @order.id.to_s.rjust(5, '0') %>
       <%= f.hidden_field :invoice_number, :value => inv %>
       <%= f.submit "Submit", class: "button black" %>
-<% end %>
+  <% end %>
 <% end %>
 </div>

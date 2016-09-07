@@ -74,13 +74,13 @@
 }
 
 .frame {
-  height: 275px;
-  width: 275px;
+  max-height: 300px;
+  max-width: 300px;
   overflow: hidden;
 }
 .frame2 {
-  height: 550px;
-  width: 550px;
+  max-height: 550px;
+  max-width: 550px;
   overflow: hidden;
 }
 .zoomin img {
@@ -110,11 +110,10 @@
   .hide-small{
     display: none;
   }
-  .image-g, .image-b{
-    img{
-      width: 300px;
-    }
+  .for-mobile{
+    width: 300px;
   }
+
   .categories-links{
       width: 300px;
       height: 1600px;
